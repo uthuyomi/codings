@@ -1,0 +1,38 @@
+footer {
+  width: 100%;
+  padding-bottom: 200px;
+  @media (max-width: 1199px){
+    padding-bottom: 100px;
+  }
+  p {
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;
+    :global(.light) &{
+      color: black;
+    }
+    :global(.dark) &{
+      color: #fff;
+    }
+  }
+  nav {
+    ul {
+      width: auto;
+      padding-left: 0;
+      margin: 0;
+      margin-left: 70vw;
+      li {
+        list-style: none;
+        a {
+          text-decoration: none;
+          :global(.light) &{
+            color: black;
+          }
+          :global(.dark) &{
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

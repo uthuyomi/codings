@@ -1,0 +1,474 @@
+@media (min-width: 1400px) {
+  body {
+    background-color: #cccccc;
+  }
+  body div.sec-title h2 {
+    font-size: 36px;
+  }
+  body div.sec-title h3 {
+    position: relative;
+    font-size: 14px;
+    margin: 10px 0 0;
+    padding-bottom: 37px;
+  }
+  body div.sec-title h3::after {
+    position: absolute;
+    top: 57px;
+    left: 0;
+    content: "";
+    width: 40px;
+    height: 1px;
+    background-color: #000000;
+  }
+  body header {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 1000px;
+    width: 100%;
+    height: 80px;
+    margin: 0 auto;
+  }
+  body header a.logo {
+    display: block;
+    width: 100px;
+    height: 26px;
+    margin: 32px 0 32px 100px;
+  }
+  body header a.logo img {
+    width: 100%;
+    height: 100%;
+  }
+  body header nav ul {
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 45px;
+  }
+  body header nav ul li {
+    height: 21px;
+    width: auto;
+    margin: 0 15px;
+  }
+  body header nav ul li a {
+    font-size: 14px;
+  }
+  body header a.contact-btn {
+    position: absolute;
+    right: 0;
+    display: block;
+    width: 200px;
+    height: 80px;
+    line-height: 80px;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+  }
+  body div.main-visual {
+    width: 100%;
+  }
+  body div.main-visual div.img img {
+    display: block;
+    width: 100%;
+  }
+  body main {
+    width: 100%;
+  }
+  body main section.news {
+    width: 1000px;
+    margin: 120px auto;
+  }
+  body main section.news div.sec-title h2 {
+    font-size: 36px;
+  }
+  body main section.news div.sec-title h3 {
+    position: relative;
+    font-size: 14px;
+    margin: 10px 0 37px;
+  }
+  body main section.news div.sec-title h3::after {
+    position: absolute;
+    top: 57px;
+    left: 0;
+    content: "";
+    width: 40px;
+    height: 1px;
+    background-color: #000000;
+  }
+  body main section.news div.information {
+    width: 100%;
+    display: flex;
+    margin-top: 60px;
+  }
+  body main section.news div.information article {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    padding-right: 60px;
+  }
+  body main section.news div.information article:not(:first-child) {
+    border-left: solid 1px black;
+  }
+  body main section.news div.information article div.category {
+    display: inline-block;
+    width: auto;
+    height: 20px;
+    font-size: 14px;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 0 6px;
+    margin: 0 10px;
+  }
+  body main section.news div.information article p {
+    width: 100%;
+    padding: 16px 0 0;
+  }
+  body main section.about {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  body main section.about div.sec1-img {
+    width: 55%;
+    height: auto;
+  }
+  body main section.about div.sec1-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  body main section.about div.sec1-text {
+    width: 35%;
+    margin: 180px 5% 0;
+  }
+  body main section.about div.sec1-text p {
+    margin-top: 50px;
+  }
+  body main section.business {
+    width: 1000px;
+    margin: 120px auto;
+  }
+  body main section.business div.business-content {
+    display: flex;
+    gap: 64px;
+    width: 100%;
+    padding: 0 100px;
+  }
+  body main section.business div.business-content div.left {
+    margin-top: 100px;
+  }
+  body main section.business div.business-content div.left div.inner-content {
+    width: 368px;
+  }
+  body main section.business div.business-content div.left div.inner-content:nth-of-type(1) {
+    margin-top: 100px;
+  }
+  body main section.business div.business-content div.left div.inner-content h3 {
+    margin: 50px 0 10px;
+  }
+  body main section.business div.business-content div.left div.inner-content figure img {
+    display: block;
+    width: 100%;
+  }
+  body main section.business div.business-content div.right div.inner-content {
+    width: 368px;
+  }
+  body main section.business div.business-content div.right div.inner-content:nth-of-type(1) {
+    margin-top: 100px;
+  }
+  body main section.business div.business-content div.right div.inner-content h3 {
+    margin: 50px 0 10px;
+  }
+  body main section.business div.business-content div.right div.inner-content figure img {
+    display: block;
+    width: 100%;
+  }
+  body main section.canpany {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    margin: 0 auto;
+  }
+  body main section.canpany div.canpany-date {
+    width: 567px;
+    height: auto;
+    padding: 100px 45px;
+    background-color: #ffffff;
+  }
+  body main section.canpany div.canpany-date div.sec-title dl {
+    margin: 50px 0 0;
+  }
+  body main section.canpany div.canpany-img {
+    position: absolute;
+    right: 0;
+    top: calc(50% - 200px);
+    width: auto;
+    width: 547px;
+    height: 400px;
+    z-index: 12;
+    background-image: url("../img/company.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+  body footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    margin-top: 128px;
+    background-color: #ffffff;
+    padding: 40px calc((100% - 980px) / 2) 20px;
+  }
+  body footer a.logo {
+    display: block;
+    width: 100px;
+    height: 26px;
+  }
+  body footer a.logo img {
+    width: 100%;
+    height: 100%;
+  }
+  body footer p.copy {
+    width: 100%;
+    text-align: left;
+    margin: 40px 0 0;
+  }
+}
+@media (min-width: 375px) and (max-width: 1399px) {
+  body {
+    background-color: #cccccc;
+  }
+  body div.sec-title h2 {
+    font-size: 36px;
+  }
+  body div.sec-title h3 {
+    position: relative;
+    font-size: 14px;
+    margin: 10px 0 0;
+    padding-bottom: 37px;
+  }
+  body div.sec-title h3::after {
+    position: absolute;
+    top: 57px;
+    left: 0;
+    content: "";
+    width: 40px;
+    height: 1px;
+    background-color: #000000;
+  }
+  body header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 375px;
+    width: 100%;
+    height: 80px;
+    margin: 0 auto;
+  }
+  body header a.logo {
+    display: block;
+    width: 80px;
+    height: 20px;
+    margin: 16px 0 8px;
+    margin-right: 279px;
+  }
+  body header a.logo img {
+    width: 100%;
+    height: 100%;
+  }
+  body header nav ul {
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  body header nav ul li {
+    height: 21px;
+    width: auto;
+    margin: 0 15px;
+  }
+  body header nav ul li a {
+    font-size: 14px;
+  }
+  body header a.contact-btn {
+    display: none;
+  }
+  body div.main-visual {
+    width: 100%;
+    height: 400px;
+  }
+  body div.main-visual div.img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  body div.main-visual div.img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    height: 100%;
+    transform: translate(-50%, -50%);
+  }
+  body main {
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+  }
+  body main section.news {
+    width: 100%;
+    padding: 80px 15px;
+    margin: 0 auto;
+  }
+  body main section.news div.sec-title h2 {
+    font-size: 36px;
+  }
+  body main section.news div.sec-title h3 {
+    position: relative;
+    font-size: 14px;
+    margin: 10px 0 37px;
+  }
+  body main section.news div.sec-title h3::after {
+    position: absolute;
+    top: 57px;
+    left: 0;
+    content: "";
+    width: 40px;
+    height: 1px;
+    background-color: #000000;
+  }
+  body main section.news div.information {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+  }
+  body main section.news div.information article {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    padding-right: 60px;
+  }
+  body main section.news div.information article div.category {
+    display: inline-block;
+    width: auto;
+    height: 20px;
+    font-size: 14px;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 0 6px;
+    margin: 0 10px;
+  }
+  body main section.news div.information article p {
+    width: 100%;
+    padding: 16px 0 0;
+  }
+  body main section.about {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  body main section.about div.sec1-img {
+    width: 100%;
+    height: auto;
+  }
+  body main section.about div.sec1-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  body main section.about div.sec1-text {
+    width: 100%;
+    padding: 30px 15px;
+  }
+  body main section.about div.sec1-text p {
+    margin-top: 50px;
+  }
+  body main section.business {
+    width: 343px;
+    margin: 0 auto;
+  }
+  body main section.business div.business-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  body main section.business div.business-content div.left div.inner-content {
+    width: 100%;
+  }
+  body main section.business div.business-content div.left div.inner-content:nth-of-type(1) {
+    margin-top: 100px;
+  }
+  body main section.business div.business-content div.left div.inner-content h3 {
+    margin: 30px 0 10px;
+  }
+  body main section.business div.business-content div.left div.inner-content figure img {
+    display: block;
+    width: 100%;
+  }
+  body main section.business div.business-content div.right div.inner-content {
+    width: 100%;
+  }
+  body main section.business div.business-content div.right div.inner-content h3 {
+    margin: 30px 0 10px;
+  }
+  body main section.business div.business-content div.right div.inner-content figure img {
+    display: block;
+    width: 100%;
+  }
+  body main section.canpany {
+    width: 100%;
+    max-width: 343px;
+    height: auto;
+    margin: 0 auto;
+  }
+  body main section.canpany div.canpany-date {
+    width: 100%;
+    height: auto;
+    padding: 100px 45px;
+    background-color: #ffffff;
+  }
+  body main section.canpany div.canpany-date div.sec-title dl {
+    margin: 50px 0 0;
+  }
+  body main section.canpany div.canpany-img {
+    width: auto;
+    height: 400px;
+    background-image: url("../img/company.jpg");
+    background-position: center;
+    background-size: cover;
+    margin: 20px 0 0;
+  }
+  body footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 40px 16px 20px;
+  }
+  body footer a.logo {
+    display: block;
+    width: 100px;
+    height: 26px;
+    margin: 0 279px 10px 0;
+  }
+  body footer a.logo img {
+    width: 100%;
+    height: 100%;
+  }
+  body footer p.copy {
+    width: 100%;
+    text-align: left;
+    margin: 40px 0 0;
+  }
+}/*# sourceMappingURL=style.css.map */

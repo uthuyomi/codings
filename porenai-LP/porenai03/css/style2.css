@@ -1,0 +1,337 @@
+@media (min-width: 769px) {
+  html header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    aspect-ratio: 1600/147;
+    background-color: #ffffff;
+    margin: 0 auto;
+    z-index: 100;
+  }
+  html header div.logo {
+    position: absolute;
+    top: min(13px, 0.8125vw);
+    left: min(241px, 15.0625vw);
+    width: min(292px, 18.25vw);
+    height: min(116px, 7.25vw);
+    /* background: url(...); */
+  }
+  html header div.logo img {
+    display: block;
+    width: 100%;
+  }
+  html header div.sp-hum {
+    display: none;
+  }
+  html header nav {
+    position: absolute;
+    top: min(50px, 3.125vw);
+    left: min(1020px, 63.75vw);
+  }
+  html header nav ul {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: min(35px, 2.1875vw);
+  }
+  html header nav ul li a {
+    font-family: "Ten Mincho Text";
+    font-weight: normal;
+    font-size: min(30px, 1.875vw);
+    text-align: left;
+    color: #413f3f;
+  }
+  html header nav ul li:nth-child(1) {
+    display: none;
+  }
+  html section {
+    padding: 1px;
+  }
+  html img {
+    display: block;
+  }
+}
+@media (min-width: 769px) and (min-width: 769px) {
+  html .container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  html .container section.btn-area1 {
+    position: relative;
+  }
+  html .container section.btn-area1 a {
+    position: absolute;
+    top: 72%;
+    left: 50%;
+    display: block;
+    width: 47.38%;
+    height: auto;
+    transform: translate(-50%);
+  }
+  html .container section.btn-area1 a picture {
+    width: 100%;
+  }
+  html .container section.btn-area1 a picture img {
+    width: 100%;
+  }
+  html .container section.btn-area2 {
+    position: relative;
+  }
+  html .container section.btn-area2 a {
+    position: absolute;
+    top: 77%;
+    left: 50%;
+    display: block;
+    width: 47.38%;
+    height: auto;
+    transform: translate(-50%);
+  }
+  html .container section.btn-area2 a picture {
+    width: 100%;
+  }
+  html .container section.btn-area2 a picture img {
+    width: 100%;
+  }
+  html .container section picture,
+  html .container section img {
+    width: 100%;
+    max-width: 1600px;
+  }
+}
+@media (min-width: 769px) {
+  html footer {
+    position: relative;
+    width: 100%;
+    height: min(140px, 8.75vw);
+    background: #f87979;
+  }
+  html footer p {
+    position: absolute;
+    top: min(90px, 5.625vw);
+    left: min(240px, 15vw);
+    font-family: Korolev;
+    font-weight: bold;
+    font-size: min(13px, 0.8125vw);
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #fff;
+  }
+  html footer nav ul {
+    display: flex;
+    flex-wrap: nowrap;
+    position: absolute;
+    top: min(90px, 5.625vw);
+    left: min(1120px, 70vw);
+    gap: min(30px, 1.875vw);
+  }
+  html footer nav ul li a {
+    font-family: "Noto Sans CJK JP";
+    font-weight: bold;
+    font-size: min(13px, 0.8125vw);
+    letter-spacing: 0.05em;
+    line-height: min(25px, 1.5625vw);
+    text-align: left;
+    color: #fff;
+  }
+  html footer nav ul li:nth-child(1) {
+    padding-right: min(30px, 7.5vw);
+    border-right: 1px #ffffff solid;
+  }
+}
+@media (max-width: 768px) {
+  html header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: min(85px, 21.25vw);
+    background-color: #FFFFFF;
+    z-index: 99;
+  }
+  html header div.logo {
+    position: absolute;
+    top: min(15px, 3.75vw);
+    left: min(20px, 5vw);
+    width: min(152px, 38vw);
+    height: min(60px, 15vw);
+    /* background: url(...); */
+  }
+  html header div.logo img {
+    display: block;
+    width: 100%;
+  }
+  html header div.sp-hum {
+    position: fixed;
+    top: min(25px, 6.25vw);
+    right: min(100px, 25vw);
+    z-index: 110;
+  }
+  html header div.sp-hum span {
+    display: inline-block;
+    position: absolute;
+    width: min(50px, 12.5vw);
+    height: min(6px, 1.5vw);
+    background: #393636;
+    transition: all 0.3s;
+    transform-origin: center;
+  }
+  html header div.sp-hum span:nth-child(1) {
+    top: 0;
+    left: 0;
+    transform: rotate(0);
+  }
+  html header div.sp-hum span:nth-child(1).active {
+    top: min(17px, 4.25vw);
+    left: 0;
+    transform: rotate(45deg) !important;
+  }
+  html header div.sp-hum span:nth-child(2) {
+    top: min(17px, 4.25vw);
+    left: 0;
+  }
+  html header div.sp-hum span:nth-child(2).active {
+    display: none;
+  }
+  html header div.sp-hum span:nth-child(3) {
+    top: min(34px, 8.5vw);
+    left: 0;
+    transform: rotate(0);
+  }
+  html header div.sp-hum span:nth-child(3).active {
+    top: min(17px, 4.25vw);
+    left: 0;
+    transform: rotate(-45deg) !important;
+  }
+  html header nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #FFFFFF;
+    z-index: 10;
+    transform: translateX(100%);
+    transition: all 0.5s;
+  }
+  html header nav ul {
+    width: 100vw;
+    height: calc(100vh - min(85px, 21.25%));
+  }
+  html header nav ul li {
+    width: 100%;
+  }
+  html header nav ul li img {
+    width: min(292px, 73vw);
+    margin: min(126px, 31.5vw) auto min(35px, 8.75vw);
+  }
+  html header nav ul li a {
+    display: block;
+    font-family: "Ten Mincho Text";
+    font-weight: normal;
+    font-size: min(30px, 7.5vw);
+    text-align: left;
+    color: #413f3f;
+    padding: min(14px, 3.5vw) 0;
+    border-bottom: solid 1px #EDEBEB;
+    text-align: center;
+  }
+  html header nav ul li a:nth-child(1) {
+    border-top: solid 1px #EDEBEB;
+  }
+  html section {
+    padding: 1px;
+  }
+  html img {
+    display: block;
+  }
+}
+@media (max-width: 768px) and (max-width: 768px) {
+  html .container {
+    width: 100%;
+    margin: 0;
+  }
+  html .container section.btn-area1 {
+    position: relative;
+  }
+  html .container section.btn-area1 a {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    display: block;
+    width: 70%;
+    transform: translate(-50%);
+  }
+  html .container section.btn-area1 a picture {
+    width: 100%;
+  }
+  html .container section.btn-area1 a picture img {
+    width: 100%;
+  }
+  html .container section.btn-area2 {
+    position: relative;
+  }
+  html .container section.btn-area2 a {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    display: block;
+    width: 70%;
+    transform: translate(-50%);
+  }
+  html .container section.btn-area2 a picture {
+    width: 100%;
+  }
+  html .container section.btn-area2 a picture img {
+    width: 100%;
+  }
+  html .container section picture,
+  html .container section img {
+    width: 100%;
+    max-width: none;
+  }
+}
+@media (max-width: 768px) {
+  html footer {
+    position: relative;
+    width: 100%;
+    height: min(108px, 27vw);
+    background: #f87979;
+  }
+  html footer p {
+    position: absolute;
+    width: 100%;
+    top: min(36px, 9vw);
+    font-family: Korolev;
+    font-weight: bold;
+    font-size: min(13px, 3.25vw);
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #fff;
+  }
+  html footer nav ul {
+    display: flex;
+    flex-wrap: nowrap;
+    position: absolute;
+    justify-content: center;
+    width: 100%;
+    top: min(67px, 16.75vw);
+    gap: min(26px, 6.5vw);
+  }
+  html footer nav ul li a {
+    font-family: "Noto Sans CJK JP";
+    font-weight: bold;
+    font-size: min(13px, 3.25vw);
+    letter-spacing: 0.05em;
+    line-height: min(25px, 6.25vw);
+    text-align: left;
+    color: #fff;
+  }
+  html footer nav ul li:nth-child(1) {
+    padding-right: min(30px, 7.5vw);
+    border-right: 1px #ffffff solid;
+  }
+  html .active {
+    transform: translateX(0) !important;
+  }
+}/*# sourceMappingURL=style2.css.map */

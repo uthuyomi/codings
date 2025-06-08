@@ -1,0 +1,38 @@
+{
+  "nav": [
+    { "id": 1, "label": "Home", "url": "/index.html" },
+    { "id": 2, "label": "Works", "url": "https://webyayasu.com/" },
+    { "id": 3, "label": "Contact", "url": "https://webyayasu.com/#contact" }
+  ],
+  "hero": {
+    "catch": "Designed {{br}} to Function.",
+    "sub": "機能のために設計された。",
+    "image": "/images/hero.jpg"
+  },
+  "gallery": [
+    {
+      "id": 1,
+      "imagepc": "inner-img01-pc.png",
+      "imagesp": "inner-img01-sp.png",
+      "title": "WPテーマ制作",
+      "skills": ["HTML", "CSS", "JavaScript", "php", "CFS", "figma"],
+      "link": "https://webyayasu.sakura.ne.jp/home/"
+    },
+    {
+      "id": 2,
+      "imagepc": "inner-img02-pc.jpg",
+      "imagesp": "inner-img02-sp.jpg",
+      "title": "英会話教室",
+      "skills": ["HTML", "CSS", "javascript", "figma"],
+      "link": "https://webyayasu.sakura.ne.jp/portfolio/coding-sample01/index.html"
+    },
+    {
+      "id": 3,
+      "imagepc": "inner-img03-pc.jpg",
+      "imagesp": "inner-img03-sp.jpg",
+      "title": "ギャラリーサイト",
+      "skills": ["HTML", "CSS", "JavaScript", "figma"],
+      "link": "https://webyayasu.sakura.ne.jp/portfolio/coding-sample02/html/index.html"
+    }
+  ]
+}

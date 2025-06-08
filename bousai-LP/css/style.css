@@ -1,0 +1,2029 @@
+@charset "UTF-8";
+.under-yellow {
+  text-indent: -1em;
+  background: linear-gradient(transparent 70%, #FED858 70%);
+}
+
+.red {
+  color: #ED780B;
+}
+
+div.outer {
+  width: 100%;
+  max-width: 780px;
+  height: auto;
+  margin: 0 auto;
+  overflow-x: hidden;
+  /*message*/
+}
+div.outer div.fv div.fv--content {
+  position: relative;
+  width: min(780px, 780 / 780 * 100vw);
+  height: min(572px, 572 / 780 * 100vw);
+  background-image: url("../img/fv-back/906042 1.jpg");
+  background-position: center;
+  background-size: cover;
+}
+div.outer div.fv div.fv--content::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: min(780px, 780 / 780 * 100vw);
+  height: min(38px, 38 / 780 * 100vw);
+  background-image: url("../img/fv-back/stripe.png");
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+}
+div.outer div.fv div.fv--content img {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: min(376px, 376 / 780 * 100vw);
+  height: min(530px, 530 / 780 * 100vw);
+  z-index: 1;
+}
+div.outer div.fv div.fv--content div.text {
+  position: absolute;
+  top: 0;
+  width: min(486px, 486 / 780 * 100vw);
+  height: min(400px, 400 / 780 * 100vw);
+  flex-shrink: 0;
+  border-radius: min(22px, 22 / 780 * 100vw);
+  border: 2px solid #000;
+  background: #FED858;
+  margin: min(96px, 96 / 780 * 100vw) 0 0 min(262px, 262 / 780 * 100vw);
+}
+div.outer div.fv div.fv--content div.text p {
+  width: min(340px, 340 / 780 * 100vw);
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: min(34px, 34 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.05rem;
+  white-space: nowrap;
+  margin: min(32px, 32 / 780 * 100vw) auto 0;
+  text-align: center;
+}
+div.outer div.fv div.fv--content div.text h1 {
+  display: inline-block;
+  height: min(74px, 74 / 780 * 100vw);
+  line-height: min(74px, 74 / 780 * 100vw);
+  color: #FFF;
+  font-family: "Noto Sans";
+  font-size: min(64px, 64 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: min(1px, 1 / 780 * 100vw);
+  background: #ED780B;
+  margin: min(10px, 10 / 780 * 100vw) 0 min(10px, 10 / 780 * 100vw) min(80px, 80 / 780 * 100vw);
+  padding: 0 min(30px, 30 / 780 * 100vw);
+}
+div.outer div.fv div.fv--content div.text h1:nth-child(2)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: min(-10px, -10 / 780 * 100vw);
+  width: min(68px, 68 / 780 * 100vw);
+  height: min(56px, 56 / 780 * 100vw);
+  background-image: url("../img/fv-back/anzen-bou.png");
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+}
+div.outer div.fv div.fv--content div.text h1:nth-child(4n) {
+  background: transparent !important;
+}
+div.outer div.fv div.fv--content div.text h1:nth-child(4n) span {
+  display: inline-block;
+  color: #ED780B !important;
+  border-bottom: min(8px, 8 / 780 * 100vw) solid #ED780B;
+}
+div.outer div.fv div.fv--text {
+  position: relative;
+  background: #FFFAE1;
+}
+div.outer div.fv div.fv--text::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(780px, 780 / 780 * 100vw);
+  height: min(38px, 38 / 780 * 100vw);
+  background-image: url("../img/fv-back/stripe.png");
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+}
+div.outer div.fv div.fv--text p {
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: min(32px, 32 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 139.6%;
+  padding: min(56px, 56 / 780 * 100vw) 0 0 min(82px, 82 / 780 * 100vw);
+}
+div.outer div.fv div.fv--text p span {
+  color: #ED780B;
+  font-size: min(40px, 40 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 139.6%;
+}
+div.outer div.fv div.fv--text div.message {
+  margin-top: min(34px, 34 / 780 * 100vw);
+}
+div.outer div.message {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 0 0 min(80px, 80 / 780 * 100vw);
+}
+div.outer div.message img {
+  width: min(210px, 210 / 780 * 100vw);
+  aspect-ratio: 1/1;
+}
+div.outer div.message div.message--text {
+  display: flex;
+  align-items: center;
+  width: min(500px, 500 / 780 * 100vw);
+  height: min(180px, 180 / 780 * 100vw);
+  background-image: url("../img/fv-back/Union.svg");
+  background-position: center;
+  background-size: cover;
+}
+div.outer div.message div.message--text p {
+  color: #000;
+  text-align: justify;
+  font-family: "M PLUS 1";
+  font-size: min(20px, 20 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 500;
+  line-height: min(36px, 36 / 780 * 100vw);
+  /* 180% */
+  letter-spacing: 0.5px;
+  padding: 0 0 min(14px, 14 / 780 * 100vw) min(100px, 100 / 780 * 100vw);
+}
+div.outer div.message div.message--text p span {
+  color: #ED780B;
+  font-family: "M PLUS 1";
+  font-size: min(20px, 20 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 500;
+  line-height: min(36px, 36 / 780 * 100vw);
+  letter-spacing: 0.5px;
+}
+div.outer div.best3 {
+  position: relative;
+  z-index: 2;
+}
+div.outer div.best3::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: min(874px, 874 / 780 * 100vw);
+  height: min(242px, 242 / 780 * 100vw);
+  border-radius: 50%;
+  background: #fff;
+  transform: translate(-50%, 35%);
+  z-index: -1;
+}
+div.outer div.best3 div.best3--heading {
+  position: relative;
+  width: min(590px, 590 / 780 * 100vw);
+  height: min(80px, 80 / 780 * 100vw);
+  flex-shrink: 0;
+  border: min(2px, 2 / 780 * 100vw) solid #FFF;
+  background: #E24A1A;
+  text-align: center;
+  margin: min(60px, 60 / 780 * 100vw) auto;
+}
+div.outer div.best3 div.best3--heading::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: min(32px, 32 / 780 * 100vw);
+  left: min(-27px, -27 / 780 * 100vw);
+  width: min(120px, 120 / 780 * 100vw);
+  height: min(70px, 70 / 780 * 100vw);
+  background-image: url("../img/best3/Subtract.svg");
+  background-position: center;
+  background-size: cover;
+  transform: rotate(180deg);
+  z-index: -1;
+}
+div.outer div.best3 div.best3--heading::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: min(32px, 32 / 780 * 100vw);
+  right: min(-27px, -27 / 780 * 100vw);
+  width: min(120px, 120 / 780 * 100vw);
+  height: min(70px, 70 / 780 * 100vw);
+  background-image: url("../img/best3/Subtract.svg");
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+}
+div.outer div.best3 div.best3--heading h2 {
+  color: #FFF;
+  font-family: "M PLUS 2";
+  font-size: min(40px, 40 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: min(70px, 70 / 780 * 100vw);
+  letter-spacing: min(1.6px, 1.6 / 780 * 100vw);
+}
+div.outer div.best3 div.best3--heading h2 span {
+  font-size: min(54px, 54 / 780 * 100vw);
+}
+div.outer div.best3 div.best3--content {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: min(6px, 6 / 780 * 100vw);
+  width: min(780px, 780 / 780 * 100vw);
+  padding: min(30px, 30 / 780 * 100vw) min(12px, 12 / 780 * 100vw) min(68px, 68 / 780 * 100vw);
+}
+div.outer div.best3 div.best3--content div.best3--content__items {
+  width: min(248px, 248 / 780 * 100vw);
+  height: min(600px, 600 / 780 * 100vw);
+  padding: min(26px, 26 / 780 * 100vw) min(16px, 16 / 780 * 100vw);
+  gap: min(20px, 20 / 780 * 100vw);
+  border-radius: min(14px, 14 / 780 * 100vw);
+  border: 1px solid #ED780B;
+  background: #FFF;
+  text-align: center;
+  padding-top: min(54px, 54 / 780 * 100vw);
+}
+div.outer div.best3 div.best3--content div.best3--content__items p.best3--content__items__text {
+  display: inline;
+  color: #000;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(26px, 26 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: min(40px, 40 / 780 * 100vw);
+  margin-top: min(74px, 74 / 780 * 100vw);
+}
+div.outer div.best3 div.best3--content div.best3--content__items h3 {
+  color: #000;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(26px, 26 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: min(28px, 28 / 780 * 100vw) 0 min(14px, 14 / 780 * 100vw);
+}
+div.outer div.best3 div.best3--content div.best3--content__items h3.second {
+  margin-top: min(68px, 68 / 780 * 100vw) !important;
+}
+div.outer div.best3 div.best3--content div.best3--content__items img {
+  display: block;
+  width: min(200px, 200 / 780 * 100vw);
+  height: min(168px, 168 / 780 * 100vw);
+}
+div.outer div.best3 div.best3--content div.best3--content__items p.price {
+  color: #F06464;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(32px, 32 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: min(18px, 18 / 780 * 100vw) 0 min(20px, 20 / 780 * 100vw);
+}
+div.outer div.best3 div.best3--content div.best3--content__items a {
+  display: flex;
+  padding: min(14px, 14 / 780 * 100vw) min(46px, 46 / 780 * 100vw);
+  justify-content: center;
+  align-items: center;
+  gap: min(20px, 20 / 780 * 100vw);
+  align-self: stretch;
+  border-radius: min(56px, 56 / 780 * 100vw);
+  background: var(--unnamed, linear-gradient(180deg, #70C79F 0.15%, #0C9558 99.81%));
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+  color: #FFF;
+  text-align: center;
+  text-shadow: 0px 1px 1px #38946A;
+  font-family: "Noto Sans";
+  font-size: min(24px, 24 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+div.outer div.standard3 {
+  position: relative;
+  background: #FAE682;
+  z-index: 1;
+  text-align: center;
+  padding-bottom: min(50px, 50 / 780 * 100vw);
+}
+div.outer div.standard3 h2 {
+  display: inline-block;
+  color: #000;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(44px, 44 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  padding: min(20px, 20 / 780 * 100vw) min(24px, 24 / 780 * 100vw) min(10px, 10 / 780 * 100vw);
+  /* 22px */
+  letter-spacing: 0.66px;
+  border-bottom: dashed 2px #ED780B;
+  margin: 0 auto;
+}
+div.outer div.standard3 h2.rinkaku-w {
+  color: #FF8001;
+  text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff;
+  /* 左下 */
+}
+div.outer div.standard3 h2:nth-child(1) {
+  padding-top: min(120px, 120 / 780 * 100vw);
+}
+div.outer div.standard3 h2:nth-of-type(2) {
+  position: relative;
+  color: #FF8001;
+  font-family: "Noto Sans";
+  font-size: min(60px, 60 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: 0.9px;
+  /* 48px */
+  letter-spacing: 1.44px;
+  -webkit-text-stroke-width: 2;
+  -webkit-text-stroke-color: #F8F4F0;
+}
+div.outer div.standard3 h2:nth-of-type(2)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: min(0px, 0 / 780 * 100vw);
+  left: min(370px, 370 / 780 * 100vw);
+  width: min(116px, 116 / 780 * 100vw);
+  height: min(110px, 110 / 780 * 100vw);
+  transform: rotate(5.833deg);
+  background-image: url("../img/standard3/bag2.svg");
+  background-position: center;
+  background-size: cover;
+}
+div.outer div.standard3 h2:nth-of-type(2) span.big {
+  font-size: min(96px, 96 / 780 * 100vw);
+}
+div.outer div.standard3 h2:nth-of-type(2) span.small {
+  font-size: min(54px, 54 / 780 * 100vw);
+}
+div.outer div.standard3 p.standard3--text {
+  display: inline-block;
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: min(28px, 28 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 600;
+  line-height: min(44px, 44 / 780 * 100vw);
+  text-align: left;
+  margin: min(42px, 42 / 780 * 100vw) auto 0;
+  /* 157.143% */
+}
+div.outer div.standard3 div.message {
+  margin-top: min(34px, 34 / 780 * 100vw);
+}
+div.outer div.standard3 div.point {
+  width: min(710px, 710 / 780 * 100vw);
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: min(40px, 40 / 780 * 100vw);
+}
+div.outer div.standard3 div.point:nth-of-type(3) {
+  margin-top: min(90px, 90 / 780 * 100vw);
+}
+div.outer div.standard3 div.point:nth-of-type(4) {
+  margin-top: min(90px, 90 / 780 * 100vw);
+}
+div.outer div.standard3 div.point div.point--heading {
+  position: relative;
+  width: 100%;
+  height: min(210px, 210 / 780 * 100vw);
+  flex-shrink: 0;
+  border-radius: min(40px, 40 / 780 * 100vw) min(40px, 40 / 780 * 100vw) 0px 0px;
+  background: #ED780B;
+}
+div.outer div.standard3 div.point div.point--heading.point1::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: min(70px, 70 / 780 * 100vw);
+  left: min(30px, 30 / 780 * 100vw);
+  width: min(100px, 100 / 780 * 100vw);
+  height: min(80px, 80 / 780 * 100vw);
+  background-image: url("../img/standard3/bag.svg");
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+}
+div.outer div.standard3 div.point div.point--heading.point2::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: min(70px, 70 / 780 * 100vw);
+  left: min(50px, 50 / 780 * 100vw);
+  width: min(100px, 100 / 780 * 100vw);
+  height: min(80px, 80 / 780 * 100vw);
+  background-image: url("../img/standard3/Vector 2.svg");
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+}
+div.outer div.standard3 div.point div.point--heading.point3::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: min(70px, 70 / 780 * 100vw);
+  left: min(50px, 50 / 780 * 100vw);
+  width: min(100px, 100 / 780 * 100vw);
+  height: min(80px, 80 / 780 * 100vw);
+  background-image: url("../img/standard3/note.svg");
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+}
+div.outer div.standard3 div.point div.point--heading p {
+  position: absolute;
+  top: min(0px, 0 / 780 * 100vw);
+  left: 50%;
+  width: min(226px, 226 / 780 * 100vw);
+  height: min(56px, 56 / 780 * 100vw);
+  flex-shrink: 0;
+  color: #FFF;
+  font-family: "Bakbak One";
+  font-size: min(34px, 34 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: min(70px, 70 / 780 * 100vw);
+  letter-spacing: min(1px, 1 / 780 * 100vw);
+  background-image: url("../img/standard3/Vector 1.svg");
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  transform: translate(-50%, -99%);
+}
+div.outer div.standard3 div.point div.point--heading p span {
+  font-size: min(44px, 44 / 780 * 100vw);
+}
+div.outer div.standard3 div.point div.point--heading h3 {
+  position: relative;
+  display: inline-block;
+  color: #FFF;
+  font-family: "Noto Sans";
+  font-size: min(48px, 48 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: min(60px, 60 / 780 * 100vw);
+  text-align: left;
+  margin: min(48px, 48 / 780 * 100vw) 0 0 min(70px, 70 / 780 * 100vw);
+}
+div.outer div.standard3 div.point div.point--text {
+  padding: min(50px, 50 / 780 * 100vw) min(40px, 40 / 780 * 100vw);
+  text-align: left;
+}
+div.outer div.standard3 div.point div.point--text p {
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: min(28px, 28 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: min(44px, 44 / 780 * 100vw);
+}
+div.outer div.slider--content {
+  background: #FFF;
+  text-align: center;
+}
+div.outer div.slider--content p {
+  display: inline-block;
+  color: #000;
+  text-align: justify;
+  font-family: "Noto Sans";
+  font-size: min(30px, 30 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: min(44px, 44 / 780 * 100vw);
+  /* 146.667% */
+  letter-spacing: min(0.9px, 0.9 / 780 * 100vw);
+  margin-top: 0;
+}
+div.outer div.slider--content p:nth-of-type(2) {
+  margin: min(40px, 40 / 780 * 100vw) auto min(50px, 50 / 780 * 100vw);
+}
+div.outer div.slider--content div.slider div.slider--content__item {
+  width: 100%;
+  height: min(1000px, 1000 / 780 * 100vw);
+  flex-shrink: 0;
+  border-radius: min(56px, 56 / 780 * 100vw);
+  background: #F7F5F0;
+  box-shadow: 0px min(8px, 8 / 780 * 100vw) min(8px, 8 / 780 * 100vw) 0px rgba(0, 0, 0, 0.15);
+  margin: min(50px, 50 / 780 * 100vw) min(40px, 40 / 780 * 100vw);
+  padding-top: min(40px, 40 / 780 * 100vw);
+}
+div.outer div.slider--content div.slider div.slider--content__item h3 {
+  position: relative;
+  width: 100%;
+  color: #ED780B;
+  font-family: "Noto Sans";
+  font-size: min(56px, 56 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0 0 min(20px, 20 / 780 * 100vw);
+}
+div.outer div.slider--content div.slider div.slider--content__item h3:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: min(100px, 100 / 780 * 100vw);
+  width: min(60px, 60 / 780 * 100vw);
+  height: min(60px, 60 / 780 * 100vw);
+  background-image: url("../img/standard3/slider/ci_wavy-check.svg");
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+div.outer div.slider--content div.slider div.slider--content__item h3.rank {
+  font-size: min(52px, 52 / 780 * 100vw);
+}
+div.outer div.slider--content div.slider div.slider--content__item h3.rank:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 60%;
+  left: min(80px, 80 / 780 * 100vw);
+  width: min(100px, 100 / 780 * 100vw);
+  height: min(106px, 106 / 780 * 100vw);
+  background-image: url("../img//bestranking/rank-bag.png");
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+div.outer div.slider--content div.slider div.slider--content__item h3 span.small {
+  font-size: min(40px, 40 / 780 * 100vw);
+}
+div.outer div.slider--content div.slider div.slider--content__item h3 span.medium {
+  font-size: min(45px, 45 / 780 * 100vw);
+}
+div.outer div.slider--content div.slider div.slider--content__item h3 span.big {
+  font-size: min(70px, 70 / 780 * 100vw);
+}
+div.outer div.slider--content div.slider div.slider--content__item h3 p {
+  color: #000;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(24px, 24 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: min(60px, 60 / 780 * 100vw);
+  /* 250% */
+}
+div.outer div.slider--content div.slider div.slider--content__item div.slider--content__item__outer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0 min(30px, 30 / 780 * 100vw);
+  width: 100%;
+}
+div.outer div.slider--content div.slider div.slider--content__item div.slider--content__item__outer div.slider--content__item__icon {
+  width: min(120px, 120 / 780 * 100vw);
+}
+div.outer div.slider--content div.slider div.slider--content__item div.slider--content__item__outer div.slider--content__item__icon div.slide--img {
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+  border-radius: min(60px, 60 / 780 * 100vw);
+}
+div.outer div.slider--content div.slider div.slider--content__item div.slider--content__item__outer div.slider--content__item__icon div.slide--img.hidden {
+  background-color: #BDC3C7;
+}
+div.outer div.slider--content div.slider div.slider--content__item div.slider--content__item__outer div.slider--content__item__icon div.slide--img.hidden::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: min(2px, 2 / 780 * 100vw);
+  background-color: #F06464;
+  transform: rotate(47deg);
+  z-index: 10;
+}
+div.outer div.slider--content div.slider div.slider--content__item div.slider--content__item__outer div.slider--content__item__icon div.slide--img img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+div.outer div.slider--content div.slider div.slider--content__item div.slider--content__item__outer div.slider--content__item__icon p {
+  color: #000;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(20px, 20 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: min(14px, 14 / 780 * 100vw) 0;
+}
+div.outer div.slider--content div.slider .slick-arrow {
+  width: min(50px, 50 / 780 * 100vw) !important;
+  height: min(50px, 50 / 780 * 100vw) !important;
+  z-index: 10;
+}
+div.outer div.slider--content div.slider .slick-arrow:before {
+  content: "" !important;
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+div.outer div.slider--content div.slider .slick-next:before {
+  opacity: 1;
+  background: url("../img/standard3/slider/select-arrow.svg") !important;
+  background-size: cover !important;
+}
+div.outer div.slider--content div.slider .slick-prev:before {
+  opacity: 1;
+  background: url("../img/standard3/slider/select-arrow.svg") !important;
+  background-size: cover !important;
+  transform: rotate(180deg);
+}
+div.outer div.slider--content div.slider .slick-arrow.slick-disabled {
+  opacity: 0;
+  /*slideがなくなったらボタンを非表示にする*/
+}
+div.outer div.bestranking {
+  position: relative;
+}
+div.outer div.bestranking::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: min(0px, 0 / 780 * 100vw);
+  left: min(0px, 0 / 780 * 100vw);
+  width: min(806px, 806 / 780 * 100vw);
+  height: min(40px, 40 / 780 * 100vw);
+  background-image: url("../img/bestranking/ストライプ.png");
+  background-position: center;
+  background-size: cover;
+}
+div.outer div.bestranking div.bestranking p {
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(40px, 40 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: min(1.2px, 1.2 / 780 * 100vw);
+  background: linear-gradient(90deg, #554023 0%, #C99846 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+div.outer div.bestranking div.bestranking p:nth-of-type(1) {
+  position: relative;
+  padding-top: min(140px, 140 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking p:nth-of-type(1)::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: min(75px, 75 / 780 * 100vw);
+  left: 50%;
+  width: min(232px, 232 / 780 * 100vw);
+  height: min(52px, 52 / 780 * 100vw);
+  background-image: url("../img/bestranking/Group 176.svg");
+  background-position: center;
+  background-size: cover;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+div.outer div.bestranking div.bestranking h2 {
+  position: relative;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(48px, 48 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.6px;
+  background: linear-gradient(90deg, #554023 0%, #C99846 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+div.outer div.bestranking div.bestranking h2 span {
+  font-size: min(60px, 60 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking h2::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: min(-50px, -50 / 780 * 100vw);
+  right: 0;
+  width: min(62px, 62 / 780 * 100vw);
+  height: min(226px, 226 / 780 * 100vw);
+  background-image: url("../img/bestranking/_編集モード.svg");
+  background-position: center;
+  background-size: cover;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+div.outer div.bestranking div.bestranking h2::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: min(-50px, -50 / 780 * 100vw);
+  left: min(25px, 25 / 780 * 100vw);
+  width: min(62px, 62 / 780 * 100vw);
+  height: min(226px, 226 / 780 * 100vw);
+  background-image: url("../img/bestranking/_編集モード.svg");
+  background-position: center;
+  background-size: cover;
+  transform: translateX(-50%);
+  transform: scaleX(-1);
+  z-index: 1;
+}
+div.outer div.bestranking div.bestranking--content {
+  width: min(720px, 720 / 780 * 100vw);
+  height: auto;
+  flex-shrink: 0;
+  border-radius: min(12px, 12 / 780 * 100vw);
+  border: min(2px, 2 / 780 * 100vw) solid #C9A304;
+  background: #FFF;
+  box-shadow: 3px 4px 9px 0px rgba(163, 157, 128, 0.25);
+  margin: 0 auto;
+  padding-bottom: min(76px, 76 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content:nth-of-type(n+2) {
+  margin-top: min(72px, 72 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.bestranking--content__heading {
+  display: flex;
+}
+div.outer div.bestranking div.bestranking--content div.bestranking--content__heading img.ranking-img {
+  width: min(180px, 180 / 780 * 100vw);
+  height: min(212px, 212 / 780 * 100vw);
+  margin-left: min(60px, 60 / 780 * 100vw);
+  margin-top: min(20px, 20 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.bestranking--content__heading div.bestranking--content__heading__text {
+  margin-left: min(45px, 45 / 780 * 100vw);
+  margin-top: min(40px, 40 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.bestranking--content__heading div.bestranking--content__heading__text p {
+  color: #F06464;
+  font-family: "Noto Sans";
+  font-size: min(26px, 26 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: min(1.08px, 1.08 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.bestranking--content__heading div.bestranking--content__heading__text h3 {
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: min(52px, 52 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: min(1.6px, 1.6 / 780 * 100vw);
+  border-bottom: solid min(6px, 6 / 780 * 100vw) #F06464;
+}
+div.outer div.bestranking div.bestranking--content div.bestranking--content__heading div.bestranking--content__heading__text p.rankimg {
+  display: flex;
+  color: #F06464;
+  font-family: "Noto Sans";
+  font-size: min(60px, 60 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  height: min(60px, 60 / 780 * 100vw);
+  line-height: min(60px, 60 / 780 * 100vw);
+  margin-top: min(12px, 12 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.bestranking--content__heading div.bestranking--content__heading__text p.rankimg img {
+  display: block;
+  width: min(44px, 44 / 780 * 100vw);
+  height: min(44px, 44 / 780 * 100vw);
+  aspect-ratio: 1/1;
+  margin: min(5px, 5 / 780 * 100vw) min(5px, 5 / 780 * 100vw) 0 0;
+}
+div.outer div.bestranking div.bestranking--content div.bestranking--content__heading div.bestranking--content__heading__text p.rankimg span {
+  font-size: min(40px, 40 / 780 * 100vw);
+  line-height: min(70px, 70 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content img.bestranking--content__img {
+  display: block;
+  width: min(660px, 660 / 780 * 100vw);
+  height: min(552px, 552 / 780 * 100vw);
+  margin: min(20px, 20 / 780 * 100vw) auto;
+}
+div.outer div.bestranking div.bestranking--content div.bestranking--content__bestheading {
+  width: min(640px, 640 / 780 * 100vw);
+  margin: min(80px, 80 / 780 * 100vw) auto 0;
+}
+div.outer div.bestranking div.bestranking--content div.bestranking--content__bestheading h3 {
+  position: relative;
+  width: 100%;
+  height: min(120px, 120 / 780 * 100vw);
+  border-radius: 30px 30px 0px 0px;
+  background: #ED780B;
+  z-index: 2;
+  color: #FFF;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(32px, 32 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-top: min(10px, 10 / 780 * 100vw);
+  z-index: 2;
+}
+div.outer div.bestranking div.bestranking--content div.bestranking--content__bestheading h3::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: min(50px, 50 / 780 * 100vw);
+  width: min(212px, 212 / 780 * 100vw);
+  height: min(190px, 190 / 780 * 100vw);
+  background-image: url("../img/bestranking/human.png");
+  background-position: center;
+  background-size: cover;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+div.outer div.bestranking div.bestranking--content div.bestranking--content__bestheading h3 span.small {
+  font-size: min(22px, 22 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.bestranking--content__bestheading h3 span.big {
+  font-size: min(46px, 46 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.bestranking--content__bestheading p {
+  position: relative;
+  left: 0;
+  width: 100%;
+  height: auto;
+  border-radius: min(34px, 34 / 780 * 100vw);
+  text-align: justify;
+  font-family: "Noto Sans";
+  font-size: min(30px, 30 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: min(44px, 44 / 780 * 100vw);
+  border: min(6px, 6 / 780 * 100vw) dashed #ED780B;
+  background: #FFF;
+  padding: min(60px, 60 / 780 * 100vw) min(40px, 40 / 780 * 100vw) min(40px, 40 / 780 * 100vw);
+  z-index: 1;
+  margin-top: min(-20px, -20 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.slider--content div.slider div.slider-content_item h3 {
+  text-align: center;
+}
+div.outer div.bestranking div.bestranking--content div.voice div.voice--heading {
+  position: relative;
+  width: min(330px, 330 / 780 * 100vw);
+  height: min(108px, 108 / 780 * 100vw);
+  background-image: url("../img/bestranking/Union.svg");
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  margin: 0 auto min(20px, 20 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.voice div.voice--heading::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: min(34px, 34 / 780 * 100vw);
+  left: min(72px, 72 / 780 * 100vw);
+  width: min(48px, 48 / 780 * 100vw);
+  height: min(40px, 40 / 780 * 100vw);
+  background-image: url("../img/bestranking/comment-icon.svg");
+  background-position: center;
+  background-size: cover;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+div.outer div.bestranking div.bestranking--content div.voice div.voice--heading p {
+  width: 100%;
+  color: #FFF;
+  text-align: center;
+  font-family: "Reddit Sans Condensed";
+  font-size: min(16px, 16 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: min(50px, 50 / 780 * 100vw);
+  letter-spacing: min(2px, 2 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.voice div.voice--heading h3 {
+  color: #FFF;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(40px, 40 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: min(20px, 20 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.voice div.voice--content {
+  padding: 0 min(12px, 12 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.voice div.voice--content div.voice--content__item {
+  display: flex;
+  height: min(348px, 348 / 780 * 100vw);
+  padding: min(30px, 30 / 780 * 100vw) min(20px, 20 / 780 * 100vw);
+  justify-content: flex-start;
+  align-items: center;
+  gap: min(20px, 20 / 780 * 100vw);
+  align-self: stretch;
+  border: 1px solid #ED780B;
+  background: #FFF;
+}
+div.outer div.bestranking div.bestranking--content div.voice div.voice--content div.voice--content__item:nth-child(n+2) {
+  margin-top: min(32px, 32 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.voice div.voice--content div.voice--content__item div.voice--content__item__profile img {
+  width: min(146px, 146 / 780 * 100vw);
+  height: min(146px, 146 / 780 * 100vw);
+  background-color: #E5E5E5;
+  border-radius: min(73px, 73 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.voice div.voice--content div.voice--content__item div.voice--content__item__profile h4 {
+  color: #000;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(24px, 24 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: min(20px, 20 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.voice div.voice--content div.voice--content__item div.voice--content__item__text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  height: min(288px, 288 / 780 * 100vw);
+  border-left: min(4px, 4 / 780 * 100vw) solid #433730;
+}
+div.outer div.bestranking div.bestranking--content div.voice div.voice--content div.voice--content__item div.voice--content__item__text p {
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: min(24px, 24 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: min(36px, 36 / 780 * 100vw);
+  padding-left: min(20px, 20 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.voice div.voice--content div.voice--content__item div.voice--content__item__text p:nth-child(2n) {
+  padding-top: min(24px, 24 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.cta div.cta--price {
+  text-align: center;
+}
+div.outer div.bestranking div.bestranking--content div.cta div.cta--price .BRK-cta-p {
+  padding-top: min(70px, 70 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.cta div.cta--price p {
+  display: inline-block;
+  color: #000;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(32px, 32 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-bottom: solid min(6px, 6 / 780 * 100vw) #000;
+}
+div.outer div.bestranking div.bestranking--content div.cta div.cta--price p span {
+  color: #ED780B;
+  font-family: Kantumruy;
+  font-size: min(84px, 84 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: min(4.2px, 4.2 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.cta div.cta--price img.cta--price__arrow {
+  display: block;
+  width: min(176px, 176 / 780 * 100vw);
+  height: min(64px, 64 / 780 * 100vw);
+  margin: min(32px, 32 / 780 * 100vw) auto 0;
+}
+div.outer div.bestranking div.bestranking--content div.cta div.cta--price img.cta--price__banner {
+  display: block;
+  width: min(658px, 658 / 780 * 100vw);
+  height: min(952px, 952 / 780 * 100vw);
+  margin: 0 auto;
+}
+div.outer div.bestranking div.bestranking--content div.cta div.cta--button {
+  text-align: center;
+}
+div.outer div.bestranking div.bestranking--content div.cta div.cta--button p {
+  display: inline-block;
+  color: #000;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(36px, 36 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: min(60px, 60 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.cta div.cta--button p.security {
+  margin-top: min(18px, 18 / 780 * 100vw) !important;
+}
+div.outer div.bestranking div.bestranking--content div.cta div.cta--button a {
+  display: block;
+  width: min(680px, 680 / 780 * 100vw);
+  height: min(176px, 176 / 780 * 100vw);
+  padding: min(56px, 56 / 780 * 100vw) min(60px, 60 / 780 * 100vw);
+  border-radius: 11px;
+  background: var(--unnamed, linear-gradient(180deg, #70C79F 0.15%, #0C9558 99.81%));
+  box-shadow: 0px 3px 0px 0px #15613F;
+  color: #FFF;
+  text-align: center;
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Noto Sans";
+  font-size: min(38px, 38 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: min(1.9px, 1.9 / 780 * 100vw);
+  margin: min(10px, 10 / 780 * 100vw) auto 0;
+}
+div.outer div.bestranking div.bestranking--content div.notes {
+  width: min(640px, 640 / 780 * 100vw);
+  height: min(120px, 120 / 780 * 100vw);
+  background-image: url("../img/bestranking/notes.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto min(66px, 66 / 780 * 100vw);
+}
+div.outer div.bestranking div.bestranking--content div.notes p {
+  color: #FFF;
+  font-family: Inter;
+  font-size: min(24px, 24 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: min(40px, 40 / 780 * 100vw);
+  padding: min(20px, 20 / 780 * 100vw) 0 0 min(100px, 100 / 780 * 100vw);
+}
+div.outer div.anxiety img {
+  display: block;
+  width: min(6px, 6 / 780 * 100vw);
+  height: min(98px, 98 / 780 * 100vw);
+  margin: min(8px, 8 / 780 * 100vw) auto;
+}
+div.outer div.anxiety div.anxiety--heading {
+  position: relative;
+  width: 100%;
+  height: min(296px, 296 / 780 * 100vw);
+  background: #6D6854;
+  text-align: center;
+  background-image: url("../img/anxiety/Anxiety-heading-back.jpg");
+  background-size: cover;
+  background-position: center;
+}
+div.outer div.anxiety div.anxiety--heading h2 {
+  color: #FFF;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(46px, 46 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: min(78px, 78 / 780 * 100vw);
+  padding-top: min(42px, 42 / 780 * 100vw);
+}
+div.outer div.anxiety div.anxiety--heading p {
+  color: #FFF;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(32px, 32 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+div.outer div.anxiety div.anxiety--graph {
+  background-image: url("../img/anxiety/Anxiety-graph-text-back.jpg");
+}
+div.outer div.anxiety div.anxiety--graph img {
+  display: block;
+  width: min(780px, 780 / 780 * 100vw);
+  height: min(380px, 380 / 780 * 100vw);
+}
+div.outer div.anxiety div.anxiety--graph div.anxiety--text {
+  height: min(192px, 192 / 780 * 100vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.outer div.anxiety div.anxiety--graph div.anxiety--text p {
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: min(32px, 32 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+div.outer div.realvoice div.realvoice--heading {
+  position: relative;
+  width: min(740px, 740 / 780 * 100vw);
+  height: min(334px, 334 / 780 * 100vw);
+  background-image: url("../img/anxiety/Group 180.png");
+  background-position: center;
+  background-size: cover;
+  margin: min(34px, 34 / 780 * 100vw) min(20px, 20 / 780 * 100vw) 0;
+}
+div.outer div.realvoice div.realvoice--heading p {
+  position: absolute;
+  top: min(94px, 94 / 780 * 100vw);
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: min(202px, 202 / 780 * 100vw);
+  height: min(52px, 52 / 780 * 100vw);
+  color: #FFF;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(24px, 24 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: min(4px, 4 / 780 * 100vw);
+  background-image: url("../img/anxiety/Vector.png");
+  background-position: center;
+  background-size: contain;
+  transform: translateX(-50%);
+}
+div.outer div.realvoice div.realvoice--heading h2 {
+  position: absolute;
+  top: min(96px, 96 / 780 * 100vw);
+  left: 50%;
+  transform: translateX(-50%);
+}
+div.outer div.realvoice div.realvoice--heading h2 img {
+  display: block;
+  width: min(358px, 358 / 780 * 100vw);
+  height: min(184px, 184 / 780 * 100vw);
+}
+div.outer div.realvoice p.realvoice--text {
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: min(24px, 24 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: min(44px, 44 / 780 * 100vw);
+  margin: min(24px, 24 / 780 * 100vw) min(70px, 70 / 780 * 100vw) min(52px, 52 / 780 * 100vw);
+  /* 183.333% */
+}
+div.outer div.realvoice div.realvoice--content {
+  background: #FFFCE1;
+  padding-bottom: min(72px, 72 / 780 * 100vw);
+}
+div.outer div.realvoice div.realvoice--content div.realvoice--content__left__item {
+  position: relative;
+}
+div.outer div.realvoice div.realvoice--content div.realvoice--content__left__item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: min(20px, 20 / 780 * 100vw);
+  right: min(20px, 20 / 780 * 100vw);
+  width: min(178px, 178 / 780 * 100vw);
+  height: min(62px, 62 / 780 * 100vw);
+  background-image: url("../img/anxiety/realvoice-sousyoku.png");
+  background-position: center;
+  background-size: cover;
+}
+div.outer div.realvoice div.realvoice--content div.realvoice--content__left__item div.realvoice--content__item__human {
+  display: flex;
+  padding: min(34px, 34 / 780 * 100vw) 0 0 min(120px, 120 / 780 * 100vw);
+}
+div.outer div.realvoice div.realvoice--content div.realvoice--content__left__item div.realvoice--content__item__human img {
+  display: block;
+  width: min(136px, 136 / 780 * 100vw);
+  height: min(148px, 148 / 780 * 100vw);
+}
+div.outer div.realvoice div.realvoice--content div.realvoice--content__left__item div.realvoice--content__item__human div.realvoice--content__item__human__text {
+  margin-left: min(30px, 30 / 780 * 100vw);
+}
+div.outer div.realvoice div.realvoice--content div.realvoice--content__left__item div.realvoice--content__item__human div.realvoice--content__item__human__text h3 {
+  color: #F06464;
+  font-family: "Noto Sans";
+  font-size: min(28px, 28 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: min(30px, 30 / 780 * 100vw);
+}
+div.outer div.realvoice div.realvoice--content div.realvoice--content__left__item div.realvoice--content__item__human div.realvoice--content__item__human__text p {
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: min(16px, 16 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: min(20px, 20 / 780 * 100vw);
+}
+div.outer div.realvoice div.realvoice--content div.realvoice--content__left__item div.realvoice--content__item__text {
+  display: inline-block;
+  padding: min(56px, 56 / 780 * 100vw) min(76px, 76 / 780 * 100vw);
+  gap: min(20px, 20 / 780 * 100vw);
+  background: #F1F1F1;
+  box-shadow: 0px min(8px, 8 / 780 * 100vw) min(8px, 8 / 780 * 100vw) 0px rgba(0, 0, 0, 0.15);
+  margin: 0 0 0 min(60px, 60 / 780 * 100vw);
+}
+div.outer div.realvoice div.realvoice--content div.realvoice--content__left__item div.realvoice--content__item__text p {
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: min(24px, 24 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+div.outer div.realvoice div.realvoice--content div.realvoice--content__right__item {
+  position: relative;
+}
+div.outer div.realvoice div.realvoice--content div.realvoice--content__right__item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: min(50px, 50 / 780 * 100vw);
+  left: min(0px, 0 / 780 * 100vw);
+  width: min(178px, 178 / 780 * 100vw);
+  height: min(62px, 62 / 780 * 100vw);
+  background-image: url("../img/anxiety/realvoice-sousyoku.png");
+  background-position: center;
+  background-size: cover;
+}
+div.outer div.realvoice div.realvoice--content div.realvoice--content__right__item div.realvoice--content__item__human {
+  display: flex;
+  padding: min(34px, 34 / 780 * 100vw) 0 0 min(180px, 180 / 780 * 100vw);
+}
+div.outer div.realvoice div.realvoice--content div.realvoice--content__right__item div.realvoice--content__item__human img {
+  display: block;
+  width: min(136px, 136 / 780 * 100vw);
+  height: min(148px, 148 / 780 * 100vw);
+  order: 2;
+}
+div.outer div.realvoice div.realvoice--content div.realvoice--content__right__item div.realvoice--content__item__human div.realvoice--content__item__human__text {
+  order: 1;
+  margin-left: min(30px, 30 / 780 * 100vw);
+}
+div.outer div.realvoice div.realvoice--content div.realvoice--content__right__item div.realvoice--content__item__human div.realvoice--content__item__human__text h3 {
+  color: #F06464;
+  font-family: "Noto Sans";
+  font-size: min(28px, 28 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: min(30px, 30 / 780 * 100vw);
+}
+div.outer div.realvoice div.realvoice--content div.realvoice--content__right__item div.realvoice--content__item__human div.realvoice--content__item__human__text p {
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: min(16px, 16 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: min(20px, 20 / 780 * 100vw);
+}
+div.outer div.realvoice div.realvoice--content div.realvoice--content__right__item div.realvoice--content__item__text {
+  display: inline-block;
+  padding: min(56px, 56 / 780 * 100vw) min(76px, 76 / 780 * 100vw);
+  gap: min(20px, 20 / 780 * 100vw);
+  background: #F1F1F1;
+  box-shadow: 0px min(8px, 8 / 780 * 100vw) min(8px, 8 / 780 * 100vw) 0px rgba(0, 0, 0, 0.15);
+  margin: 0 0 0 min(120px, 120 / 780 * 100vw);
+}
+div.outer div.realvoice div.realvoice--content div.realvoice--content__right__item div.realvoice--content__item__text p {
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: min(24px, 24 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+div.outer div.realvoice p.realvoice--text02 {
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: min(26px, 26 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: min(50px, 50 / 780 * 100vw) 0 min(20px, 20 / 780 * 100vw) min(40px, 40 / 780 * 100vw);
+}
+div.outer div.earthquake {
+  width: 100%;
+  background-image: url("../img/earthquake/earthquake-back.jpg");
+  background-size: cover;
+  background-position: center;
+}
+div.outer div.earthquake p.but {
+  position: relative;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: min(100px, 100 / 780 * 100vw);
+  height: min(100px, 100 / 780 * 100vw);
+  background-color: #4B4B4B;
+  border-radius: min(50px, 50 / 780 * 100vw);
+  color: #FFF;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(26px, 26 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 500;
+  line-height: min(34px, 34 / 780 * 100vw);
+  transform: translate(-50%, 50%);
+  z-index: 10;
+}
+div.outer div.earthquake div.eartquake--heading {
+  padding-top: min(62px, 62 / 780 * 100vw);
+}
+div.outer div.earthquake div.eartquake--heading h2 {
+  width: min(598px, 598 / 780 * 100vw);
+  height: min(114px, 114 / 780 * 100vw);
+  background: #5B5758;
+  color: #FFF;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(52px, 52 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: min(114px, 114 / 780 * 100vw);
+  letter-spacing: 0.78px;
+  margin: 0 auto;
+}
+div.outer div.earthquake div.eartquake--heading h2 span {
+  color: #FBF251;
+}
+div.outer div.earthquake div.eartquake--heading h3 {
+  position: relative;
+  color: #FBF251;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(50px, 50 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: min(420px, 420 / 780 * 100vw);
+}
+div.outer div.earthquake div.eartquake--heading h3::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: min(-10px, -10 / 780 * 100vw);
+  left: 0;
+  width: 100%;
+  height: min(20px, 20 / 780 * 100vw);
+  background-image: url("../img/earthquake/stripe.svg");
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+}
+div.outer div.earthquake div.eartquake--heading h3 span.large-yellow {
+  font-size: min(72px, 72 / 780 * 100vw);
+}
+div.outer div.earthquake div.eartquake--heading h3 span.small-white {
+  color: #FFF;
+  font-size: min(46px, 46 / 780 * 100vw);
+}
+div.outer div.earthquake div.eartquake--heading h3 span.medium-yellow {
+  font-size: min(70px, 70 / 780 * 100vw);
+}
+div.outer div.earthquake div.eartquake--heading h3 span.small-yellow {
+  font-size: min(60px, 60 / 780 * 100vw);
+}
+div.outer div.earthquake div.eartquake--heading p {
+  color: #FFF;
+  font-family: "Noto Sans";
+  font-size: min(28px, 28 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: min(44px, 44 / 780 * 100vw);
+  margin: min(82px, 82 / 780 * 100vw) 0 0 min(68px, 68 / 780 * 100vw);
+}
+div.outer div.earthquake div.possibility div.possibility-if {
+  position: relative;
+  width: min(780px, 780 / 780 * 100vw);
+  height: min(604px, 604 / 780 * 100vw);
+  background: #272727;
+}
+div.outer div.earthquake div.possibility div.possibility-if::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: min(20px, 20 / 780 * 100vw);
+  background-image: url("../img/earthquake/stripe.svg");
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+}
+div.outer div.earthquake div.possibility div.possibility-if p.possibility--if__text {
+  color: #FFF;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(34px, 34 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: min(44px, 44 / 780 * 100vw);
+  padding: min(82px, 82 / 780 * 100vw) 0 min(32px, 32 / 780 * 100vw);
+}
+div.outer div.earthquake div.possibility div.possibility-if img {
+  display: block;
+  width: min(728px, 728 / 780 * 100vw);
+  height: min(326px, 326 / 780 * 100vw);
+  margin: 0 auto;
+}
+div.outer div.earthquake div.possibility div.possibility-if p.possibility__quotation {
+  display: inline-block;
+  color: #FFF;
+  font-family: Inter;
+  font-size: min(10px, 10 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  margin-left: min(600px, 600 / 780 * 100vw);
+  text-underline-position: from-font;
+}
+div.outer div.earthquake div.possibility div.message {
+  padding: min(72px, 72 / 780 * 100vw) 0 min(22px, 22 / 780 * 100vw);
+}
+div.outer div.earthquake div.possibility div.possibility--diagonal__text {
+  width: 100%;
+  height: min(316px, 316 / 780 * 100vw);
+  background-image: url("../img/earthquake/diagonal-back.png");
+  background-position: center;
+  background-size: cover;
+}
+div.outer div.earthquake div.possibility div.possibility--diagonal__text p {
+  color: #FFF;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(30px, 30 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: min(54px, 54 / 780 * 100vw);
+  transform: rotate(-2.361deg);
+  padding-top: min(66px, 66 / 780 * 100vw);
+}
+div.outer div.earthquake div.possibility div.possibility--diagonal__text p span {
+  color: #FED858;
+  font-size: min(40px, 40 / 780 * 100vw);
+}
+div.outer div.earthquake div.possibility div.possibility--restoration {
+  width: min(720px, 720 / 780 * 100vw);
+  background: #FFF;
+  box-shadow: min(6px, 6 / 780 * 100vw) min(6px, 6 / 780 * 100vw) min(8px, 8 / 780 * 100vw) min(2px, 2 / 780 * 100vw) rgba(0, 0, 0, 0.15);
+  padding: min(16px, 16 / 780 * 100vw) 0 min(40px, 40 / 780 * 100vw);
+  margin: min(28px, 28 / 780 * 100vw) auto 0;
+}
+div.outer div.earthquake div.possibility div.possibility--restoration img {
+  display: block;
+  width: min(674px, 674 / 780 * 100vw);
+  height: min(508px, 508 / 780 * 100vw);
+  margin: 0 auto;
+}
+div.outer div.earthquake div.possibility div.possibility--restoration p.possibility--restoration__quotation {
+  color: #000;
+  text-align: right;
+  font-family: Inter;
+  font-size: min(10px, 10 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+  margin: min(5px, 5 / 780 * 100vw) min(30px, 30 / 780 * 100vw) 0 0;
+}
+div.outer div.earthquake div.possibility div.possibility--restoration p.possibility-text {
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: min(32px, 32 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: min(40px, 40 / 780 * 100vw);
+  padding: min(32px, 32 / 780 * 100vw) min(22px, 22 / 780 * 100vw) 0;
+}
+div.outer div.ctav2 p.fast-text {
+  position: relative;
+  width: min(606px, 606 / 780 * 100vw);
+  height: min(154px, 154 / 780 * 100vw);
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: min(38px, 38 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  letter-spacing: min(1.14px, 1.14 / 780 * 100vw);
+  margin: min(80px, 80 / 780 * 100vw) auto 0;
+}
+div.outer div.ctav2 p.fast-text::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -8%;
+  left: -5%;
+  width: min(40px, 40 / 780 * 100vw);
+  height: min(30px, 30 / 780 * 100vw);
+  background-image: url("../img/earthquake/abstracts.png");
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+}
+div.outer div.ctav2 p.fast-text span.orange {
+  color: #ED780B;
+}
+div.outer div.ctav2 p.fast-text span.bold {
+  font-weight: 700;
+}
+div.outer div.ctav2 img {
+  display: block;
+  width: min(482px, 482 / 780 * 100vw);
+  height: min(264px, 264 / 780 * 100vw);
+  margin: min(28px, 28 / 780 * 100vw) auto 0;
+}
+div.outer div.ctav2 div.cta--button {
+  background: #FFF9E2;
+  padding-bottom: min(50px, 50 / 780 * 100vw);
+}
+div.outer div.ctav2 div.cta--button h2 {
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: min(40px, 40 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: min(54px, 54 / 780 * 100vw);
+  /* 135% */
+  letter-spacing: min(1.2px, 1.2 / 780 * 100vw);
+  padding: min(52px, 52 / 780 * 100vw) 0 0 min(100px, 100 / 780 * 100vw);
+}
+div.outer div.ctav2 div.cta--button a {
+  display: block;
+  width: min(680px, 680 / 780 * 100vw);
+  height: min(176px, 176 / 780 * 100vw);
+  padding: min(56px, 56 / 780 * 100vw) min(60px, 60 / 780 * 100vw);
+  border-radius: min(22px, 22 / 780 * 100vw);
+  background: var(--unnamed, linear-gradient(180deg, #70C79F 0.15%, #0C9558 99.81%));
+  box-shadow: 0px 3px 0px 0px #15613F;
+  color: #FFF;
+  text-align: center;
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Noto Sans";
+  font-size: min(38px, 38 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: min(1.9px, 1.9 / 780 * 100vw);
+  margin: min(56px, 56 / 780 * 100vw) auto 0;
+}
+div.outer div.ctav3 {
+  padding: min(90px, 90 / 780 * 100vw) 0 min(80px, 80 / 780 * 100vw);
+}
+div.outer div.ctav3 div.ctav3--heading {
+  width: min(710px, 710 / 780 * 100vw);
+  height: min(224px, 224 / 780 * 100vw);
+  border-radius: min(40px, 40 / 780 * 100vw) min(40px, 40 / 780 * 100vw) 0px 0px;
+  background: #ED780B;
+  margin: 0 auto;
+}
+div.outer div.ctav3 div.ctav3--heading p {
+  color: #FFF;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(40px, 40 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-top: min(44px, 44 / 780 * 100vw);
+}
+div.outer div.ctav3 div.ctav3--heading h2 {
+  color: #FFF;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(52px, 52 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+div.outer div.ctav3 img.arrow-img {
+  display: block;
+  width: min(176px, 176 / 780 * 100vw);
+  height: min(64px, 64 / 780 * 100vw);
+  margin: min(46px, 46 / 780 * 100vw) auto 0;
+}
+div.outer div.ctav3 img.cta-banner {
+  display: block;
+  width: min(726px, 726 / 780 * 100vw);
+  height: min(1050px, 1050 / 780 * 100vw);
+  margin: 0 auto;
+}
+div.outer div.ctav3 div.ctav3--button h2 {
+  color: #000;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(40px, 40 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: min(1.2px, 1.2 / 780 * 100vw);
+  margin: min(80px, 80 / 780 * 100vw) auto min(25px, 25 / 780 * 100vw);
+}
+div.outer div.ctav3 div.ctav3--button a {
+  display: block;
+  width: min(680px, 680 / 780 * 100vw);
+  height: min(176px, 176 / 780 * 100vw);
+  padding: min(56px, 56 / 780 * 100vw) min(60px, 60 / 780 * 100vw);
+  border-radius: min(22px, 22 / 780 * 100vw);
+  background: var(--unnamed, linear-gradient(180deg, #70C79F 0.15%, #0C9558 99.81%));
+  box-shadow: 0px 3px 0px 0px #15613F;
+  color: #FFF;
+  text-align: center;
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Noto Sans";
+  font-size: min(38px, 38 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: min(1.9px, 1.9 / 780 * 100vw);
+  margin: min(56px, 56 / 780 * 100vw) auto 0;
+}
+div.outer div.last--text div.last--text__heading {
+  position: relative;
+  width: min(780px, 780 / 780 * 100vw);
+  height: min(272px, 272 / 780 * 100vw);
+  background-image: url("../img/ctav3/Frame 236.png");
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+}
+div.outer div.last--text div.last--text__heading::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: min(4px, 4 / 780 * 100vw);
+  height: min(88px, 88 / 780 * 100vw);
+  background-color: #ED780B;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+div.outer div.last--text div.last--text__heading p {
+  position: relative;
+  display: inline-block;
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: min(36px, 36 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: min(1.8px, 1.8 / 780 * 100vw);
+  padding-top: min(44px, 44 / 780 * 100vw);
+}
+div.outer div.last--text div.last--text__heading p::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: min(44px, 44 / 780 * 100vw);
+  left: 0;
+  width: min(30px, 30 / 780 * 100vw);
+  height: min(20px, 20 / 780 * 100vw);
+  background-image: url("../img/lasttext/lasttext-heading-sousyoku.svg");
+  background-position: center;
+  background-size: cover;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+div.outer div.last--text div.last--text__heading h2 {
+  color: #FFF;
+  text-align: center;
+  text-shadow: min(1px, 1 / 780 * 100vw) 0 #48484B, min(-1px, -1 / 780 * 100vw) 0 #48484B, 0 min(1px, 1 / 780 * 100vw) #48484B, 0 min(-1px, -1 / 780 * 100vw) #48484B;
+  /* 上 */
+  font-family: Inter;
+  font-size: min(54px, 54 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+div.outer div.last--text div.last--text__p {
+  position: relative;
+  width: min(708px, 708 / 780 * 100vw);
+  height: auto;
+  border-radius: 14px;
+  border: 2px solid #ED780B;
+  background: #FFF;
+  margin: min(46px, 46 / 780 * 100vw) auto min(64px, 64 / 780 * 100vw);
+  padding: min(54px, 54 / 780 * 100vw) 0 min(54px, 54 / 780 * 100vw) min(40px, 40 / 780 * 100vw);
+}
+div.outer div.last--text div.last--text__p::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: min(22px, 22 / 780 * 100vw);
+  left: min(622px, 622 / 780 * 100vw);
+  width: min(54px, 54 / 780 * 100vw);
+  height: min(52px, 52 / 780 * 100vw);
+  background-image: url("../img/lasttext/kirakira-sousyoku.svg");
+  background-position: center;
+  background-size: cover;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+div.outer div.last--text div.last--text__p::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: min(260px, 260 / 780 * 100vw);
+  left: min(47px, 47 / 780 * 100vw);
+  width: min(54px, 54 / 780 * 100vw);
+  height: min(52px, 52 / 780 * 100vw);
+  background-image: url("../img/lasttext/kirakira-sousyoku.svg");
+  background-position: center;
+  background-size: cover;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+div.outer div.last--text div.last--text__p p {
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: min(30px, 30 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+div.outer div.last--text div.last--text__item {
+  width: min(620px, 620 / 780 * 100vw);
+  margin: 0 auto;
+}
+div.outer div.last--text div.last--text__item:nth-child(4) {
+  margin-top: min(40px, 40 / 780 * 100vw);
+}
+div.outer div.last--text div.last--text__item img {
+  display: block;
+  width: min(620px, 620 / 780 * 100vw);
+  margin-bottom: min(20px, 20 / 780 * 100vw);
+}
+div.outer div.last--text div.last--text__item p {
+  width: min(620px, 620 / 780 * 100vw);
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: min(26px, 26 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 8px;
+  background: white;
+  box-shadow: min(4px, 4 / 780 * 100vw) min(4px, 4 / 780 * 100vw) min(10px, 10 / 780 * 100vw) 0px rgba(0, 0, 0, 0.15);
+  padding: min(20px, 20 / 780 * 100vw) min(55px, 55 / 780 * 100vw);
+}
+div.outer div.last--text div.message {
+  padding: min(40px, 40 / 780 * 100vw) 0 min(60px, 60 / 780 * 100vw);
+}
+div.outer div.lastcta {
+  width: 100%;
+  background-color: #ED780B;
+  padding: 1px;
+}
+div.outer div.lastcta div.lastcta--heading {
+  text-align: center;
+}
+div.outer div.lastcta div.lastcta--heading div.lastcta--heading--text {
+  display: flex;
+  padding: min(68px, 68 / 780 * 100vw) 0 min(30px, 30 / 780 * 100vw);
+}
+div.outer div.lastcta div.lastcta--heading div.lastcta--heading--text p {
+  color: #FFF;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(28px, 28 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: min(32px, 32 / 780 * 100vw);
+  letter-spacing: 0.84;
+  margin-left: min(26px, 26 / 780 * 100vw);
+}
+div.outer div.lastcta div.lastcta--heading div.lastcta--heading--text p span.color-yellow {
+  color: #FAE682;
+}
+div.outer div.lastcta div.lastcta--heading div.lastcta--heading--text p span.small {
+  font-size: min(20px, 20 / 780 * 100vw);
+}
+div.outer div.lastcta div.lastcta--heading div.lastcta--heading--text h3 {
+  width: min(472px, 472 / 780 * 100vw);
+  height: min(60px, 60 / 780 * 100vw);
+  border-radius: min(30px, 30 / 780 * 100vw);
+  background: #FFF;
+  box-shadow: 0px min(8px, 8 / 780 * 100vw) 0px 0px #B15908;
+  color: #ED780B;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(32px, 32 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: min(60px, 60 / 780 * 100vw);
+  letter-spacing: min(0.96px, 0.96 / 780 * 100vw);
+}
+div.outer div.lastcta div.lastcta--heading h2 {
+  color: #FFF;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(56px, 56 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: min(1.68px, 1.68 / 780 * 100vw);
+  padding-left: min(34px, 34 / 780 * 100vw);
+  margin-bottom: min(32px, 32 / 780 * 100vw);
+}
+div.outer div.lastcta div.lastcta--heading h2 span {
+  font-size: min(44px, 44 / 780 * 100vw);
+  margin-right: min(-15px, -15 / 780 * 100vw);
+}
+div.outer div.lastcta div.lastcta--content {
+  width: min(720px, 720 / 780 * 100vw);
+  border-radius: min(16px, 16 / 780 * 100vw);
+  background: #FFF;
+  padding: min(86px, 86 / 780 * 100vw) 0 min(34px, 34 / 780 * 100vw);
+  margin: 0 auto min(96px, 96 / 780 * 100vw);
+}
+div.outer div.lastcta div.lastcta--content img {
+  display: block;
+  width: min(640px, 640 / 780 * 100vw);
+  height: min(548px, 548 / 780 * 100vw);
+  margin: 0 auto;
+}
+div.outer div.lastcta div.lastcta--content ul.lastcta--content__point {
+  position: relative;
+  width: min(684px, 684 / 780 * 100vw);
+  padding: min(30px, 30 / 780 * 100vw);
+  align-items: center;
+  border-radius: min(20px, 20 / 780 * 100vw);
+  border: min(4px, 4 / 780 * 100vw) solid #ED780B;
+  list-style: none;
+  margin: min(100px, 100 / 780 * 100vw) auto 0;
+}
+div.outer div.lastcta div.lastcta--content ul.lastcta--content__point h3 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: min(42px, 42 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding: 0 min(42px, 42 / 780 * 100vw);
+  letter-spacing: min(2.1px, 2.1 / 780 * 100vw);
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+}
+div.outer div.lastcta div.lastcta--content ul.lastcta--content__point li {
+  color: #000;
+  font-family: "Noto Sans";
+  font-size: min(32px, 32 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 300;
+  line-height: min(74px, 74 / 780 * 100vw);
+  /* 231.25% */
+}
+div.outer div.lastcta div.lastcta--content ul.lastcta--content__point li:nth-child(n+2) {
+  margin-top: min(20px, 20 / 780 * 100vw);
+}
+div.outer div.lastcta div.lastcta--content ul.lastcta--content__point li img {
+  display: inline-block;
+  width: min(50px, 50 / 780 * 100vw);
+  height: min(50px, 50 / 780 * 100vw);
+  aspect-ratio: 1/1;
+  margin-right: min(22px, 22 / 780 * 100vw);
+}
+div.outer div.lastcta div.lastcta--content div.cta {
+  text-align: center;
+}
+div.outer div.lastcta div.lastcta--content div.cta div.cta--price p {
+  display: inline-block;
+  color: #DC1B00;
+  text-align: center;
+  font-family: Kantumruy;
+  font-size: min(120px, 120 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-bottom: solid min(4px, 4 / 780 * 100vw) #000;
+}
+div.outer div.lastcta div.lastcta--content div.cta div.cta--price p ruby {
+  font-size: min(50px, 50 / 780 * 100vw);
+}
+div.outer div.lastcta div.lastcta--content div.cta div.cta--price p ruby rt {
+  color: #DC1B00;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(12px, 12 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+div.outer div.lastcta div.lastcta--content div.cta div.cta--button p {
+  color: #000;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: min(32px, 32 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 500;
+}
+div.outer div.lastcta div.lastcta--content div.cta div.cta--button p:nth-child(1) {
+  margin: min(56px, 56 / 780 * 100vw) auto min(10px, 10 / 780 * 100vw);
+}
+div.outer div.lastcta div.lastcta--content div.cta div.cta--button p:nth-child(1) ruby {
+  color: #ED780B;
+}
+div.outer div.lastcta div.lastcta--content div.cta div.cta--button p:nth-child(1) ruby rt {
+  height: min(30px, 30 / 780 * 100vw);
+  line-height: min(30px, 30 / 780 * 100vw);
+  font-size: min(20px, 20 / 780 * 100vw);
+}
+div.outer div.lastcta div.lastcta--content div.cta div.cta--button p:nth-child(n+2) {
+  font-size: min(28px, 28 / 780 * 100vw);
+  margin-top: min(20px, 20 / 780 * 100vw);
+}
+div.outer div.lastcta div.lastcta--content div.cta div.cta--button a {
+  display: block;
+  width: min(680px, 680 / 780 * 100vw);
+  height: min(176px, 176 / 780 * 100vw);
+  padding: min(56px, 56 / 780 * 100vw) min(60px, 60 / 780 * 100vw);
+  border-radius: min(22px, 22 / 780 * 100vw);
+  background: var(--unnamed, linear-gradient(180deg, #70C79F 0.15%, #0C9558 99.81%));
+  box-shadow: 0px 3px 0px 0px #15613F;
+  color: #FFF;
+  text-align: center;
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Noto Sans";
+  font-size: min(38px, 38 / 780 * 100vw);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: min(1.9px, 1.9 / 780 * 100vw);
+  margin: 0 auto 0;
+}
+
+a.animation {
+  position: relative;
+  overflow: hidden;
+}
+a.animation:after {
+  animation: 3s 0s shine linear infinite;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 100%);
+  content: "";
+  height: 100%;
+  left: -100%;
+  position: absolute;
+  top: 0;
+  transform: skewX(-25deg);
+  width: 50%;
+}
+@keyframes shine {
+  20% {
+    left: 150%;
+  }
+  100% {
+    left: 150%;
+  }
+}/*# sourceMappingURL=style.css.map */

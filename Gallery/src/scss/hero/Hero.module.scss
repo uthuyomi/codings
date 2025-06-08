@@ -1,0 +1,305 @@
+.hero {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1px;
+  @media (max-width: 1199px) and (min-width: 600px) {
+    width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1px;
+  }
+  header {
+    width: 100%;
+    height: 150px;
+    @media (max-width: 768px) {
+      height: 60px;
+    }
+    .logo {
+      display: none;
+    }
+    .themeButton {
+      position: fixed;
+      display: block;
+      width: 120px;
+      aspect-ratio: 120 / 48;
+      top: 55px;
+      left: 70vw;
+      z-index: 100;
+      @media (max-width: 1199px) {
+        left: 75vw;
+      }
+      @media (max-width: 768px) {
+        left: 5vw;
+        top: 15px;
+        width: 85px;
+      }
+    }
+    .hum {
+      position: fixed;
+      left: 80vw;
+      top: 55px;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 100;
+      @media (max-width: 1199px) {
+        left: 90vw;
+      }
+      @media (max-width: 768px) {
+        left: 85vw;
+        top: 10px;
+      }
+      .line {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+        :global(.light) & {
+          background-color: #000;
+        }
+        :global(.dark) & {
+          background-color: #fff;
+        }
+      }
+      span:nth-child(1) {
+        top: 12px;
+      }
+
+      span:nth-child(2) {
+        bottom: 12px;
+      }
+    }
+
+    .open span:nth-child(1) {
+      transform: rotate(45deg);
+      top: 18px;
+    }
+
+    .open span:nth-child(2) {
+      transform: rotate(-45deg);
+      bottom: 18px;
+    }
+    nav {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 200px;
+      height: 100vh;
+      padding: 50px;
+      transform: translateX(-300px);
+      transition: all 0.5s;
+      z-index: 50;
+      box-sizing: border-box;
+      :global(.light) & {
+        background-color: #fff;
+      }
+      :global(.dark) & {
+        background-color: gray;
+      }
+      @media(max-width: 768px){
+        width: 100%;
+        transform: translateX(-100%);
+      }
+      &.navOpen {
+        transform: translateX(0) !important;
+      }
+      ul {
+        list-style: none;
+        padding-left: 0;
+        li {
+          padding: 15px 0;
+          transition: all 0.3s;
+
+          a {
+            position: relative;
+            display: block;
+            text-decoration: none;
+            font-size: 20px;
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: -20px;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              transform-origin: right; // 右側を起点に縮む！
+              transform: scaleX(1); // 初期状態：100%
+              transition: transform 0.3s ease;
+              :global(.light) & {
+                background-color: #000;
+              }
+              :global(.dark) & {
+                background-color: #fff;
+              }
+            }
+
+            &:hover::after {
+              transform: scaleX(0); // → 幅0（消える）
+            }
+            :global(.light) & {
+              color: black;
+            }
+            :global(.dark) & {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  .visual {
+    position: relative;
+    width: 100%;
+    .mainview {
+      .img {
+        position: relative;
+        right: 0;
+        width: 70%;
+        aspect-ratio: 16/9;
+        background-color: gray;
+        margin-left: 30%;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 25% 0);
+        @media (max-width: 1199px) {
+          position: relative;
+          top: 0;
+          left: 50%;
+          right: 0;
+          width: 100%;
+          aspect-ratio: 16/9;
+          background-color: gray;
+          margin-left: 0;
+          clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+          transform: translateX(-50%);
+        }
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 100%;
+          height: 100%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+    h1 {
+      position: absolute;
+      top: 5%;
+      left: 30%;
+      font-size: 4em;
+      font-weight: bold;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      @media (max-width: 1199px) {
+        top: 47vw;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      @media (max-width: 768px) {
+        top: 55vw;
+        font-size: 3em;
+      }
+
+      :global(.light) & {
+        color: #000;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+        mix-blend-mode: multiply;
+      }
+
+      :global(.dark) & {
+        color: #fff;
+        text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.4);
+        mix-blend-mode: normal; // ← ここポイント！
+      }
+    }
+    .bottomarrow {
+      position: relative;
+      display: block;
+      width: 300px;
+      height: 120px;
+      font-size: 2em;
+      line-height: 80px;
+      text-align: center;
+      margin: 150px auto 100px;
+      @media (max-width: 1199px) {
+        width: 300px;
+        height: 120px;
+        font-size: 2em;
+        line-height: 80px;
+        text-align: center;
+        margin: 250px auto 100px;
+      }
+      :global(.light) & {
+        border: solid 1px black;
+      }
+      :global(.dark) & {
+        border: solid 1px #fff;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+        :global(.light) & {
+          color: black;
+        }
+        :global(.dark) & {
+          color: #fff;
+        }
+      }
+      span {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: top 1s ease;
+        &::before {
+          position: absolute;
+          left: 50%;
+          bottom: 100%;
+          content: "";
+          display: block;
+          width: 5px;
+          height: 0;
+          background: #4b4b4b;
+          transition: 1s ease;
+          transform: translateX(-50%);
+          :global(.light) & {
+            background-color: #000;
+          }
+          :global(.dark) & {
+            background-color: #fff;
+          }
+        }
+        &.active {
+          top: 240px;
+        }
+        &.active::before {
+          height: 170px;
+        }
+        &::after {
+          position: absolute;
+          content: "";
+          top: 100%;
+          width: 0;
+          left: 50%;
+          height: 0;
+          border-style: solid;
+          border-right: 20px solid transparent;
+          border-left: 20px solid transparent;
+          border-bottom: 0;
+          transform: translateX(-50%);
+          :global(.light) & {
+            border-top: 30px solid #000;
+          }
+          :global(.dark) & {
+            border-top: 30px solid #fff;
+          }
+        }
+      }
+    }
+  }
+}

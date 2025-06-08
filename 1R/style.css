@@ -1,0 +1,220 @@
+@charset "UTF-8";
+/* -----------------------------------------
+  reset
+----------------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* 解析タグの隙間対策 */
+body > img {
+  display: none;
+}
+
+#wrapper div, #wrapper span, #wrapper iframe, #wrapper h1, #wrapper h2, #wrapper h3, #wrapper h4, #wrapper h5, #wrapper h6, #wrapper p, #wrapper address, #wrapper img, #wrapper small, #wrapper strong, #wrapper sub, #wrapper sup, #wrapper dl,
+#wrapper dt, #wrapper dd, #wrapper ol, #wrapper ul, #wrapper li, #wrapper form, #wrapper label, #wrapper table, #wrapper caption, #wrapper tbody, #wrapper tfoot, #wrapper thead, #wrapper tr, #wrapper th, #wrapper td, #wrapper article,
+#wrapper aside, #wrapper footer, #wrapper header, #wrapper menu, #wrapper nav, #wrapper section, #wrapper video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+#wrapper article, #wrapper aside, #wrapper details, #wrapper figcaption, #wrapper figure,
+#wrapper footer, #wrapper header, #wrapper menu, #wrapper nav, #wrapper section {
+  display: block;
+}
+#wrapper ol, #wrapper ul {
+  list-style: none;
+}
+#wrapper :focus {
+  outline: 0;
+}
+#wrapper table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+#wrapper *,
+#wrapper *::before,
+#wrapper *::after {
+  box-sizing: border-box;
+}
+#wrapper img {
+  display: block;
+  vertical-align: bottom;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+#wrapper svg {
+  width: 100%;
+}
+/* -----------------------------------------
+  common
+----------------------------------------- */
+#wrapper .cta{
+  position: relative;
+}
+#wrapper .cta .cta-button{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(865px, calc(865/1000*100vw));
+  height: min(132px, calc(132/1000*100vw));
+  margin: 0 auto;
+  transform: translateX(-50%);
+}
+.kodou {
+	animation: kodou 1.5s infinite;
+}
+@keyframes kodou {
+	0% {
+		transform: scale(1.10)
+	}
+	10% {
+		transform: scale(1)
+	}
+	90% {
+		transform: scale(1)
+	}
+	100% {
+		-webkit-transform: scale(1.10)
+	}
+}
+
+#wrapper .video-area{
+  position: relative;
+}
+#wrapper .video-area iframe{
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 90%;
+  height: min(537px, calc(537/1000*100vw));
+  margin: 0 5%;
+}
+#wrapper {
+  font-family: "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "メイリオ", Meiryo, "Meiryo UI", Avenir, "Open Sans", Helvetica, "Helvetica Neue", Arial, Verdana, Roboto, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+#wrapper dl .ac_header{
+  position: relative;
+  z-index: 100;
+}
+#wrapper dl .ac_header dt{
+  position: relative;
+}
+#wrapper dl .ac_header div{
+  position: absolute;
+  top: calc( 50% - min(20px, calc(20/1000*100vw)));
+  right: min(75px, calc(75/1000*100vw));
+  width: min(39px, calc(39/1000*100vw));
+  height: min(39px, calc(39/1000*100vw));
+}
+#wrapper dl .ac_header div img{
+  width: 100%;
+  height: 100%;
+  transform: rotate(0);
+  transition: all .3s;
+}
+#wrapper dl .ac_header div img.active{
+  transform: rotate(-45deg);
+}
+#wrapper dl dd{
+  display: none;/*閉じた状態*/
+}
+@media screen and (min-width:600px){
+footer{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  height: min(80px, calc(80/1000*100vw));
+  background-color: #012d70;
+  margin: 0 auto;
+}
+
+footer p{
+  margin: 0;
+  height: min(25px, calc(25/1000*100vw));
+  margin: 0;
+}
+footer p.company{
+  width: min(113px, calc(113/1000*100vw));
+  height: min(25px, calc(25/1000*100vw));
+}
+footer p.privacypolicy{
+  width: min(230px, calc(230px/1000*100vw));
+  height: min(25px, calc(25/1000*100vw));
+}
+footer div{
+  width: min(2px, calc(2/1000*100vw));
+  height: min(25px, calc(25/1000*100vw));
+}
+footer div img{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+footer p a{
+  width: 100%;
+  height: 100%;
+}
+footer p a img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+}
+@media screen and (min-width:1px) and (max-width:599px){
+  footer{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    height: min(80px, calc(80/1000*100vw));
+    background-color: #012d70;
+    margin: 0 auto;
+  }
+  
+  footer p{
+    margin: 0;
+    height: min(40px, calc(40/1000*100vw));
+    margin: 0 min(10px, calc(10/1000*100vw));
+  }
+  footer p.company{
+    width: min(163px, calc(163/1000*100vw));
+    height: min(40px, calc(40/1000*100vw));
+  }
+  footer p.privacypolicy{
+    width: min(290px, calc(290px/1000*100vw));
+    height: min(40px, calc(40/1000*100vw));
+  }
+  footer div{
+    width: min(4px, calc(4/1000*100vw));
+    height: min(40px, calc(40/1000*100vw));
+  }
+  footer div img{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  footer p a{
+    width: 100%;
+    height: 100%;
+  }
+  footer p a img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+}

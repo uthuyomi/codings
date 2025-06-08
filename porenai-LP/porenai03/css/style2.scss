@@ -1,0 +1,403 @@
+// 変数の定義
+$breakpoint-pc: 769px; // PCは769px以上
+$breakpoint-sp: 768px; // SPは768px以下
+
+// Mixinの定義
+@mixin respond-to($device) {
+	@if $device=='pc' {
+		@media (min-width: $breakpoint-pc) {
+			@content;
+		}
+	}
+
+	@else if $device=='sp' {
+		@media (max-width: $breakpoint-sp) {
+			@content;
+		}
+	}
+}
+html {
+// PCスタイル
+@include respond-to('pc') {
+	header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		aspect-ratio: 1600/147;
+		background-color: #ffffff;
+		margin: 0 auto;
+		z-index: 100;
+
+		div.logo {
+			position: absolute;
+			top: min(13px, calc(13/1600*100vw));
+			left: min(241px, calc(241/1600*100vw));
+			width: min(292px, calc(292/1600*100vw));
+			height: min(116px, calc(116/1600*100vw));
+			/* background: url(...); */
+
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+
+		div.sp-hum{
+			display: none;
+		}
+
+		nav {
+			position: absolute;
+			top: min(50px, calc(50/1600*100vw));
+			left: min(1020px, calc(1020/1600*100vw));
+
+			ul {
+				display: flex;
+				flex-wrap: nowrap;
+				gap: min(35px, calc(35/1600*100vw));
+
+				li {
+					a {
+						font-family: "Ten Mincho Text";
+						font-weight: normal;
+						font-size: min(30px, calc(30/1600*100vw));
+						text-align: left;
+						color: #413f3f;
+					}
+					&:nth-child(1){
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+
+
+	section {
+		padding: 1px;
+	}
+
+	img {
+		display: block;
+	}
+
+	.container {
+		// 画面幅が769px以上の場合のスタイル
+		@media (min-width: 769px) {
+		  width: 100%;
+		  max-width: 1600px;
+		  margin: 0 auto; // 1600pxを超える場合に左右に余白をつける
+	  
+		  section {
+			&.btn-area1{
+				position: relative;
+				a{
+					position: absolute;
+					top: 72%;
+					left: 50%;
+					display: block;
+					width: 47.38%;
+					height: auto;
+					transform: translate(-50%);
+					picture{
+						width: 100%;
+						img{
+							width: 100%;
+						}
+					}
+				}
+			}
+			&.btn-area2{
+				position: relative;
+				a{
+					position: absolute;
+					top: 77%;
+					left: 50%;
+					display: block;
+					width: 47.38%;
+					height: auto;
+					transform: translate(-50%);
+					picture{
+						width: 100%;
+						img{
+							width: 100%;
+						}
+					}
+				}
+			}
+			picture,
+			img {
+			  width: 100%; // 画面幅いっぱいに画像を表示する
+			  max-width: 1600px; // 画像の最大幅を1600pxに制限
+			}
+		  }
+		}
+	  }
+
+	footer {
+		position: relative;
+		width: 100%;
+		height: min(140px, calc(140/1600*100vw));
+		background: #f87979;
+
+		p {
+			position: absolute;
+			top: min(90px, calc(90/1600*100vw));
+			left: min(240px, calc(240/1600*100vw));
+			font-family: Korolev;
+			font-weight: bold;
+			font-size: min(13px, calc(13/1600*100vw));
+			letter-spacing: 0.02em;
+			text-align: center;
+			color: #fff;
+
+		}
+
+		nav {
+			ul {
+				display: flex;
+				flex-wrap: nowrap;
+				position: absolute;
+				top: min(90px, calc(90/1600*100vw));
+			    left: min(1120px, calc(1120/1600*100vw));
+				gap: min(30px, calc(30/1600*100vw));
+				li {
+					a {
+						font-family: "Noto Sans CJK JP";
+						font-weight: bold;
+						font-size: min(13px, calc(13/1600*100vw));
+						letter-spacing: 0.05em;
+						line-height: min(25px, calc(25/1600*100vw));
+						text-align: left;
+						color: #fff;
+					}
+					&:nth-child(1){
+						padding-right: min(30px, calc(30/400*100vw));
+						border-right: 1px #ffffff solid;
+					}
+				}
+			}
+		}
+	}
+}
+
+// SPスタイル
+@include respond-to('sp') {
+	header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: min(85px, calc(85/400*100vw));
+		background-color: #FFFFFF;
+		z-index: 99;
+
+		div.logo {
+			position: absolute;
+			top: min(15px, calc(15/400*100vw));
+			left: min(20px, calc(20/400*100vw));
+			width: min(152px, calc(152/400*100vw));
+			height: min(60px, calc(60/400*100vw));
+			/* background: url(...); */
+
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+
+		div.sp-hum{
+			position: fixed;
+			top: min(25px, calc(25/400*100vw));
+			right: min(100px, calc(100/400*100vw));
+			z-index: 110;
+			span{
+				display: inline-block;
+				position: absolute;
+				width: min(50px, calc(50/400*100vw));
+				height: min(6px, calc(6/400*100vw));
+				background: #393636;
+				transition: all .3s;
+				transform-origin: center;
+				&:nth-child(1){
+					top: 0;
+					left: 0;
+					transform: rotate(0);
+				}
+				&:nth-child(1).active{
+					top: min(17px, calc(17/400*100vw));
+					left: 0;
+					transform: rotate(45deg)!important;
+				}
+				&:nth-child(2){
+					top: min(17px, calc(17/400*100vw));
+					left: 0;
+				}
+				&:nth-child(2).active{
+					display: none;
+				}
+				&:nth-child(3){
+					top: min(34px, calc(34/400*100vw));
+					left: 0;
+					transform: rotate(0);
+				}
+				&:nth-child(3).active{
+					top: min(17px, calc(17/400*100vw));
+					left: 0;
+					transform: rotate(-45deg)!important;
+				}
+				}
+		}
+
+		nav {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			background-color: #FFFFFF;
+			z-index: 10;
+			transform: translateX(100%);
+			transition: all .5s;
+			ul {
+				width: 100vw;
+				height: calc( 100vh - min(85px, calc(85/400*100%)));
+				li {
+					width: 100%;
+					img{
+						width: min(292px, calc(292/400*100vw));
+						margin: min(126px, calc(126/400*100vw)) auto min(35px, calc(35/400*100vw));
+					}
+					a {
+						display: block;
+						font-family: "Ten Mincho Text";
+						font-weight: normal;
+						font-size: min(30px, calc(30/400*100vw));
+						text-align: left;
+						color: #413f3f;
+						padding: min(14px, calc(14/400*100vw)) 0;
+						border-bottom: solid 1px #EDEBEB;
+						text-align: center;
+						&:nth-child(1){
+							border-top: solid 1px #EDEBEB;
+						}
+					}
+					
+				}
+			}
+		}
+	}
+
+	section {
+		padding: 1px;
+	}
+
+	img {
+		display: block;
+	}
+
+	
+	.container {
+		// 768px以下の場合のスタイル
+		@media (max-width: 768px) {
+		  width: 100%; // コンテナ全体を画面幅いっぱいにする
+		  margin: 0; // 余白をなくす
+		  section {
+			&.btn-area1{
+				position: relative;
+				a{
+					position: absolute;
+					top: 70%;
+					left: 50%;
+					display: block;
+					width: 70%;
+					transform: translate(-50%);
+					picture{
+						width: 100%;
+						img{
+							width: 100%;
+						}
+					}
+				}
+			}
+			&.btn-area2{
+				position: relative;
+				a{
+					position: absolute;
+					top: 75%;
+					left: 50%;
+					display: block;
+					width: 70%;
+					transform: translate(-50%);
+					picture{
+						width: 100%;
+						img{
+							width: 100%;
+						}
+					}
+				}
+			}
+			picture,
+			img {
+			  width: 100%; // 画像を画面幅いっぱいに広げる
+			  max-width: none; // 最大幅の制限をなくす
+			}
+			
+		  }
+		}
+	  }
+
+	  footer {
+		position: relative;
+		width: 100%;
+		height: min(108px, calc(108/400*100vw));
+		background: #f87979;
+
+		p {
+			position: absolute;
+			width: 100%;
+			top: min(36px, calc(36/400*100vw));
+			font-family: Korolev;
+			font-weight: bold;
+			font-size: min(13px, calc(13/400*100vw));
+			letter-spacing: 0.02em;
+			text-align: center;
+			color: #fff;
+
+		}
+
+		nav {
+			ul {
+				display: flex;
+				flex-wrap: nowrap;
+				position: absolute;
+				justify-content: center;
+				width: 100%;
+				top: min(67px, calc(67/400*100vw));
+				gap: min(26px, calc(26/400*100vw));
+				li {
+					a {
+						font-family: "Noto Sans CJK JP";
+						font-weight: bold;
+						font-size: min(13px, calc(13/400*100vw));
+						letter-spacing: 0.05em;
+						line-height: min(25px, calc(25/400*100vw));
+						text-align: left;
+						color: #fff;
+					}
+					&:nth-child(1){
+						padding-right: min(30px, calc(30/400*100vw));
+						border-right: 1px #ffffff solid;
+					}
+				}
+			}
+		}
+	}
+
+	.active{
+		transform: translateX(0)!important;
+	}
+}
+}

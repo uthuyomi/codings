@@ -1,0 +1,2454 @@
+$base-width: 780;
+
+@function responsive-percent($value) {
+	@return min(#{$value}px, calc(#{$value} / #{$base-width} * 100%));
+}
+
+@function responsive-vw($value) {
+	@return min(#{$value}px, calc(#{$value} / #{$base-width} * 100vw));
+}
+
+.under-yellow {
+	text-indent: -1em;
+	background: linear-gradient(transparent 70%, #FED858 70%);
+}
+
+.red {
+	color: #ED780B;
+}
+
+div.outer {
+	width: 100%;
+	max-width: 780px;
+	height: auto;
+	margin: 0 auto;
+	overflow-x: hidden;
+
+	div.fv {
+		div.fv--content {
+			position: relative;
+			width: responsive-vw(780);
+			height: responsive-vw(572);
+			background-image: url("../img/fv-back/906042\ 1.jpg");
+			background-position: center;
+			background-size: cover;
+
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				width: responsive-vw(780);
+				height: responsive-vw(38);
+				background-image: url("../img/fv-back/stripe.png");
+				background-position: center;
+				background-size: cover;
+				z-index: 1;
+			}
+
+
+
+			img {
+				display: block;
+				position: absolute;
+				bottom: 0;
+				width: responsive-vw(376);
+				height: responsive-vw(530);
+				z-index: 1;
+			}
+
+			div.text {
+				position: absolute;
+				top: 0;
+				width: responsive-vw(486);
+				height: responsive-vw(400);
+				flex-shrink: 0;
+				border-radius: responsive-vw(22);
+				border: 2px solid #000;
+				background: #FED858;
+				margin: responsive-vw(96) 0 0 responsive-vw(262);
+
+				p {
+					width: responsive-vw(340);
+					color: #000;
+					font-family: "Noto Sans";
+					font-size: responsive-vw(34);
+					font-style: normal;
+					font-weight: 700;
+					line-height: normal;
+					letter-spacing: 0.05rem;
+					white-space: nowrap;
+					margin: responsive-vw(32) auto 0;
+					text-align: center;
+				}
+
+				h1 {
+					display: inline-block;
+					height: responsive-vw(74);
+					line-height: responsive-vw(74);
+					color: #FFF;
+					font-family: "Noto Sans";
+					font-size: responsive-vw(64);
+					font-style: normal;
+					font-weight: 700;
+					letter-spacing: responsive-vw(1);
+					background: #ED780B;
+					margin: responsive-vw(10) 0 responsive-vw(10) responsive-vw(80);
+					padding: 0 responsive-vw(30);
+
+					&:nth-child(2)::after {
+						content: '';
+						display: block;
+						position: absolute;
+						right: responsive-vw(-10);
+						width: responsive-vw(68);
+						height: responsive-vw(56);
+						background-image: url("../img/fv-back/anzen-bou.png");
+						background-position: center;
+						background-size: cover;
+						z-index: 1;
+					}
+
+					&:nth-child(4n) {
+						background: transparent !important;
+
+						span {
+							display: inline-block;
+							color: #ED780B !important;
+							border-bottom: responsive-vw(8) solid #ED780B;
+						}
+					}
+				}
+			}
+		}
+
+		div.fv--text {
+			position: relative;
+			background: #FFFAE1;
+
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: responsive-vw(780);
+				height: responsive-vw(38);
+				background-image: url("../img/fv-back/stripe.png");
+				background-position: center;
+				background-size: cover;
+				z-index: 1;
+			}
+
+			p {
+				color: #000;
+				font-family: "Noto Sans";
+				font-size: responsive-vw(32);
+				font-style: normal;
+				font-weight: 700;
+				line-height: 139.6%;
+				padding: responsive-vw(56) 0 0 responsive-vw(82);
+
+				span {
+					color: #ED780B;
+					font-size: responsive-vw(40);
+					font-style: normal;
+					font-weight: 700;
+					line-height: 139.6%;
+				}
+			}
+
+			div.message {
+				margin-top: responsive-vw(34);
+			}
+		}
+	}
+
+	/*message*/
+	div.message {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		padding: 0 0 responsive-vw(80);
+
+		img {
+			width: responsive-vw(210);
+			aspect-ratio: 1/1;
+		}
+
+		div.message--text {
+			display: flex;
+			align-items: center;
+			width: responsive-vw(500);
+			height: responsive-vw(180);
+			background-image: url("../img/fv-back/Union.svg");
+			background-position: center;
+			background-size: cover;
+
+			p {
+				color: #000;
+				text-align: justify;
+				font-family: "M PLUS 1";
+				font-size: responsive-vw(20);
+				font-style: normal;
+				font-weight: 500;
+				line-height: responsive-vw(36);
+				/* 180% */
+				letter-spacing: 0.5px;
+				padding: 0 0 responsive-vw(14) responsive-vw(100);
+
+				span {
+					color: #ED780B;
+					font-family: "M PLUS 1";
+					font-size: responsive-vw(20);
+					font-style: normal;
+					font-weight: 500;
+					line-height: responsive-vw(36);
+					letter-spacing: 0.5px;
+				}
+			}
+		}
+	}
+
+	div.best3 {
+		position: relative;
+		z-index: 2;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			width: responsive-vw(874);
+			height: responsive-vw(242);
+			border-radius: 50%;
+			background: #fff;
+			transform: translate(-50%, 35%);
+			z-index: -1;
+		}
+
+		div.best3--heading {
+			position: relative;
+			width: responsive-vw(590);
+			height: responsive-vw(80);
+			flex-shrink: 0;
+			border: responsive-vw(2) solid #FFF;
+			background: #E24A1A;
+			text-align: center;
+			margin: responsive-vw(60) auto;
+
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: responsive-vw(32);
+				left: responsive-vw(-27);
+				width: responsive-vw(120);
+				height: responsive-vw(70);
+				background-image: url("../img/best3/Subtract.svg");
+				background-position: center;
+				background-size: cover;
+				transform: rotate(180deg);
+				z-index: -1;
+			}
+
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: responsive-vw(32);
+				right: responsive-vw(-27);
+				width: responsive-vw(120);
+				height: responsive-vw(70);
+				background-image: url("../img/best3/Subtract.svg");
+				background-position: center;
+				background-size: cover;
+				z-index: -1;
+			}
+
+			h2 {
+				color: #FFF;
+				font-family: "M PLUS 2";
+				font-size: responsive-vw(40);
+				font-style: normal;
+				font-weight: 700;
+				line-height: responsive-vw(70);
+				letter-spacing: responsive-vw(1.6);
+
+				span {
+					font-size: responsive-vw(54);
+				}
+			}
+		}
+
+		div.best3--content {
+			display: flex;
+			flex-wrap: nowrap;
+			gap: responsive-vw(6);
+			width: responsive-vw(780);
+			padding: responsive-vw(30) responsive-vw(12) responsive-vw(68);
+
+			div.best3--content__items {
+				width: responsive-vw(248);
+				height: responsive-vw(600);
+				padding: responsive-vw(26) responsive-vw(16);
+				gap: responsive-vw(20);
+				border-radius: responsive-vw(14);
+				border: 1px solid #ED780B;
+				background: #FFF;
+				text-align: center;
+				padding-top: responsive-vw(54);
+
+				p.best3--content__items__text {
+					display: inline;
+					color: #000;
+					text-align: center;
+					font-family: "Noto Sans";
+					font-size: responsive-vw(26);
+					font-style: normal;
+					font-weight: 700;
+					line-height: responsive-vw(40);
+					margin-top: responsive-vw(74);
+				}
+
+				h3 {
+					color: #000;
+					text-align: center;
+					font-family: "Noto Sans";
+					font-size: responsive-vw(26);
+					font-style: normal;
+					font-weight: 400;
+					line-height: normal;
+					margin: responsive-vw(28) 0 responsive-vw(14);
+
+					&.second {
+						margin-top: responsive-vw(68) !important;
+					}
+				}
+
+				img {
+					display: block;
+					width: responsive-vw(200);
+					height: responsive-vw(168);
+
+				}
+
+				p.price {
+					color: #F06464;
+					text-align: center;
+					font-family: "Noto Sans";
+					font-size: responsive-vw(32);
+					font-style: normal;
+					font-weight: 700;
+					line-height: normal;
+					margin: responsive-vw(18) 0 responsive-vw(20);
+				}
+
+				a {
+					display: flex;
+					padding: responsive-vw(14) responsive-vw(46);
+					justify-content: center;
+					align-items: center;
+					gap: responsive-vw(20);
+					align-self: stretch;
+					border-radius: responsive-vw(56);
+					background: var(--unnamed, linear-gradient(180deg, #70C79F 0.15%, #0C9558 99.81%));
+					box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+					color: #FFF;
+					text-align: center;
+					text-shadow: 0px 1px 1px #38946A;
+					font-family: "Noto Sans";
+					font-size: responsive-vw(24);
+					font-style: normal;
+					font-weight: 600;
+					line-height: normal;
+				}
+			}
+		}
+
+	}
+
+	div.standard3 {
+		position: relative;
+		background: #FAE682;
+		z-index: 1;
+		text-align: center;
+		padding-bottom: responsive-vw(50);
+
+		h2 {
+			display: inline-block;
+			color: #000;
+			text-align: center;
+			font-family: "Noto Sans";
+			font-size: responsive-vw(44);
+			font-style: normal;
+			font-weight: 600;
+			line-height: 100%;
+			padding: responsive-vw(20) responsive-vw(24) responsive-vw(10);
+			/* 22px */
+			letter-spacing: 0.66px;
+			border-bottom: dashed 2px #ED780B;
+			margin: 0 auto;
+
+			&.rinkaku-w {
+				color: #FF8001
+					/* 文字色 */
+				;
+				text-shadow:
+					2px 2px 0 #fff,
+					/* 右下 */
+					-2px -2px 0 #fff,
+					/* 左上 */
+					2px -2px 0 #fff,
+					/* 右上 */
+					-2px 2px 0 #fff;
+				/* 左下 */
+			}
+
+			&:nth-child(1) {
+				padding-top: responsive-vw(120);
+			}
+
+			&:nth-of-type(2) {
+				position: relative;
+				color: #FF8001;
+				font-family: "Noto Sans";
+				font-size: responsive-vw(60);
+				font-style: normal;
+				font-weight: 600;
+				line-height: 100%;
+				letter-spacing: 0.9px;
+				/* 48px */
+				letter-spacing: 1.44px;
+				-webkit-text-stroke-width: 2;
+				-webkit-text-stroke-color: #F8F4F0;
+
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					top: responsive-vw(0);
+					left: responsive-vw(370);
+					width: responsive-vw(116);
+					height: responsive-vw(110);
+					transform: rotate(5.833deg);
+					background-image: url("../img/standard3/bag2.svg");
+					background-position: center;
+					background-size: cover;
+				}
+
+				span.big {
+					font-size: responsive-vw(96);
+				}
+
+				span.small {
+					font-size: responsive-vw(54);
+				}
+			}
+		}
+
+		p.standard3--text {
+			display: inline-block;
+			color: #000;
+			font-family: "Noto Sans";
+			font-size: responsive-vw(28);
+			font-style: normal;
+			font-weight: 600;
+			line-height: responsive-vw(44);
+			text-align: left;
+			margin: responsive-vw(42) auto 0;
+			/* 157.143% */
+		}
+
+		div.message {
+			margin-top: responsive-vw(34);
+
+			img {}
+
+			div.message {
+				p {}
+			}
+		}
+
+		div.point {
+			width: responsive-vw(710);
+			margin: 0 auto;
+			background-color: #fff;
+			border-radius: responsive-vw(40);
+
+			&:nth-of-type(3) {
+				margin-top: responsive-vw(90);
+			}
+
+			&:nth-of-type(4) {
+				margin-top: responsive-vw(90);
+			}
+
+			div.point--heading {
+				position: relative;
+				width: 100%;
+				height: responsive-vw(210);
+				flex-shrink: 0;
+				border-radius: responsive-vw(40) responsive-vw(40) 0px 0px;
+				background: #ED780B;
+
+				&.point1::before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: responsive-vw(70);
+					left: responsive-vw(30);
+					width: responsive-vw(100);
+					height: responsive-vw(80);
+					background-image: url("../img/standard3/bag.svg");
+					background-position: center;
+					background-size: cover;
+					z-index: 1;
+				}
+
+				&.point2::before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: responsive-vw(70);
+					left: responsive-vw(50);
+					width: responsive-vw(100);
+					height: responsive-vw(80);
+					background-image: url("../img/standard3/Vector\ 2.svg");
+					background-position: center;
+					background-size: cover;
+					z-index: 1;
+				}
+
+				&.point3::before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: responsive-vw(70);
+					left: responsive-vw(50);
+					width: responsive-vw(100);
+					height: responsive-vw(80);
+					background-image: url("../img/standard3/note.svg");
+					background-position: center;
+					background-size: cover;
+					z-index: 1;
+				}
+
+				p {
+					position: absolute;
+					top: responsive-vw(0);
+					left: 50%;
+					width: responsive-vw(226);
+					height: responsive-vw(56);
+					flex-shrink: 0;
+					color: #FFF;
+					font-family: "Bakbak One";
+					font-size: responsive-vw(34);
+					font-style: normal;
+					font-weight: 400;
+					line-height: responsive-vw(70);
+					letter-spacing: responsive-vw(1);
+					background-image: url("../img/standard3/Vector\ 1.svg");
+					background-position: center;
+					background-size: cover;
+					text-align: center;
+					transform: translate(-50%, -99%);
+
+					span {
+						font-size: responsive-vw(44);
+					}
+				}
+
+				h3 {
+					position: relative;
+					display: inline-block;
+					color: #FFF;
+					font-family: "Noto Sans";
+					font-size: responsive-vw(48);
+					font-style: normal;
+					font-weight: 700;
+					line-height: responsive-vw(60);
+					text-align: left;
+					margin: responsive-vw(48) 0 0 responsive-vw(70);
+				}
+			}
+
+			div.point--text {
+				padding: responsive-vw(50) responsive-vw(40);
+				text-align: left;
+
+				p {
+					color: #000;
+
+					font-family: "Noto Sans";
+					font-size: responsive-vw(28);
+					font-style: normal;
+					font-weight: 400;
+					line-height: responsive-vw(44);
+
+				}
+			}
+		}
+	}
+
+	div.slider--content {
+		background: #FFF;
+		text-align: center;
+
+		p {
+			display: inline-block;
+			color: #000;
+			text-align: justify;
+			font-family: "Noto Sans";
+			font-size: responsive-vw(30);
+			font-style: normal;
+			font-weight: 400;
+			line-height: responsive-vw(44);
+			/* 146.667% */
+			letter-spacing: responsive-vw(0.9);
+			margin-top: 0;
+
+			&:nth-of-type(2) {
+				margin: responsive-vw(40) auto responsive-vw(50);
+			}
+		}
+
+		div.slider {
+
+			div.slider--content__item {
+				width: 100%;
+				height: responsive-vw(1000);
+				flex-shrink: 0;
+				border-radius: responsive-vw(56);
+				background: #F7F5F0;
+				box-shadow: 0px responsive-vw(8) responsive-vw(8) 0px rgba(0, 0, 0, 0.15);
+				margin: responsive-vw(50) responsive-vw(40);
+				padding-top: responsive-vw(40);
+
+				h3 {
+					position: relative;
+					width: 100%;
+					color: #ED780B;
+					font-family: "Noto Sans";
+					font-size: responsive-vw(56);
+					font-style: normal;
+					font-weight: 700;
+					line-height: normal;
+					margin: 0 0 responsive-vw(20);
+
+					&:before {
+						content: '';
+						display: block;
+						position: absolute;
+						top: 50%;
+						left: responsive-vw(100);
+						width: responsive-vw(60);
+						height: responsive-vw(60);
+						background-image: url("../img/standard3/slider/ci_wavy-check.svg");
+						background-position: center;
+						background-size: cover;
+						z-index: 1;
+						transform: translateY(-50%);
+					}
+
+					&.rank {
+						font-size: responsive-vw(52);
+
+						&:before {
+							content: '';
+							display: block;
+							position: absolute;
+							top: 60%;
+							left: responsive-vw(80);
+							width: responsive-vw(100);
+							height: responsive-vw(106);
+							background-image: url("../img//bestranking/rank-bag.png");
+							background-position: center;
+							background-size: cover;
+							z-index: 1;
+							transform: translateY(-50%);
+						}
+					}
+
+					span.small {
+						font-size: responsive-vw(40);
+					}
+
+					span.medium {
+						font-size: responsive-vw(45);
+					}
+
+					span.big {
+						font-size: responsive-vw(70);
+					}
+
+					p {
+						color: #000;
+						text-align: center;
+						font-family: "Noto Sans";
+						font-size: responsive-vw(24);
+						font-style: normal;
+						font-weight: 400;
+						line-height: responsive-vw(60);
+						/* 250% */
+					}
+				}
+
+				div.slider--content__item__outer {
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+					align-items: flex-start;
+					gap: 0 responsive-vw(30);
+					width: 100%;
+
+					div.slider--content__item__icon {
+						width: responsive-vw(120);
+
+						div.slide--img {
+							position: relative;
+							background-color: #ffff;
+							overflow: hidden;
+							border-radius: responsive-vw(60);
+
+							&.hidden {
+								background-color: #BDC3C7;
+
+								&::after {
+									content: '';
+									display: block;
+									position: absolute;
+									top: 50%;
+									left: 0;
+									width: 100%;
+									height: responsive-vw(2);
+									background-color: #F06464;
+									transform: rotate(47deg);
+									z-index: 10;
+								}
+							}
+
+							img {
+								display: block;
+								width: 100%;
+								aspect-ratio: 1/1;
+							}
+						}
+
+						p {
+							color: #000;
+							text-align: center;
+							font-family: "Noto Sans";
+							font-size: responsive-vw(20);
+							font-style: normal;
+							font-weight: 400;
+							line-height: normal;
+							margin: responsive-vw(14) 0;
+						}
+
+						span {}
+					}
+				}
+			}
+
+			.slick-arrow {
+				width: responsive-vw(50) !important;
+				height: responsive-vw(50) !important;
+				z-index: 10;
+
+				//next、prevのデザイン
+				&:before {
+					content: "" !important;
+					width: 100% !important;
+					height: 100% !important;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+
+			.slick-next:before {
+				opacity: 1;
+				background: url("../img/standard3/slider/select-arrow.svg") !important;
+				background-size: cover !important;
+			}
+
+			.slick-prev:before {
+				opacity: 1;
+				background: url("../img/standard3/slider/select-arrow.svg") !important;
+				background-size: cover !important;
+				transform: rotate(180deg);
+			}
+
+			.slick-arrow.slick-disabled {
+				opacity: 0;
+				/*slideがなくなったらボタンを非表示にする*/
+			}
+
+		}
+	}
+
+	div.bestranking {
+		position: relative;
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: responsive-vw(0);
+			left: responsive-vw(0);
+			width: responsive-vw(806);
+			height: responsive-vw(40);
+			background-image: url("../img/bestranking/ストライプ.png");
+			background-position: center;
+			background-size: cover;
+
+		}
+
+		div.bestranking {
+			p {
+				text-align: center;
+				font-family: "Noto Sans";
+				font-size: responsive-vw(40);
+				font-style: normal;
+				font-weight: 400;
+				line-height: normal;
+				letter-spacing: responsive-vw(1.2);
+				background: linear-gradient(90deg, #554023 0%, #C99846 100%);
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+
+				&:nth-of-type(1) {
+					position: relative;
+					padding-top: responsive-vw(140);
+
+					&::before {
+						content: '';
+						display: block;
+						position: absolute;
+						top: responsive-vw(75);
+						left: 50%;
+						width: responsive-vw(232);
+						height: responsive-vw(52);
+						background-image: url("../img/bestranking/Group\ 176.svg");
+						background-position: center;
+						background-size: cover;
+						transform: translateX(-50%);
+						z-index: 1;
+					}
+				}
+			}
+
+			h2 {
+				position: relative;
+				text-align: center;
+				font-family: "Noto Sans";
+				font-size: responsive-vw(48);
+				font-style: normal;
+				font-weight: 400;
+				line-height: normal;
+				letter-spacing: 0.6px;
+				background: linear-gradient(90deg, #554023 0%, #C99846 100%);
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+
+				span {
+					font-size: responsive-vw(60);
+				}
+
+				&::before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: responsive-vw(-50);
+					right: 0;
+					width: responsive-vw(62);
+					height: responsive-vw(226);
+					background-image: url("../img/bestranking/_編集モード.svg");
+					background-position: center;
+					background-size: cover;
+					transform: translateX(-50%);
+					z-index: 1;
+				}
+
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					top: responsive-vw(-50);
+					left: responsive-vw(25);
+					width: responsive-vw(62);
+					height: responsive-vw(226);
+					background-image: url("../img/bestranking/_編集モード.svg");
+					background-position: center;
+					background-size: cover;
+					transform: translateX(-50%);
+					transform: scaleX(-1);
+					z-index: 1;
+				}
+			}
+		}
+
+		div.bestranking--content {
+			width: responsive-vw(720);
+			height: auto;
+			flex-shrink: 0;
+			border-radius: responsive-vw(12);
+			border: responsive-vw(2) solid #C9A304;
+			background: #FFF;
+			box-shadow: 3px 4px 9px 0px rgba(163, 157, 128, 0.25);
+			margin: 0 auto;
+			padding-bottom: responsive-vw(76);
+
+			&:nth-of-type(n+2) {
+				margin-top: responsive-vw(72);
+			}
+
+			div.bestranking--content__heading {
+				display: flex;
+
+				img.ranking-img {
+					width: responsive-vw(180);
+					height: responsive-vw(212);
+					margin-left: responsive-vw(60);
+					margin-top: responsive-vw(20);
+				}
+
+				div.bestranking--content__heading__text {
+					margin-left: responsive-vw(45);
+					margin-top: responsive-vw(40);
+
+					p {
+						color: #F06464;
+
+						font-family: "Noto Sans";
+						font-size: responsive-vw(26);
+						font-style: normal;
+						font-weight: 600;
+						line-height: normal;
+						letter-spacing: responsive-vw(1.08);
+					}
+
+					h3 {
+						color: #000;
+
+						font-family: "Noto Sans";
+						font-size: responsive-vw(52);
+						font-style: normal;
+						font-weight: 600;
+						line-height: normal;
+						letter-spacing: responsive-vw(1.6);
+						border-bottom: solid responsive-vw(6) #F06464;
+					}
+
+					p.rankimg {
+						display: flex;
+						color: #F06464;
+
+						font-family: "Noto Sans";
+						font-size: responsive-vw(60);
+						font-style: normal;
+						font-weight: 600;
+						line-height: normal;
+						height: responsive-vw(60);
+						line-height: responsive-vw(60);
+						margin-top: responsive-vw(12);
+
+
+						img {
+							display: block;
+							width: responsive-vw(44);
+							height: responsive-vw(44);
+							aspect-ratio: 1/1;
+							margin: responsive-vw(5) responsive-vw(5) 0 0;
+						}
+
+						span {
+							font-size: responsive-vw(40);
+							line-height: responsive-vw(70);
+						}
+					}
+				}
+			}
+
+			img.bestranking--content__img {
+				display: block;
+				width: responsive-vw(660);
+				height: responsive-vw(552);
+				margin: responsive-vw(20) auto;
+			}
+
+			div.bestranking--content__bestheading {
+				width: responsive-vw(640);
+				margin: responsive-vw(80) auto 0;
+
+
+				h3 {
+					position: relative;
+					width: 100%;
+					height: responsive-vw(120);
+					border-radius: 30px 30px 0px 0px;
+					background: #ED780B;
+					z-index: 2;
+					color: #FFF;
+					text-align: center;
+					font-family: "Noto Sans";
+					font-size: responsive-vw(32);
+					font-style: normal;
+					font-weight: 400;
+					line-height: normal;
+					padding-top: responsive-vw(10);
+					z-index: 2;
+
+					&::before {
+						content: '';
+						display: block;
+						position: absolute;
+						bottom: 0;
+						left: responsive-vw(50);
+						width: responsive-vw(212);
+						height: responsive-vw(190);
+						background-image: url("../img/bestranking/human.png");
+						background-position: center;
+						background-size: cover;
+						transform: translateX(-50%);
+						z-index: 3;
+					}
+
+					span.small {
+						font-size: responsive-vw(22);
+					}
+
+					span.big {
+						font-size: responsive-vw(46);
+					}
+				}
+
+				p {
+					position: relative;
+					left: 0;
+					width: 100%;
+					height: auto;
+					border-radius: responsive-vw(34);
+					text-align: justify;
+					font-family: "Noto Sans";
+					font-size: responsive-vw(30);
+					font-style: normal;
+					font-weight: 400;
+					line-height: responsive-vw(44);
+					border: responsive-vw(6) dashed #ED780B;
+					background: #FFF;
+					padding: responsive-vw(60) responsive-vw(40) responsive-vw(40);
+					z-index: 1;
+					margin-top: responsive-vw(-20);
+
+					span {}
+				}
+			}
+
+			div.slider--content {
+				div.slider {
+					div.slider-content_item {
+						h3 {
+							text-align: center;
+						}
+
+						div.slider-content_item_outer {
+							div.slider-content_item_icon {
+								img {}
+
+								p {}
+
+								span {}
+							}
+						}
+					}
+				}
+			}
+
+			div.voice {
+				div.voice--heading {
+					position: relative;
+					width: responsive-vw(330);
+					height: responsive-vw(108);
+					background-image: url("../img/bestranking/Union.svg");
+					background-position: center;
+					background-size: cover;
+					text-align: center;
+					margin: 0 auto responsive-vw(20);
+
+					&::before {
+						content: '';
+						display: block;
+						position: absolute;
+						top: responsive-vw(34);
+						left: responsive-vw(72);
+						width: responsive-vw(48);
+						height: responsive-vw(40);
+						background-image: url("../img/bestranking/comment-icon.svg");
+						background-position: center;
+						background-size: cover;
+						transform: translateX(-50%);
+						z-index: 1;
+					}
+
+					p {
+						width: 100%;
+						color: #FFF;
+
+						text-align: center;
+						font-family: "Reddit Sans Condensed";
+						font-size: responsive-vw(16);
+						font-style: normal;
+						font-weight: 400;
+						line-height: responsive-vw(50);
+						letter-spacing: responsive-vw(2);
+					}
+
+					h3 {
+						color: #FFF;
+
+						text-align: center;
+						font-family: "Noto Sans";
+						font-size: responsive-vw(40);
+						font-style: normal;
+						font-weight: 700;
+						line-height: responsive-vw(20);
+					}
+				}
+
+				div.voice--content {
+					padding: 0 responsive-vw(12);
+
+					div.voice--content__item {
+						display: flex;
+						height: responsive-vw(348);
+						padding: responsive-vw(30) responsive-vw(20);
+						justify-content: flex-start;
+						align-items: center;
+						gap: responsive-vw(20);
+						align-self: stretch;
+						border: 1px solid #ED780B;
+						background: #FFF;
+
+						&:nth-child(n+2) {
+							margin-top: responsive-vw(32);
+						}
+
+						div.voice--content__item__profile {
+							img {
+								width: responsive-vw(146);
+								height: responsive-vw(146);
+								background-color: #E5E5E5;
+								border-radius: responsive-vw(73);
+							}
+
+							h4 {
+								color: #000;
+
+								text-align: center;
+								font-family: "Noto Sans";
+								font-size: responsive-vw(24);
+								font-style: normal;
+								font-weight: 700;
+								line-height: normal;
+								margin-top: responsive-vw(20);
+							}
+						}
+
+						div.voice--content__item__text {
+							display: flex;
+							flex-wrap: wrap;
+							align-items: center;
+							align-content: center;
+							height: responsive-vw(288);
+							border-left: responsive-vw(4) solid #433730;
+
+							p {
+								color: #000;
+
+								font-family: "Noto Sans";
+								font-size: responsive-vw(24);
+								font-style: normal;
+								font-weight: 400;
+								line-height: responsive-vw(36);
+								padding-left: responsive-vw(20);
+
+								span {}
+
+								&:nth-child(2n) {
+									padding-top: responsive-vw(24);
+								}
+							}
+						}
+					}
+				}
+			}
+
+			div.cta {
+				div.cta--price {
+					text-align: center;
+
+					.BRK-cta-p {
+						padding-top: responsive-vw(70);
+					}
+
+					p {
+						display: inline-block;
+						color: #000;
+
+						text-align: center;
+						font-family: "Noto Sans";
+						font-size: responsive-vw(32);
+						font-style: normal;
+						font-weight: 700;
+						line-height: normal;
+						border-bottom: solid responsive-vw(6) #000;
+
+						span {
+							color: #ED780B;
+							font-family: Kantumruy;
+							font-size: responsive-vw(84);
+							font-style: normal;
+							font-weight: 700;
+							line-height: normal;
+							letter-spacing: responsive-vw(4.2);
+						}
+					}
+
+					img.cta--price__arrow {
+						display: block;
+						width: responsive-vw(176);
+						height: responsive-vw(64);
+						margin: responsive-vw(32) auto 0;
+					}
+
+					img.cta--price__banner {
+						display: block;
+						width: responsive-vw(658);
+						height: responsive-vw(952);
+						margin: 0 auto;
+					}
+				}
+
+				div.cta--button {
+					text-align: center;
+
+					p {
+						display: inline-block;
+						color: #000;
+
+						text-align: center;
+						font-family: "Noto Sans";
+						font-size: responsive-vw(36);
+						font-style: normal;
+						font-weight: 400;
+						line-height: normal;
+						margin-top: responsive-vw(60);
+
+						&.security {
+							margin-top: responsive-vw(18) !important;
+						}
+					}
+
+					a {
+						display: block;
+						width: responsive-vw(680);
+						height: responsive-vw(176);
+						padding: responsive-vw(56) responsive-vw(60);
+						border-radius: 11px;
+						background: var(--unnamed, linear-gradient(180deg, #70C79F 0.15%, #0C9558 99.81%));
+						box-shadow: 0px 3px 0px 0px #15613F;
+						color: #FFF;
+
+						text-align: center;
+						text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+						font-family: "Noto Sans";
+						font-size: responsive-vw(38);
+						font-style: normal;
+						font-weight: 600;
+						line-height: normal;
+						letter-spacing: responsive-vw(1.9);
+						margin: responsive-vw(10) auto 0;
+					}
+				}
+			}
+
+			div.notes {
+				width: responsive-vw(640);
+				height: responsive-vw(120);
+				background-image: url("../img/bestranking/notes.jpg");
+				background-size: cover;
+				background-position: center;
+				margin: 0 auto responsive-vw(66);
+
+				p {
+					color: #FFF;
+					font-family: Inter;
+					font-size: responsive-vw(24);
+					font-style: normal;
+					font-weight: 700;
+					line-height: responsive-vw(40);
+					padding: responsive-vw(20) 0 0 responsive-vw(100);
+				}
+			}
+		}
+	}
+
+	div.anxiety {
+		img {
+			display: block;
+			width: responsive-vw(6);
+			height: responsive-vw(98);
+			margin: responsive-vw(8) auto;
+		}
+
+		div.anxiety--heading {
+			position: relative;
+			width: 100%;
+			height: responsive-vw(296);
+			background: #6D6854;
+			text-align: center;
+			background-image: url("../img/anxiety/Anxiety-heading-back.jpg");
+			background-size: cover;
+			background-position: center;
+
+			h2 {
+				color: #FFF;
+				text-align: center;
+				font-family: "Noto Sans";
+				font-size: responsive-vw(46);
+				font-style: normal;
+				font-weight: 700;
+				line-height: responsive-vw(78);
+				padding-top: responsive-vw(42);
+			}
+
+			p {
+				color: #FFF;
+				text-align: center;
+				font-family: "Noto Sans";
+				font-size: responsive-vw(32);
+				font-style: normal;
+				font-weight: 400;
+				line-height: normal;
+			}
+		}
+
+		div.anxiety--graph {
+			background-image: url("../img/anxiety/Anxiety-graph-text-back.jpg");
+
+			img {
+				display: block;
+				width: responsive-vw(780);
+				height: responsive-vw(380);
+			}
+
+			div.anxiety--text {
+				height: responsive-vw(192);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				p {
+					color: #000;
+
+					font-family: "Noto Sans";
+					font-size: responsive-vw(32);
+					font-style: normal;
+					font-weight: 400;
+					line-height: normal;
+
+					span {}
+				}
+			}
+		}
+
+
+	}
+
+	div.realvoice {
+
+		div.realvoice--heading {
+			position: relative;
+			width: responsive-vw(740);
+			height: responsive-vw(334);
+			background-image: url("../img/anxiety/Group\ 180.png");
+			background-position: center;
+			background-size: cover;
+			margin: responsive-vw(34) responsive-vw(20) 0;
+
+			p {
+				position: absolute;
+				top: responsive-vw(94);
+				left: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: responsive-vw(202);
+				height: responsive-vw(52);
+				color: #FFF;
+				text-align: center;
+				font-family: "Noto Sans";
+				font-size: responsive-vw(24);
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+				letter-spacing: responsive-vw(4);
+				background-image: url("../img/anxiety/Vector.png");
+				background-position: center;
+				background-size: contain;
+				transform: translateX(-50%);
+			}
+
+			h2 {
+				position: absolute;
+				top: responsive-vw(96);
+				left: 50%;
+				transform: translateX(-50%);
+
+				img {
+					display: block;
+					width: responsive-vw(358);
+					height: responsive-vw(184);
+				}
+			}
+		}
+
+		p.realvoice--text {
+			color: #000;
+
+			font-family: "Noto Sans";
+			font-size: responsive-vw(24);
+			font-style: normal;
+			font-weight: 400;
+			line-height: responsive-vw(44);
+			margin: responsive-vw(24) responsive-vw(70) responsive-vw(52);
+			/* 183.333% */
+		}
+
+		div.realvoice--content {
+			background: #FFFCE1;
+			padding-bottom: responsive-vw(72);
+
+			div.realvoice--content__left__item {
+				position: relative;
+
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					top: responsive-vw(20);
+					right: responsive-vw(20);
+					width: responsive-vw(178);
+					height: responsive-vw(62);
+					background-image: url("../img/anxiety/realvoice-sousyoku.png");
+					background-position: center;
+					background-size: cover;
+				}
+
+				div.realvoice--content__item__human {
+					display: flex;
+					padding: responsive-vw(34) 0 0 responsive-vw(120);
+
+					img {
+						display: block;
+						width: responsive-vw(136);
+						height: responsive-vw(148);
+					}
+
+					div.realvoice--content__item__human__text {
+						margin-left: responsive-vw(30);
+
+						h3 {
+							color: #F06464;
+
+							font-family: "Noto Sans";
+							font-size: responsive-vw(28);
+							font-style: normal;
+							font-weight: 700;
+							line-height: normal;
+							margin-top: responsive-vw(30);
+						}
+
+						p {
+							color: #000;
+
+							font-family: "Noto Sans";
+							font-size: responsive-vw(16);
+							font-style: normal;
+							font-weight: 600;
+							line-height: normal;
+							margin-top: responsive-vw(20);
+						}
+					}
+				}
+
+				div.realvoice--content__item__text {
+					display: inline-block;
+					padding: responsive-vw(56) responsive-vw(76);
+					gap: responsive-vw(20);
+					background: #F1F1F1;
+
+					box-shadow: 0px responsive-vw(8) responsive-vw(8) 0px rgba(0, 0, 0, 0.15);
+					margin: 0 0 0 responsive-vw(60);
+
+					p {
+						color: #000;
+
+						font-family: "Noto Sans";
+						font-size: responsive-vw(24);
+						font-style: normal;
+						font-weight: 400;
+						line-height: normal;
+
+						span {}
+					}
+				}
+			}
+
+			div.realvoice--content__right__item {
+				position: relative;
+
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					top: responsive-vw(50);
+					left: responsive-vw(0);
+					width: responsive-vw(178);
+					height: responsive-vw(62);
+					background-image: url("../img/anxiety/realvoice-sousyoku.png");
+					background-position: center;
+					background-size: cover;
+				}
+
+				div.realvoice--content__item__human {
+					display: flex;
+					padding: responsive-vw(34) 0 0 responsive-vw(180);
+
+					img {
+						display: block;
+						width: responsive-vw(136);
+						height: responsive-vw(148);
+						order: 2;
+					}
+
+					div.realvoice--content__item__human__text {
+						order: 1;
+						margin-left: responsive-vw(30);
+
+						h3 {
+							color: #F06464;
+
+							font-family: "Noto Sans";
+							font-size: responsive-vw(28);
+							font-style: normal;
+							font-weight: 700;
+							line-height: normal;
+							margin-top: responsive-vw(30);
+						}
+
+						p {
+							color: #000;
+
+							font-family: "Noto Sans";
+							font-size: responsive-vw(16);
+							font-style: normal;
+							font-weight: 600;
+							line-height: normal;
+							margin-top: responsive-vw(20);
+						}
+					}
+				}
+
+				div.realvoice--content__item__text {
+					display: inline-block;
+					padding: responsive-vw(56) responsive-vw(76);
+					gap: responsive-vw(20);
+					background: #F1F1F1;
+
+					box-shadow: 0px responsive-vw(8) responsive-vw(8) 0px rgba(0, 0, 0, 0.15);
+					margin: 0 0 0 responsive-vw(120);
+
+					p {
+						color: #000;
+
+						font-family: "Noto Sans";
+						font-size: responsive-vw(24);
+						font-style: normal;
+						font-weight: 400;
+						line-height: normal;
+
+						span {}
+					}
+				}
+			}
+		}
+
+		p.realvoice--text02 {
+			color: #000;
+
+			font-family: "Noto Sans";
+			font-size: responsive-vw(26);
+			font-style: normal;
+			font-weight: 700;
+			line-height: normal;
+			margin: responsive-vw(50) 0 responsive-vw(20) responsive-vw(40);
+		}
+
+		div.message {
+			img {}
+
+			div.message {
+				p {
+					span {}
+				}
+			}
+		}
+	}
+
+	div.earthquake {
+		width: 100%;
+		background-image: url("../img/earthquake/earthquake-back.jpg");
+		background-size: cover;
+		background-position: center;
+
+		p.but {
+			position: relative;
+			left: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: responsive-vw(100);
+			height: responsive-vw(100);
+			background-color: #4B4B4B;
+			border-radius: responsive-vw(50);
+			color: #FFF;
+
+			text-align: center;
+			font-family: "Noto Sans";
+			font-size: responsive-vw(26);
+			font-style: normal;
+			font-weight: 500;
+			line-height: responsive-vw(34);
+			transform: translate(-50%, 50%);
+			z-index: 10;
+
+		}
+
+		div.eartquake--heading {
+			padding-top: responsive-vw(62);
+
+			h2 {
+				width: responsive-vw(598);
+				height: responsive-vw(114);
+
+				background: #5B5758;
+				color: #FFF;
+				text-align: center;
+				font-family: "Noto Sans";
+				font-size: responsive-vw(52);
+				font-style: normal;
+				font-weight: 400;
+				line-height: responsive-vw(114);
+				letter-spacing: 0.78px;
+				margin: 0 auto;
+
+				span {
+					color: #FBF251;
+				}
+			}
+
+			img {}
+
+			h3 {
+				position: relative;
+				color: #FBF251;
+
+				text-align: center;
+				font-family: "Noto Sans";
+				font-size: responsive-vw(50);
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+				margin-top: responsive-vw(420);
+
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					bottom: responsive-vw(-10);
+					left: 0;
+					width: 100%;
+					height: responsive-vw(20);
+					background-image: url("../img/earthquake/stripe.svg");
+					background-position: center;
+					background-size: cover;
+					z-index: 1;
+				}
+
+				span.large-yellow {
+					font-size: responsive-vw(72);
+				}
+
+				span.small-white {
+					color: #FFF;
+					font-size: responsive-vw(46);
+				}
+
+				span.medium-yellow {
+					font-size: responsive-vw(70);
+				}
+
+				span.small-yellow {
+					font-size: responsive-vw(60);
+				}
+			}
+
+			p {
+				color: #FFF;
+
+				font-family: "Noto Sans";
+				font-size: responsive-vw(28);
+				font-style: normal;
+				font-weight: 700;
+				line-height: responsive-vw(44);
+				margin: responsive-vw(82) 0 0 responsive-vw(68)
+			}
+		}
+
+		p {}
+
+		div.possibility {
+			div.possibility-if {
+				position: relative;
+				width: responsive-vw(780);
+				height: responsive-vw(604);
+				background: #272727;
+
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: responsive-vw(20);
+					background-image: url("../img/earthquake/stripe.svg");
+					background-position: center;
+					background-size: cover;
+					z-index: 1;
+				}
+
+				p.possibility--if__text {
+					color: #FFF;
+
+					text-align: center;
+					font-family: "Noto Sans";
+					font-size: responsive-vw(34);
+					font-style: normal;
+					font-weight: 700;
+					line-height: responsive-vw(44);
+					padding: responsive-vw(82) 0 responsive-vw(32);
+				}
+
+				img {
+					display: block;
+					width: responsive-vw(728);
+					height: responsive-vw(326);
+					margin: 0 auto;
+				}
+
+				p.possibility__quotation {
+					display: inline-block;
+					color: #FFF;
+					font-family: Inter;
+					font-size: responsive-vw(10);
+					font-style: normal;
+					font-weight: 400;
+					line-height: normal;
+					text-decoration-line: underline;
+					text-decoration-style: solid;
+					text-decoration-skip-ink: none;
+					text-decoration-thickness: auto;
+					text-underline-offset: auto;
+					margin-left: responsive-vw(600);
+					text-underline-position: from-font;
+				}
+			}
+
+			div.message {
+				padding: responsive-vw(72) 0 responsive-vw(22);
+
+				img {}
+
+				div.message {
+					p {}
+				}
+			}
+
+			div.possibility--diagonal__text {
+				width: 100%;
+				height: responsive-vw(316);
+				background-image: url("../img/earthquake/diagonal-back.png");
+				background-position: center;
+				background-size: cover;
+
+				p {
+					color: #FFF;
+					text-align: center;
+					font-family: "Noto Sans";
+					font-size: responsive-vw(30);
+					font-style: normal;
+					font-weight: 700;
+					line-height: responsive-vw(54);
+					transform: rotate(-2.361deg);
+					padding-top: responsive-vw(66);
+
+					span {
+						color: #FED858;
+						font-size: responsive-vw(40);
+					}
+				}
+			}
+
+			div.possibility--restoration {
+				width: responsive-vw(720);
+				background: #FFF;
+				box-shadow: responsive-vw(6) responsive-vw(6) responsive-vw(8) responsive-vw(2) rgba(0, 0, 0, 0.15);
+				padding: responsive-vw(16) 0 responsive-vw(40);
+				margin: responsive-vw(28) auto 0;
+
+				img {
+					display: block;
+					width: responsive-vw(674);
+					height: responsive-vw(508);
+					margin: 0 auto;
+				}
+
+				p.possibility--restoration__quotation {
+					color: #000;
+
+					text-align: right;
+					font-family: Inter;
+					font-size: responsive-vw(10);
+					font-style: normal;
+					font-weight: 400;
+					line-height: normal;
+					text-decoration-line: underline;
+					text-decoration-style: solid;
+					text-decoration-skip-ink: none;
+					text-decoration-thickness: auto;
+					text-underline-offset: auto;
+					text-underline-position: from-font;
+					margin: responsive-vw(5) responsive-vw(30) 0 0;
+				}
+
+				p.possibility-text {
+					color: #000;
+					font-family: "Noto Sans";
+					font-size: responsive-vw(32);
+					font-style: normal;
+					font-weight: 400;
+					line-height: responsive-vw(40);
+					padding: responsive-vw(32) responsive-vw(22) 0;
+				}
+			}
+		}
+	}
+
+	div.ctav2 {
+		p.fast-text {
+			position: relative;
+			width: responsive-vw(606);
+			height: responsive-vw(154);
+			color: #000;
+			font-family: "Noto Sans";
+			font-size: responsive-vw(38);
+			font-style: normal;
+			font-weight: 200;
+			line-height: normal;
+			letter-spacing: responsive-vw(1.14);
+			margin: responsive-vw(80) auto 0;
+			&::before{
+				content: '';
+					display: block;
+					position: absolute;
+					top: -8%;
+					left: -5%;
+					width: responsive-vw(40);
+					height: responsive-vw(30);
+					background-image: url("../img/earthquake/abstracts.png");
+					background-position: center;
+					background-size: cover;
+					z-index: 1;
+			}
+
+			span.orange {
+				color: #ED780B;
+			}
+
+			span.bold {
+				font-weight: 700;
+			}
+		}
+
+		img {
+			display: block;
+			width: responsive-vw(482);
+			height: responsive-vw(264);
+			margin: responsive-vw(28) auto 0;
+		}
+
+		div.cta--button {
+			background: #FFF9E2;
+			padding-bottom: responsive-vw(50);
+
+			h2 {
+				color: #000;
+
+				font-family: "Noto Sans";
+				font-size: responsive-vw(40);
+				font-style: normal;
+				font-weight: 700;
+				line-height: responsive-vw(54);
+				/* 135% */
+				letter-spacing: responsive-vw(1.2);
+				padding: responsive-vw(52) 0 0 responsive-vw(100);
+
+				span {}
+			}
+
+			a {
+				display: block;
+				width: responsive-vw(680);
+				height: responsive-vw(176);
+				padding: responsive-vw(56) responsive-vw(60);
+				border-radius: responsive-vw(22);
+				background: var(--unnamed, linear-gradient(180deg, #70C79F 0.15%, #0C9558 99.81%));
+				box-shadow: 0px 3px 0px 0px #15613F;
+				color: #FFF;
+
+				text-align: center;
+				text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+				font-family: "Noto Sans";
+				font-size: responsive-vw(38);
+				font-style: normal;
+				font-weight: 600;
+				line-height: normal;
+				letter-spacing: responsive-vw(1.9);
+				margin: responsive-vw(56) auto 0;
+			}
+		}
+	}
+
+	div.ctav3 {
+		padding: responsive-vw(90) 0 responsive-vw(80);
+
+		div.ctav3--heading {
+			width: responsive-vw(710);
+			height: responsive-vw(224);
+			border-radius: responsive-vw(40) responsive-vw(40) 0px 0px;
+			background: #ED780B;
+			margin: 0 auto;
+
+			p {
+				color: #FFF;
+
+				text-align: center;
+				font-family: "Noto Sans";
+				font-size: responsive-vw(40);
+				font-style: normal;
+				font-weight: 400;
+				line-height: normal;
+				padding-top: responsive-vw(44);
+			}
+
+			h2 {
+				color: #FFF;
+
+				text-align: center;
+				font-family: "Noto Sans";
+				font-size: responsive-vw(52);
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+			}
+		}
+
+		img.arrow-img {
+			display: block;
+			width: responsive-vw(176);
+			height: responsive-vw(64);
+			margin: responsive-vw(46) auto 0;
+		}
+
+		img.cta-banner {
+			display: block;
+			width: responsive-vw(726);
+			height: responsive-vw(1050);
+			margin: 0 auto;
+		}
+
+		div.ctav3--button {
+			h2 {
+				color: #000;
+
+				text-align: center;
+				font-family: "Noto Sans";
+				font-size: responsive-vw(40);
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+				letter-spacing: responsive-vw(1.2);
+				margin: responsive-vw(80) auto responsive-vw(25);
+
+				span {}
+			}
+
+			a {
+				display: block;
+				width: responsive-vw(680);
+				height: responsive-vw(176);
+				padding: responsive-vw(56) responsive-vw(60);
+				border-radius: responsive-vw(22);
+				background: var(--unnamed, linear-gradient(180deg, #70C79F 0.15%, #0C9558 99.81%));
+				box-shadow: 0px 3px 0px 0px #15613F;
+				color: #FFF;
+
+				text-align: center;
+				text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+				font-family: "Noto Sans";
+				font-size: responsive-vw(38);
+				font-style: normal;
+				font-weight: 600;
+				line-height: normal;
+				letter-spacing: responsive-vw(1.9);
+				margin: responsive-vw(56) auto 0;
+			}
+		}
+	}
+
+	div.last--text {
+		div.last--text__heading {
+			position: relative;
+			width: responsive-vw(780);
+			height: responsive-vw(272);
+			background-image: url("../img/ctav3/Frame\ 236.png");
+			background-position: center;
+			background-size: cover;
+			text-align: center;
+
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				width: responsive-vw(4);
+				height: responsive-vw(88);
+				background-color: #ED780B;
+				transform: translateX(-50%);
+				z-index: 1;
+			}
+
+			p {
+				position: relative;
+				display: inline-block;
+				color: #000;
+
+				text-align: center;
+				font-family: Inter;
+				font-size: responsive-vw(36);
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+				letter-spacing: responsive-vw(1.8);
+				padding-top: responsive-vw(44);
+
+				&::before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: responsive-vw(44);
+					left: 0;
+					width: responsive-vw(30);
+					height: responsive-vw(20);
+					background-image: url("../img/lasttext/lasttext-heading-sousyoku.svg");
+					background-position: center;
+					background-size: cover;
+					transform: translateX(-50%);
+					z-index: 1;
+				}
+			}
+
+			h2 {
+				color: #FFF;
+
+				text-align: center;
+				text-shadow:
+					responsive-vw(1) 0 #48484B,
+					/* 右 */
+					responsive-vw(-1) 0 #48484B,
+					/* 左 */
+					0 responsive-vw(1) #48484B,
+					/* 下 */
+					0 responsive-vw(-1) #48484B;
+				/* 上 */
+				font-family: Inter;
+				font-size: responsive-vw(54);
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+			}
+		}
+
+		div.last--text__p {
+			position: relative;
+			width: responsive-vw(708);
+			height: auto;
+			border-radius: 14px;
+			border: 2px solid #ED780B;
+			background: #FFF;
+			margin: responsive-vw(46) auto responsive-vw(64);
+			padding: responsive-vw(54) 0 responsive-vw(54) responsive-vw(40);
+
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: responsive-vw(22);
+				left: responsive-vw(622);
+				width: responsive-vw(54);
+				height: responsive-vw(52);
+				background-image: url("../img/lasttext/kirakira-sousyoku.svg");
+				background-position: center;
+				background-size: cover;
+				transform: translateX(-50%);
+				z-index: 1;
+			}
+
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: responsive-vw(260);
+				left: responsive-vw(47);
+				width: responsive-vw(54);
+				height: responsive-vw(52);
+				background-image: url("../img/lasttext/kirakira-sousyoku.svg");
+				background-position: center;
+				background-size: cover;
+				transform: translateX(-50%);
+				z-index: 1;
+			}
+
+			p {
+				color: #000;
+				font-family: "Noto Sans";
+				font-size: responsive-vw(30);
+				font-style: normal;
+				font-weight: 300;
+				line-height: normal;
+			}
+		}
+
+		div.last--text__item {
+			width: responsive-vw(620);
+			margin: 0 auto;
+
+			&:nth-child(4) {
+				margin-top: responsive-vw(40);
+			}
+
+			img {
+				display: block;
+				width: responsive-vw(620);
+				margin-bottom: responsive-vw(20);
+			}
+
+			p {
+				width: responsive-vw(620);
+				color: #000;
+
+				font-family: "Noto Sans";
+				font-size: responsive-vw(26);
+				font-style: normal;
+				font-weight: 400;
+				line-height: normal;
+				border-radius: 8px;
+				background: #FFFF;
+				box-shadow: responsive-vw(4) responsive-vw(4) responsive-vw(10) 0px rgba(0, 0, 0, 0.15);
+				padding: responsive-vw(20) responsive-vw(55);
+			}
+		}
+
+		div.message {
+			padding: responsive-vw(40) 0 responsive-vw(60);
+
+			img {}
+
+			div.message--text {
+				p {}
+			}
+		}
+	}
+
+	div.lastcta {
+		width: 100%;
+		background-color: #ED780B;
+		padding: 1px;
+
+		div.lastcta--heading {
+			text-align: center;
+
+			div.lastcta--heading--text {
+				display: flex;
+				padding: responsive-vw(68) 0 responsive-vw(30);
+
+				p {
+					color: #FFF;
+					text-align: center;
+					font-family: "Noto Sans";
+					font-size: responsive-vw(28);
+					font-style: normal;
+					font-weight: 700;
+					line-height: responsive-vw(32);
+					letter-spacing: 0.84;
+					margin-left: responsive-vw(26);
+
+					span.color-yellow {
+						color: #FAE682;
+					}
+
+					span.small {
+						font-size: responsive-vw(20);
+					}
+				}
+
+				h3 {
+					width: responsive-vw(472);
+					height: responsive-vw(60);
+					border-radius: responsive-vw(30);
+					background: #FFF;
+
+					box-shadow: 0px responsive-vw(8) 0px 0px #B15908;
+					color: #ED780B;
+
+					text-align: center;
+					font-family: "Noto Sans";
+					font-size: responsive-vw(32);
+					font-style: normal;
+					font-weight: 700;
+					line-height: responsive-vw(60);
+					letter-spacing: responsive-vw(0.96);
+
+					span {}
+				}
+			}
+
+			h2 {
+				color: #FFF;
+				text-align: center;
+				font-family: "Noto Sans";
+				font-size: responsive-vw(56);
+				font-style: normal;
+				font-weight: 700;
+				line-height: normal;
+				letter-spacing: responsive-vw(1.68);
+				padding-left: responsive-vw(34);
+				margin-bottom: responsive-vw(32);
+
+				span {
+					font-size: responsive-vw(44);
+					margin-right: responsive-vw(-15);
+				}
+			}
+		}
+
+		div.lastcta--content {
+			width: responsive-vw(720);
+			border-radius: responsive-vw(16);
+			background: #FFF;
+			padding: responsive-vw(86) 0 responsive-vw(34);
+			margin: 0 auto responsive-vw(96);
+
+			img {
+				display: block;
+				width: responsive-vw(640);
+				height: responsive-vw(548);
+				margin: 0 auto;
+			}
+
+			ul.lastcta--content__point {
+				position: relative;
+				width: responsive-vw(684);
+				padding: responsive-vw(30);
+				align-items: center;
+				border-radius: responsive-vw(20);
+				border: responsive-vw(4) solid #ED780B;
+				list-style: none;
+				margin: responsive-vw(100) auto 0;
+
+				h3 {
+					position: absolute;
+					top: 0;
+					left: 50%;
+					color: #000;
+					text-align: center;
+					font-family: Inter;
+					font-size: responsive-vw(42);
+					font-style: normal;
+					font-weight: 700;
+					line-height: normal;
+					padding: 0 responsive-vw(42);
+					letter-spacing: responsive-vw(2.10);
+					transform: translate(-50%, -50%);
+					background-color: #fff;
+				}
+
+				li {
+					&:nth-child(n+2) {
+						margin-top: responsive-vw(20);
+					}
+
+					color: #000;
+
+					font-family: "Noto Sans";
+					font-size: responsive-vw(32);
+					font-style: normal;
+					font-weight: 300;
+					line-height: responsive-vw(74);
+					/* 231.25% */
+
+					img {
+						display: inline-block;
+						width: responsive-vw(50);
+						height: responsive-vw(50);
+						aspect-ratio: 1/1;
+						margin-right: responsive-vw(22)
+					}
+				}
+			}
+
+			div.cta {
+				text-align: center;
+
+				div.cta--price {
+					p {
+						display: inline-block;
+						color: #DC1B00;
+
+						text-align: center;
+						font-family: Kantumruy;
+						font-size: responsive-vw(120);
+						font-style: normal;
+						font-weight: 700;
+						line-height: normal;
+						border-bottom: solid responsive-vw(4) #000;
+
+						ruby {
+							font-size: responsive-vw(50);
+
+							rt {
+								color: #DC1B00;
+
+								text-align: center;
+								font-family: "Noto Sans";
+								font-size: responsive-vw(12);
+								font-style: normal;
+								font-weight: 700;
+								line-height: normal;
+							}
+						}
+					}
+				}
+
+				div.cta--button {
+					p {
+						color: #000;
+
+						text-align: center;
+						font-family: "Noto Sans";
+						font-size: responsive-vw(32);
+						font-style: normal;
+						font-weight: 500;
+
+						&:nth-child(1) {
+							margin: responsive-vw(56) auto responsive-vw(10);
+
+							ruby {
+								color: #ED780B;
+
+								rt {
+									height: responsive-vw(30);
+									line-height: responsive-vw(30);
+									font-size: responsive-vw(20);
+								}
+							}
+						}
+
+						&:nth-child(n+2) {
+							font-size: responsive-vw(28);
+							margin-top: responsive-vw(20);
+						}
+					}
+
+					a {
+						display: block;
+						width: responsive-vw(680);
+						height: responsive-vw(176);
+						padding: responsive-vw(56) responsive-vw(60);
+						border-radius: responsive-vw(22);
+						background: var(--unnamed, linear-gradient(180deg, #70C79F 0.15%, #0C9558 99.81%));
+						box-shadow: 0px 3px 0px 0px #15613F;
+						color: #FFF;
+
+						text-align: center;
+						text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+						font-family: "Noto Sans";
+						font-size: responsive-vw(38);
+						font-style: normal;
+						font-weight: 600;
+						line-height: normal;
+						letter-spacing: responsive-vw(1.9);
+						margin: 0 auto 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+a.animation {
+	position: relative;
+	overflow: hidden;
+
+	&:after {
+		animation: 3s 0s shine linear infinite;
+		background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .4) 100%);
+		content: '';
+		height: 100%;
+		left: -100%;
+		position: absolute;
+		top: 0;
+		transform: skewX(-25deg);
+		width: 50%;
+	}
+
+	@keyframes shine {
+		20% {
+			left: 150%;
+		}
+
+		100% {
+			left: 150%;
+		}
+	}
+}
