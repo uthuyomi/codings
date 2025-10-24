@@ -45,7 +45,7 @@ function GalleryListItem({ item, isLeft }) {
       <GalleryListItemImg item={item} />
       <div className={style.text}>
         <h2>{item.title}</h2>
-        <GalleryListText item={item.skills} link={item.link} />
+        <GalleryListText item={item} link={item.link} />
       </div>
     </div>
   );

@@ -25,6 +25,11 @@
         "TypeScript",
         "REST API"
       ],
+      "overview": "学習ブログ兼ポートフォリオとして制作。",
+      "scope": "デザイン、実装、WordPress連携",
+      "tech": "Next.js / React.js / REST API",
+      "period": "約3週間",
+      "notes": "構造設計を意識したレスポンシブ最適化。",
       "link": "https://next-js-study-git-main-uthuyomis-projects.vercel.app/"
     },
     {

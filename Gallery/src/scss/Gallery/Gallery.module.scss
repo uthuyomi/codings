@@ -107,6 +107,7 @@
         position: absolute;
         top: 25px;
         left: 100px;
+        padding-left: 210px;
         @media (max-width: 1199px) {
           top: 25%;
           left: 0;
@@ -122,8 +123,6 @@
         transition: all 1s;
         box-sizing: border-box;
         h2 {
-          width: 200px;
-          margin-left: 400px;
           text-align: center;
           @media (max-width: 1199px) {
             font-size: 1em;
@@ -133,12 +132,9 @@
             margin: 20px 0 0 20px;
           }
         }
-        ul {
-          width: 200px;
-          margin-left: 460px;
-          padding-left: 0;
-          text-align: left;
-          list-style: none;
+        div.info {
+           line-height: 1.8;
+           margin-top: 20px;
           @media (max-width: 1199px) {
             margin-left: 30px;
             font-size: 0.8em;
@@ -149,9 +145,10 @@
           display: block;
           width: 80px;
           margin: 0 auto;
-          margin-left: 445px;
+          margin-left: 35%;
           text-align: center;
           padding: 5px 10px;
+          margin: 0 auto;
           border: solid 1px #000;
           color: #000;
           text-decoration: none;
@@ -213,19 +210,19 @@
       @media (min-width: 1200px) {
         &.slideX {
           .img {
-            transform: translateX(-100px); // 横のみ
+            transform: translateX(-200px); // 横のみ
           }
           .text {
-            transform: translateX(100px); // 横のみ
+            transform: translateX(200px); // 横のみ
           }
         }
 
         &.slideY {
           .img {
-            transform: translateX(-100px) translateY(-25px); // 横+縦
+            transform: translateX(-200px) translateY(-25px); // 横+縦
           }
           .text {
-            transform: translateX(100px) translateY(25px); // 横+縦
+            transform: translateX(200px) translateY(25px); // 横+縦
           }
         }
       }
@@ -360,7 +357,7 @@
           }
         }
 
-        ul {
+        .info {
           width: 200px;
           margin-left: 60px; // ← 同上
           padding-left: 0;
@@ -440,19 +437,19 @@
       @media (min-width: 1200px) {
         &.slideX {
           .img {
-            transform: translateX(100px); // 右方向へ
+            transform: translateX(200px); // 右方向へ
           }
           .text {
-            transform: translateX(-100px); // 左方向へ
+            transform: translateX(-200px); // 左方向へ
           }
         }
 
         &.slideY {
           .img {
-            transform: translateX(100px) translateY(-25px); // 右 + 縦
+            transform: translateX(200px) translateY(-25px); // 右 + 縦
           }
           .text {
-            transform: translateX(-100px) translateY(25px); // 左 + 縦
+            transform: translateX(-200px) translateY(25px); // 左 + 縦
           }
         }
       }
