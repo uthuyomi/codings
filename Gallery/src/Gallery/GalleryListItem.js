@@ -14,6 +14,7 @@ function GalleryListItem({ item, isLeft }) {
   const [slideY, setSlideY] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
+  // 画面サイズを監視
   useEffect(() => {
     const checkSize = () => {
       setIsMobile(window.innerWidth <= 1199);
@@ -23,21 +24,26 @@ function GalleryListItem({ item, isLeft }) {
     return () => window.removeEventListener("resize", checkSize);
   }, []);
 
+  // スクロール時アニメーション
   useEffect(() => {
+    // 1199px以下ではアニメーション無効
+    if (isMobile) return;
+
     if (inView) {
       const timer = setTimeout(() => {
         setSlideY(true);
       }, 750);
       return () => clearTimeout(timer);
     }
-  }, [inView]);
+  }, [inView, isMobile]);
 
+  // クラス名設定
   const wrapperClass = isLeft
     ? `${style.GalleryLeftitem} ${!isMobile && inView ? style.slideX : ""} ${
-        slideY ? (isMobile ? style.slideYMobile : style.slideY) : ""
+        !isMobile && slideY ? style.slideY : ""
       }`
     : `${style.GalleryRightitem} ${!isMobile && inView ? style.slideX : ""} ${
-        slideY ? (isMobile ? style.slideYMobile : style.slideY) : ""
+        !isMobile && slideY ? style.slideY : ""
       }`;
 
   return (

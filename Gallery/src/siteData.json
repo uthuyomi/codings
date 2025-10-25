@@ -1,8 +1,7 @@
 {
   "nav": [
-    { "id": 1, "label": "Home", "url": "/index.html" },
-    { "id": 2, "label": "Works", "url": "https://webyayasu.com/" },
-    { "id": 3, "label": "Contact", "url": "https://webyayasu.com/#contact" }
+    { "id": 1, "label": "Top", "url": "/index.html" },
+    { "id": 2, "label": "Us", "url": "https://next-portfolio-git-main-uthuyomis-projects.vercel.app/" }
   ],
   "hero": {
     "catch": "Designed {{br}} to Function.",
@@ -15,21 +14,11 @@
       "imagepc": "inner-img00-pc.png",
       "imagesp": "inner-img00-sp.png",
       "title": "ブログサイト",
-      "skills": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "figma",
-        "React.js",
-        "Next.js",
-        "TypeScript",
-        "REST API"
-      ],
-      "overview": "学習ブログ兼ポートフォリオとして制作。",
-      "scope": "デザイン、実装、WordPress連携",
-      "tech": "Next.js / React.js / REST API",
-      "period": "約3週間",
-      "notes": "構造設計を意識したレスポンシブ最適化。",
+      "overview": "学習記録と制作実績を一体化したポートフォリオとして設計。単なる展示ではなく、学びの蓄積と発信を両立する場として構築しました。",
+      "scope": "デザイン、実装、WordPress連携、UI設計",
+      "tech": "Next.js / React.js / REST API / SCSS",
+      "period": "約1週間",
+      "notes": "構造設計を意識し、データをJSON化して管理。要素単位で再利用可能なコンポーネント構成とし、レスポンシブ最適化を実現しています。",
       "link": "https://next-js-study-git-main-uthuyomis-projects.vercel.app/"
     },
     {
@@ -37,16 +26,23 @@
       "imagepc": "inner-img08-pc.png",
       "imagesp": "inner-img08-sp.png",
       "title": "WPサイト",
-      "skills": ["HTML", "CSS", "JavaScript", "PHP", "figma"],
+      "overview": "オリジナルWordPressテーマとして開発。カスタムフィールドやカスタマイザーを独自実装し、柔軟な更新性とデザインの一貫性を両立しました。",
+      "scope": "テーマ設計、デザイン調整、WordPress構築、ACF設定",
+      "tech": "WordPress / PHP / JavaScript / SCSS / Advanced Custom Fields",
+      "period": "約2週間",
+      "notes": "ACFとカスタマイザーによるモジュール化で、コード修正なしに各セクションを編集可能に。運用面での更新効率を最適化しています。",
       "link": "https://webyayasu.com"
-      
     },
     {
       "id": 2,
       "imagepc": "inner-img01-pc.jpg",
       "imagesp": "inner-img01-sp.jpg",
       "title": "フィットネスLP",
-      "skills": ["HTML", "CSS", "JavaScript", "figma"],
+      "overview": "女性向けピラティススタジオのキャンペーンLPを制作。静的画像を中心に、安心感と清潔感のあるデザインを再現しました。",
+      "scope": "デザイン再現コーディング、HTML/CSS設計、レスポンシブ対応",
+      "tech": "HTML / CSS / jQuery",
+      "period": "約1週間",
+      "notes": "画像中心の構成に合わせて余白比率とスクロール導線を調整。スマートフォン閲覧時の読みやすさと視覚訴求の両立を図りました。",
       "link": "https://webyayasu.sakura.ne.jp/portfolio/porenai-LP/porenai03/index.html"
     },
     {
@@ -54,7 +50,11 @@
       "imagepc": "inner-img02-pc.jpg",
       "imagesp": "inner-img02-sp.jpg",
       "title": "防災LP",
-      "skills": ["HTML", "CSS", "JavaScript", "figma"],
+      "overview": "防災用品を紹介するランディングページのコーディングを担当しました。明るいトーンのデザインをもとに、正確な再現と軽量化を意識して実装しています。",
+      "scope": "HTML/CSSコーディング、jQueryによる動きの実装、レスポンシブ対応",
+      "tech": "HTML / CSS / jQuery",
+      "period": "約1週間",
+      "notes": "画像中心のLP構成に合わせて余白や比率を丁寧に調整し、スマホでも見やすいレスポンシブ設計に仕上げました。",
       "link": "https://webyayasu.sakura.ne.jp/bousai-LP/index.html"
     },
     {
@@ -62,16 +62,23 @@
       "imagepc": "inner-img03-pc.jpg",
       "imagesp": "inner-img03-pc.jpg",
       "title": "福祉事業LP",
-      "skills": ["HTML", "CSS", "PhotoShop"],
+      "overview": "福祉施設建築を紹介する企業向けランディングページのコーディングを担当しました。落ち着いた配色をもとに、正確なデザイン再現と可読性を意識しています。",
+      "scope": "HTML/CSSコーディング、jQueryによるアニメーション実装、レスポンシブ対応",
+      "tech": "HTML / CSS / jQuery",
+      "period": "約3日",
+      "notes": "テキスト量の多い構成に合わせて余白と行間を調整し、スマホでも読みやすいレイアウトに仕上げました。",
       "link": "https://webyayasu.sakura.ne.jp/portfolio/zyuutaku-LP/LP-left/html/LP1.html"
     },
-
     {
       "id": 5,
       "imagepc": "inner-img04-pc.png",
       "imagesp": "inner-img04-sp.png",
       "title": "不動産LP",
-      "skills": ["HTML", "CSS", "JavaScript", "PhotoShop"],
+      "overview": "Photoshopデザインをもとに、不動産向けランディングページをコーディングしました。要素数が多いため、正確な再現を意識しています。",
+      "scope": "HTML/CSSコーディング、jQuery実装、レスポンシブ対応",
+      "tech": "HTML / CSS / jQuery",
+      "period": "約3日",
+      "notes": "Photoshopデータをもとに構築し、余白や整列を丁寧に調整しました。スマホでは自然な縦レイアウトにしています。",
       "link": "https://webyayasu.sakura.ne.jp/portfolio/1R/index.html"
     },
     {
@@ -79,24 +86,12 @@
       "imagepc": "inner-img05-pc.png",
       "imagesp": "inner-img05-sp.png",
       "title": "コンサルティングLP",
-      "skills": ["HTML", "CSS", "PhotoShop"],
+      "overview": "Photoshopデザインをもとに、企業向けセミナーLPをコーディングしました。文章量が多いため、余白設計と可読性を意識しています。",
+      "scope": "HTML/CSSコーディング、レスポンシブ対応、jQueryによる動作調整",
+      "tech": "HTML / CSS / jQuery",
+      "period": "約3日",
+      "notes": "セクション構成を崩さず、行間と余白を最適化して読みやすく調整しました。スマホでは階層構造を維持した縦レイアウトにしています。",
       "link": "https://webyayasu.sakura.ne.jp/portfolio/kanri-LP/index.html"
-    },
-    {
-      "id": 7,
-      "imagepc": "inner-img06-pc.jpg",
-      "imagesp": "inner-img06-sp.jpg",
-      "title": "英会話LP",
-      "skills": ["HTML", "CSS", "javascript", "XD"],
-      "link": "https://webyayasu.sakura.ne.jp/portfolio/coding-sample01/index.html"
-    },
-    {
-      "id": 8,
-      "imagepc": "inner-img07-pc.jpg",
-      "imagesp": "inner-img07-sp.jpg",
-      "title": "ギャラリーサイト",
-      "skills": ["HTML", "CSS", "JavaScript", "XD"],
-      "link": "https://webyayasu.sakura.ne.jp/portfolio/coding-sample02/html/index.html"
     }
   ]
 }

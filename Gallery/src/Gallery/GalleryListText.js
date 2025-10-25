@@ -4,26 +4,25 @@ function GalleryListText({ item, link }) {
   return (
     <>
       <div className={style.info}>
-        <p>
-          <strong>制作概要：</strong>
-          {item.overview}
-        </p>
-        <p>
-          <strong>担当範囲：</strong>
-          {item.scope}
-        </p>
-        <p>
-          <strong>使用技術：</strong>
-          {item.tech}
-        </p>
-        <p>
-          <strong>制作期間：</strong>
-          {item.period}
-        </p>
-        <p>
-          <strong>工夫点：</strong>
-          {item.notes}
-        </p>
+        <p className={style.overview}>{item.overview}</p>
+        <ul>
+          <li>
+            <strong>範囲：</strong>
+            {item.scope}
+          </li>
+          <li>
+            <strong>技術：</strong>
+            {item.tech}
+          </li>
+          <li>
+            <strong>期間：</strong>
+            {item.period}
+          </li>
+          <li>
+            <strong>工夫：</strong>
+            {item.notes}
+          </li>
+        </ul>
       </div>
 
       <a href={link}>MORE</a>
