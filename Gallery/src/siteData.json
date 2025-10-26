@@ -16,7 +16,7 @@
       "title": "ブログサイト",
       "overview": "学習記録と制作実績を一体化したポートフォリオとして設計。単なる展示ではなく、学びの蓄積と発信を両立する場として構築しました。",
       "scope": "デザイン、実装、WordPress連携、UI設計",
-      "tech": "Next.js / React.js / REST API / SCSS",
+      "tech": "Next.js / React.js / REST API / SCSS / Figma",
       "period": "約1週間",
       "notes": "構造設計を意識し、データをJSON化して管理。要素単位で再利用可能なコンポーネント構成とし、レスポンシブ最適化を実現しています。",
       "link": "https://next-js-study-git-main-uthuyomis-projects.vercel.app/"
@@ -28,7 +28,7 @@
       "title": "WPサイト",
       "overview": "オリジナルWordPressテーマとして開発。カスタムフィールドやカスタマイザーを独自実装し、柔軟な更新性とデザインの一貫性を両立しました。",
       "scope": "テーマ設計、デザイン調整、WordPress構築、ACF設定",
-      "tech": "WordPress / PHP / JavaScript / SCSS / Advanced Custom Fields",
+      "tech": "WordPress / PHP / JavaScript / SCSS / Advanced Custom Fields / Figma",
       "period": "約2週間",
       "notes": "ACFとカスタマイザーによるモジュール化で、コード修正なしに各セクションを編集可能に。運用面での更新効率を最適化しています。",
       "link": "https://webyayasu.com"
@@ -40,7 +40,7 @@
       "title": "フィットネスLP",
       "overview": "女性向けピラティススタジオのキャンペーンLPを制作。静的画像を中心に、安心感と清潔感のあるデザインを再現しました。",
       "scope": "デザイン再現コーディング、HTML/CSS設計、レスポンシブ対応",
-      "tech": "HTML / CSS / jQuery",
+      "tech": "HTML / CSS / jQuery / Figma",
       "period": "約1週間",
       "notes": "画像中心の構成に合わせて余白比率とスクロール導線を調整。スマートフォン閲覧時の読みやすさと視覚訴求の両立を図りました。",
       "link": "https://webyayasu.sakura.ne.jp/portfolio/porenai-LP/porenai03/index.html"
@@ -51,8 +51,8 @@
       "imagesp": "inner-img02-sp.jpg",
       "title": "防災LP",
       "overview": "防災用品を紹介するランディングページのコーディングを担当しました。明るいトーンのデザインをもとに、正確な再現と軽量化を意識して実装しています。",
-      "scope": "HTML/CSSコーディング、jQueryによる動きの実装、レスポンシブ対応",
-      "tech": "HTML / CSS / jQuery",
+      "scope": "HTML/CSSコーディング、jQueryによる動きの実装レスポンシブ対応",
+      "tech": "HTML / CSS / jQuery / Figma",
       "period": "約1週間",
       "notes": "画像中心のLP構成に合わせて余白や比率を丁寧に調整し、スマホでも見やすいレスポンシブ設計に仕上げました。",
       "link": "https://webyayasu.sakura.ne.jp/bousai-LP/index.html"
@@ -63,8 +63,8 @@
       "imagesp": "inner-img03-pc.jpg",
       "title": "福祉事業LP",
       "overview": "福祉施設建築を紹介する企業向けランディングページのコーディングを担当しました。落ち着いた配色をもとに、正確なデザイン再現と可読性を意識しています。",
-      "scope": "HTML/CSSコーディング、jQueryによるアニメーション実装、レスポンシブ対応",
-      "tech": "HTML / CSS / jQuery",
+      "scope": "HTML/CSSコーディング、レスポンシブ対応",
+      "tech": "HTML / CSS / Photoshop",
       "period": "約3日",
       "notes": "テキスト量の多い構成に合わせて余白と行間を調整し、スマホでも読みやすいレイアウトに仕上げました。",
       "link": "https://webyayasu.sakura.ne.jp/portfolio/zyuutaku-LP/LP-left/html/LP1.html"
@@ -76,7 +76,7 @@
       "title": "不動産LP",
       "overview": "Photoshopデザインをもとに、不動産向けランディングページをコーディングしました。要素数が多いため、正確な再現を意識しています。",
       "scope": "HTML/CSSコーディング、jQuery実装、レスポンシブ対応",
-      "tech": "HTML / CSS / jQuery",
+      "tech": "HTML / CSS / jQuery / Photoshop",
       "period": "約3日",
       "notes": "Photoshopデータをもとに構築し、余白や整列を丁寧に調整しました。スマホでは自然な縦レイアウトにしています。",
       "link": "https://webyayasu.sakura.ne.jp/portfolio/1R/index.html"
@@ -88,7 +88,7 @@
       "title": "コンサルティングLP",
       "overview": "Photoshopデザインをもとに、企業向けセミナーLPをコーディングしました。文章量が多いため、余白設計と可読性を意識しています。",
       "scope": "HTML/CSSコーディング、レスポンシブ対応、jQueryによる動作調整",
-      "tech": "HTML / CSS / jQuery",
+      "tech": "HTML / CSS / Photoshop",
       "period": "約3日",
       "notes": "セクション構成を崩さず、行間と余白を最適化して読みやすく調整しました。スマホでは階層構造を維持した縦レイアウトにしています。",
       "link": "https://webyayasu.sakura.ne.jp/portfolio/kanri-LP/index.html"
