@@ -1,0 +1,41 @@
+{
+  "toppage": {
+    "hero": {
+      "heading": "見出し見出し",
+      "text": "テキストテキスト",
+      "linkUrl": "",
+      "linkText": ""
+    },
+    "profile": {
+      "Heading01": "about",
+      "imgUrl": "/assets/profile.jp",
+      "heading02": "安崎　海星",
+      "text": "texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext"
+    },
+    "service": {
+      "heading": "Service"
+    },
+    "skills": {
+      "heading": "Skill"
+    },
+    "contact": {
+      "heading": "Contact",
+      "form": {
+        "name": "名前",
+        "kana": "フリガナ",
+        "email": "メールアドレス",
+        "text": "お問い合わせ内容",
+        "button": "送信"
+      }
+    },
+    "footer": {
+      "copyRight": "@ kaisei yasuzaki"
+    }
+  },
+  "profile": {
+    "img": "/assets/profile.png",
+    "name": "安崎 海星",
+    "introHeading": "自己紹介",
+    "skillHeading": "スキルセット"
+  }
+}

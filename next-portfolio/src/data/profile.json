@@ -1,0 +1,152 @@
+{
+  "ja": {
+    "hero": {
+      "name": "安崎 海星",
+      "role": "Front-end Engineer / Web Coder",
+      "description": "北海道札幌市を拠点に、HTML/CSS/JavaScriptによるLP制作から、Next.js・TypeScriptを用いたUI実装までを手がけています。デザインカンプ・画像支給のどちらにも対応し、状態管理やAPI連携を含むフロントエンド実装を行っています。",
+      "image": "/images/home/profile.png"
+    },
+    "skills": {
+      "title": "Skills & Tech Stack",
+      "categories": [
+        {
+          "name": "Frontend",
+          "items": "HTML / CSS / JavaScript / Next.js / TypeScript / Tailwind CSS"
+        },
+        {
+          "name": "CMS",
+          "items": "WordPress / PHP / REST API Integration"
+        },
+        {
+          "name": "Design",
+          "items": "Figma / XD / Photoshop"
+        },
+        {
+          "name": "Backend / API (Support)",
+          "items": "Python / FastAPI / OpenAI API / JSON Schema"
+        },
+        {
+          "name": "Other",
+          "items": "Git / UI State Management"
+        }
+      ]
+    },
+    "works": {
+      "title": "Works & Projects",
+      "projects": [
+        {
+          "name": "DocReview UI",
+          "description": "文章レビュー結果をUIとして可視化するWebアプリ。ローディング・エラー・結果表示を分離した状態管理と、タブ切替による情報整理を実装。UI表示に必要なデータ取得・整形のため、API連携も含めて実装。",
+          "linkText": "View Project →",
+          "linkUrl": "https://docreview-ui.vercel.app/"
+        },
+        {
+          "name": "Touhou Talk",
+          "description": "キャラクター切替と会話履歴を扱うチャットUI。レスポンシブ対応とUI状態の整理を重視し、フロントエンド実装を中心に設計。",
+          "linkText": "View Project →",
+          "linkUrl": "https://touhou-talk.vercel.app/"
+        }
+      ]
+    },
+    "experience": {
+      "title": "Experience",
+      "items": [
+        {
+          "role": "Web Coder / Frontend Engineer",
+          "period": "2022 – 2024",
+          "description": "制作会社にて業務委託として、LPおよびHTMLメールのコーディングを担当。\nPhotoshop・XD・Figmaのデザインカンプをもとに、HTML/CSS/JavaScriptによる実装を行い、レスポンシブ対応や既存ページ改修を実施。\nWordPressを用いたテーマカスタマイズや軽微なPHP調整、GitHubを利用した更新管理にも対応。\n短納期案件（平均3〜5日）を複数並行で担当し、全案件で納期遵守を継続。"
+        },
+        {
+          "role": "Freelance Frontend Engineer",
+          "period": "2023 – Present",
+          "description": "個人事業主・中小企業向けに、LPおよびWebサイトのフロントエンド開発を担当。\nHTML/CSS/JavaScriptによるUI実装に加え、WordPressテーマの新規構築・既存テーマ改修を実施。\n要件整理から構成設計、実装、動作検証、修正対応まで一貫して対応し、クライアントとの直接調整も担当。\n修正指示の分析・テンプレート化により作業効率を改善し、再依頼率70％超を達成。"
+        },
+        {
+          "role": "Personal Development (Frontend)",
+          "period": "2022 – Present",
+          "description": "Next.js / TypeScript を用いた個人開発を継続。\nUI設計、コンポーネント分割、状態管理などフロントエンド設計を中心に検証を行い、実務で扱いにくい設計レベルの構造整理や最適化を実践している。"
+        }
+      ]
+    },
+    "vision": {
+      "title": "Vision",
+      "paragraph1": "フロントエンドは、デザインとロジックをUIとして成立させるための実装領域だと考えています。見た目だけでなく、状態や構造が整理された実装を重視しています。",
+      "paragraph2": "LP制作からWebアプリUIまで、実務を想定した実装を積み重ね、保守しやすく理解しやすいフロントエンドを提供していきたいと考えています。"
+    }
+  },
+  "en": {
+    "hero": {
+      "name": "Kaisei Yasuzaki",
+      "role": "Front-end Engineer / Web Coder",
+      "description": "Based in Sapporo, Japan. I work on front-end development ranging from LP coding with HTML/CSS/JavaScript to UI implementation using Next.js and TypeScript. I focus on clear state management and practical API integration to support UI behavior.",
+      "image": "/images/home/profile.png"
+    },
+    "skills": {
+      "title": "Skills & Tech Stack",
+      "categories": [
+        {
+          "name": "Frontend",
+          "items": "HTML / CSS / JavaScript / Next.js / TypeScript / Tailwind CSS"
+        },
+        {
+          "name": "CMS",
+          "items": "WordPress / PHP / REST API Integration"
+        },
+        {
+          "name": "Design",
+          "items": "Figma / XD / Photoshop"
+        },
+        {
+          "name": "Backend / API (Support)",
+          "items": "Python / FastAPI / OpenAI API / JSON Schema"
+        },
+        {
+          "name": "Other",
+          "items": "Git / UI State Management"
+        }
+      ]
+    },
+    "works": {
+      "title": "Works & Projects",
+      "projects": [
+        {
+          "name": "DocReview UI",
+          "description": "A web UI that visualizes document review results. Focused on UI state separation, tab-based presentation, and API integration to support front-end behavior.",
+          "linkText": "View Project →",
+          "linkUrl": "https://docreview-ui.vercel.app/"
+        },
+        {
+          "name": "Touhou Talk",
+          "description": "A character-based chat UI focusing on conversation state handling and responsive front-end layout.",
+          "linkText": "View Project →",
+          "linkUrl": "https://touhou-talk.vercel.app/"
+        }
+      ]
+    },
+    "experience": {
+      "title": "Experience",
+      "items": [
+        {
+          "role": "Web Coder / Frontend Engineer",
+          "period": "2022 – 2024",
+          "description": "Worked as a contract frontend engineer at a web production company, handling LPs and HTML email coding.\nImplemented designs based on Photoshop, XD, and Figma mockups using HTML, CSS, and JavaScript, including responsive layouts and updates to existing pages.\nHandled WordPress theme customization, minor PHP adjustments, and update management using GitHub.\nManaged multiple short-deadline projects in parallel (average turnaround: 3–5 days) while maintaining a 100% on-time delivery record."
+        },
+        {
+          "role": "Freelance Frontend Engineer",
+          "period": "2023 – Present",
+          "description": "Providing frontend development for LPs and websites for individual clients and small businesses.\nImplemented UI using HTML, CSS, and JavaScript, and handled new WordPress theme development as well as existing theme modifications.\nResponsible for the full workflow from requirement clarification and structure design to implementation, testing, revisions, and direct client communication.\nImproved development efficiency by analyzing and templating recurring revision requests, achieving a repeat-client rate of over 70%."
+        },
+        {
+          "role": "Personal Development (Frontend)",
+          "period": "2022 – Present",
+          "description": "Continuously developing personal projects using Next.js and TypeScript.\nFocusing on frontend architecture such as UI design, component structuring, and state management, while experimenting with design-level optimizations and structural improvements that are difficult to validate in typical client work."
+        }
+      ]
+    },
+    "vision": {
+      "title": "Vision",
+      "paragraph1": "I see front-end development as the practice of turning design and logic into a usable interface, with a strong emphasis on structured UI and clear state management.",
+      "paragraph2": "From landing pages to interactive web UIs, I aim to build maintainable front-end implementations grounded in practical development experience."
+    }
+  }
+}

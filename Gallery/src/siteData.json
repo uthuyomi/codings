@@ -1,7 +1,11 @@
 {
   "nav": [
     { "id": 1, "label": "Top", "url": "/index.html" },
-    { "id": 2, "label": "Us", "url": "https://next-portfolio-git-main-uthuyomis-projects.vercel.app/" }
+    {
+      "id": 2,
+      "label": "Us",
+      "url": "https://next-portfolio-uthuyomis-projects.vercel.app/"
+    }
   ],
   "hero": {
     "catch": "Designed {{br}} to Function.",
@@ -10,7 +14,7 @@
   },
   "gallery": [
     {
-      "id": 8,
+      "id": 1,
       "imagepc": "inner-img00-pc.png",
       "imagesp": "inner-img00-sp.png",
       "title": "ブログサイト",
@@ -20,18 +24,6 @@
       "period": "約1週間",
       "notes": "構造設計を意識し、データをJSON化して管理。要素単位で再利用可能なコンポーネント構成とし、レスポンシブ最適化を実現しています。",
       "link": "https://next-js-study-git-main-uthuyomis-projects.vercel.app/"
-    },
-    {
-      "id": 1,
-      "imagepc": "inner-img08-pc.png",
-      "imagesp": "inner-img08-sp.png",
-      "title": "WPサイト",
-      "overview": "オリジナルWordPressテーマとして開発。カスタムフィールドやカスタマイザーを独自実装し、柔軟な更新性とデザインの一貫性を両立しました。",
-      "scope": "テーマ設計、デザイン調整、WordPress構築、ACF設定",
-      "tech": "WordPress / PHP / JavaScript / SCSS / Advanced Custom Fields / Figma",
-      "period": "約2週間",
-      "notes": "ACFとカスタマイザーによるモジュール化で、コード修正なしに各セクションを編集可能に。運用面での更新効率を最適化しています。",
-      "link": "https://webyayasu.com"
     },
     {
       "id": 2,

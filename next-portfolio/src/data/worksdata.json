@@ -1,0 +1,117 @@
+{
+  "ja": {
+    "slide01": {
+      "title": "LP Coding (Design → Implementation)",
+      "description": "Figmaデザインカンプをもとに、HTML/CSS/JavaScriptで実装したランディングページ。PC/SP両対応のレスポンシブ設計と、視線誘導を意識したレイアウトを重視。",
+      "pcimg": "/images/works/portfolio/inner-img01-pc.jpg",
+      "spimg": "/images/works/portfolio/inner-img01-sp.jpg",
+      "link": "https://webyayasu.sakura.ne.jp/portfolio/porenai-LP/porenai03/index.html",
+      "github": "https://github.com/uthuyomi/codings/tree/main/porenai-LP/porenai03",
+      "skill": ["HTML", "CSS", "JavaScript", "Responsive Design", "Figma"]
+    },
+    "slide02": {
+      "title": "LP Coding (Image-based Design)",
+      "description": "支給されたデザイン画像をもとに、HTML/CSS/JavaScriptでLPをコーディング。デザイン再現性と可読性を重視したマークアップを実装。",
+      "pcimg": "/images/works/portfolio/inner-img02-pc.jpg",
+      "spimg": "/images/works/portfolio/inner-img02-sp.jpg",
+      "link": "https://webyayasu.sakura.ne.jp/bousai-LP/index.html",
+      "github": "https://github.com/uthuyomi/codings/tree/main/bousai-LP",
+      "skill": ["HTML", "CSS", "JavaScript", "Responsive Design"]
+    },
+    "slide03": {
+      "title": "DocReview UI (Writing Review Web UI)",
+      "description": "業務メール/文章のレビューを「問題点・改善案・理由」で可視化する単一画面UI。ローディング/エラー/結果を状態分離し、結果はタブで切替。日英対応、Next.js Route Handler 経由で OpenAI Responses API を呼び出し、JSON Schemaで出力構造を制約。",
+      "pcimg": "/images/works/portfolio/docreview-pc.png",
+      "spimg": "/images/works/portfolio/docreview-sp.png",
+      "link": "https://docreview-ui.vercel.app/",
+      "github": "https://github.com/uthuyomi/docreview-ui",
+      "skill": [
+        "Next.js (App Router)",
+        "TypeScript",
+        "Tailwind CSS",
+        "UI State Management (Loading/Error/Result)",
+        "Tab UI / Component Design",
+        "i18n (JA/EN)",
+        "Next.js Route Handler",
+        "OpenAI Responses API",
+        "JSON Schema",
+        "Vercel"
+      ]
+    },
+    "slide04": {
+      "title": "Touhou Talk (Character Chat UI Prototype)",
+      "description": "Next.js（App Router）と TypeScript で実装したキャラクター毎の会話履歴を保持するチャットUI。画面サイズに応じたレスポンシブ対応と、キャラクター切替時の状態管理にフォーカスしたフロントエンド設計。",
+      "pcimg": "/images/works/portfolio/touhou-talk-pc.png",
+      "spimg": "/images/works/portfolio/touhou-talk-sp.png",
+      "link": "https://touhou-talk.vercel.app/",
+      "github": "https://github.com/uthuyomi/touhou-talk",
+      "skill": [
+        "Next.js (App Router)",
+        "TypeScript",
+        "Tailwind CSS",
+        "Responsive UI Design",
+        "State Management (Conversation/Character Switch)",
+        "Frontend Architecture",
+        "Vercel Deployment"
+      ]
+    }
+  },
+
+  "en": {
+    "slide01": {
+      "title": "LP Coding (Design → Implementation)",
+      "description": "A landing page implemented with HTML/CSS/JavaScript based on a Figma design mockup. Emphasis on responsive design for PC and mobile, with layouts optimized for visual flow and user attention.",
+      "pcimg": "/images/works/portfolio/inner-img01-pc.jpg",
+      "spimg": "/images/works/portfolio/inner-img01-sp.jpg",
+      "link": "https://webyayasu.sakura.ne.jp/portfolio/porenai-LP/porenai03/index.html",
+      "github": "https://github.com/uthuyomi/codings/tree/main/porenai-LP/porenai03",
+      "skill": ["HTML", "CSS", "JavaScript", "Responsive Design", "Figma"]
+    },
+    "slide02": {
+      "title": "LP Coding (Image-based Design)",
+      "description": "Coded a landing page using HTML/CSS/JavaScript based on provided design images. Focused on accurate visual reproduction and readable, maintainable markup.",
+      "pcimg": "/images/works/portfolio/inner-img02-pc.jpg",
+      "spimg": "/images/works/portfolio/inner-img02-sp.jpg",
+      "link": "https://webyayasu.sakura.ne.jp/bousai-LP/index.html",
+      "github": "https://github.com/uthuyomi/codings/tree/main/bousai-LP",
+      "skill": ["HTML", "CSS", "JavaScript", "Responsive Design"]
+    },
+    "slide03": {
+      "title": "DocReview UI (Writing Review Web UI)",
+      "description": "A single-screen UI that visualizes reviews of business emails and documents by separating issues, improvement suggestions, and reasons. Loading, error, and result states are handled independently, with results switchable via tabs. Supports both Japanese and English. Calls the OpenAI Responses API via Next.js Route Handlers, with output structure constrained using JSON Schema.",
+      "pcimg": "/images/works/portfolio/docreview-pc.png",
+      "spimg": "/images/works/portfolio/docreview-sp.png",
+      "link": "https://docreview-ui.vercel.app/",
+      "github": "https://github.com/uthuyomi/docreview-ui",
+      "skill": [
+        "Next.js (App Router)",
+        "TypeScript",
+        "Tailwind CSS",
+        "UI State Management (Loading/Error/Result)",
+        "Tab UI / Component Design",
+        "i18n (JA/EN)",
+        "Next.js Route Handler",
+        "OpenAI Responses API",
+        "JSON Schema",
+        "Vercel"
+      ]
+    },
+    "slide04": {
+      "title": "Touhou Talk (Character Chat UI Prototype)",
+      "description": "A chat UI implemented with Next.js (App Router) and TypeScript that preserves conversation history per character. Frontend architecture focuses on responsive behavior across screen sizes and state management when switching characters.",
+      "pcimg": "/images/works/portfolio/touhou-talk-pc.png",
+      "spimg": "/images/works/portfolio/touhou-talk-sp.png",
+      "link": "https://touhou-talk.vercel.app/",
+      "github": "https://github.com/uthuyomi/touhou-talk",
+      "skill": [
+        "Next.js (App Router)",
+        "TypeScript",
+        "Tailwind CSS",
+        "Responsive UI Design",
+        "State Management (Conversation/Character Switch)",
+        "Frontend Architecture",
+        "Vercel Deployment"
+      ]
+    }
+  }
+}

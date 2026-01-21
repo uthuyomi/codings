@@ -1,0 +1,113 @@
+/* ===============================
+   PC SLIDE
+================================ */
+
+.slide-pc {
+  position: relative;
+
+  .slideOuter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .slideInner {
+    position: absolute;
+    width: 59.5%;
+    height: 56%;
+    top: 17%;
+    left: 20%;
+    overflow-y: scroll;
+    z-index: 20;
+
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+/* ===============================
+   SP SLIDE
+================================ */
+
+.slide-sp {
+  position: relative;
+
+  .slideOuter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .slideInner {
+    position: absolute;
+    width: 28%;
+    height: 89%;
+    top: 5%;
+    left: 36%;
+    overflow-y: scroll;
+    z-index: 20;
+    border-radius: 10%;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+/* ===============================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+  .slide-pc,
+  .slide-sp {
+    width: 100%;
+    position: relative;
+  }
+
+  .slide-pc {
+    .slideInner {
+      width: 59.5%;
+      height: 56%;
+      top: 17%;
+      left: 20%;
+    }
+  }
+
+  .slide-sp {
+    .slideInner {
+      width: 28%;
+      height: 89%;
+      top: 5%;
+      left: 36%;
+      border-radius: 10%;
+    }
+  }
+}

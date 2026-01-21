@@ -1,0 +1,54 @@
+{
+  "slide01": {
+    "pcimg": "/images/works/portfolio/inner-img00-pc.png",
+    "spimg": "/images/works/portfolio/inner-img00-sp.png",
+    "link": "https://next-js-study-git-main-uthuyomis-projects.vercel.app/",
+    "skill": ["JavaScript", "React.js", "Next.js", "TypeScript"]
+  },
+  "slide02": {
+    "pcimg": "/images/works/portfolio/inner-img01-pc.jpg",
+    "spimg": "/images/works/portfolio/inner-img01-sp.jpg",
+    "link": "https://webyayasu.sakura.ne.jp/portfolio/porenai-LP/porenai03/index.html",
+    "skill": ["HTML", "CSS", "JavaScript", "figma"]
+  },
+  "slide03": {
+    "pcimg": "/images/works/portfolio/inner-img02-pc.jpg",
+    "spimg": "/images/works/portfolio/inner-img02-sp.jpg",
+    "link": "https://webyayasu.sakura.ne.jp/bousai-LP/index.html",
+    "skill": ["HTML", "CSS", "JavaScript", "figma"]
+  },
+  "slide04": {
+    "pcimg": "/images/works/portfolio/inner-img03-pc.jpg",
+    "spimg": "/images/works/portfolio/inner-img03-pc.jpg",
+    "link": "https://webyayasu.sakura.ne.jp/portfolio/zyuutaku-LP/LP-left/html/LP1.html",
+    "skill": ["HTML", "CSS", "PhotoShop"]
+  },
+  "slide05": {
+    "pcimg": "/images/works/portfolio/inner-img04-pc.png",
+    "spimg": "/images/works/portfolio/inner-img04-sp.png",
+    "link": "https://webyayasu.sakura.ne.jp/portfolio/1R/index.html",
+    "skill": ["HTML", "CSS", "JavaScript", "PhotoShop"]
+  },
+  "slide06": {
+    "pcimg": "/images/works/portfolio/inner-img05-pc.png",
+    "spimg": "/images/works/portfolio/inner-img05-sp.png",
+    "link": "https://webyayasu.sakura.ne.jp/portfolio/kanri-LP/index.html",
+    "skill": ["HTML", "CSS", "PhotoShop"]
+  },
+  "slide07": {
+  "title": "Chat UI Web Application",
+  "description":
+    "Next.js と FastAPI を用いたチャット型Webアプリ。UI状態管理とAPI連携を中心に設計。",
+  "pcimg": "/images/works/touhou-pc.png",
+  "spimg": "/images/works/touhou-sp.png",
+  "link": "https://touhou-talk.example",
+  "github": "https://github.com/uthuyomi/touhou-talk",
+  "skill": [
+    "Next.js",
+    "TypeScript",
+    "FastAPI",
+    "UI State Management",
+    "API Integration"
+  ]
+  }
+}

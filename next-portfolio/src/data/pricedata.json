@@ -1,0 +1,449 @@
+{
+  "ja": {
+    "price1": {
+      "title": "コーポレートサイト コーディング料金表",
+      "header": ["項目", "納期目安（営業日）", "料金（税込）", "備考"],
+      "rows": [
+        [
+          "トップページ",
+          "2〜3営業日",
+          "20,000円〜",
+          "デザインカンプからの静的HTML構築・レスポンシブ込み"
+        ],
+        [
+          "下層ページ（1ページあたり）",
+          "1〜2営業日",
+          "7,000円〜",
+          "同一レイアウト・テキスト差替え中心の場合"
+        ],
+        [
+          "お問い合わせフォーム（静的）",
+          "+1営業日",
+          "3,000円〜",
+          "HTML＋CSSのみ、送信機能なし"
+        ],
+        [
+          "お問い合わせフォーム（PHP+送信機能）",
+          "+1営業日",
+          "6,000円〜",
+          "自動返信メール・バリデーション込み"
+        ],
+        [
+          "簡易アニメーション（5箇所まで）",
+          "+1営業日",
+          "4,000円〜",
+          "フェードイン・スライドインなど軽度の動作"
+        ],
+        [
+          "高度なアニメーション",
+          "+2営業日〜",
+          "8,000円〜",
+          "GSAP・IntersectionObserver等を使用する演出"
+        ],
+        [
+          "レスポンシブ対応",
+          "標準対応",
+          "無料",
+          "スマホ・タブレット最適化込み"
+        ],
+        [
+          "JavaScript処理（スライダー・モーダル等）",
+          "+1営業日〜",
+          "6,000円〜",
+          "Swiperやモーダル等の実装"
+        ],
+        [
+          "特殊カスタマイズ",
+          "要相談",
+          "別途お見積り",
+          "実装範囲・難易度により変動"
+        ]
+      ]
+    },
+    "price2": {
+      "title": "画像LP コーディング料金表",
+      "header": ["サイズ", "納期目安（営業日）", "料金（税込）", "備考"],
+      "rows": [
+        [
+          "10,000px以下",
+          "2〜3営業日",
+          "12,000円〜",
+          "レスポンシブ対応・簡易アニメーション（5箇所まで）含む"
+        ],
+        [
+          "10,000px〜12,500px",
+          "3〜4営業日",
+          "14,000円〜",
+          "同上。テキスト差替え・構成維持可"
+        ],
+        [
+          "12,500px〜15,000px",
+          "4〜5営業日",
+          "16,000円〜",
+          "アニメーション増加・軽度な構成変更対応"
+        ],
+        [
+          "15,000px〜17,500px",
+          "5〜6営業日",
+          "18,000円〜",
+          "セクション数が多い長尺LP向け"
+        ],
+        [
+          "17,500px〜20,000px",
+          "6〜7営業日",
+          "20,000円〜",
+          "アニメーション強化・セクション構成多め"
+        ],
+        [
+          "20,000px〜25,000px",
+          "7〜9営業日",
+          "22,000円〜",
+          "ボリュームLP・確認回数増対応"
+        ],
+        ["25,000px〜", "要相談", "別途お見積り", "構成・要件により柔軟対応"]
+      ]
+    },
+    "price3": {
+      "title": "HTML コーディング料金表",
+      "header": ["サイズ", "納期目安（営業日）", "料金（税込）", "備考"],
+      "rows": [
+        [
+          "10,000px以下",
+          "2〜3営業日",
+          "14,000円〜",
+          "静的HTML・CSS構築。スマホ対応込み"
+        ],
+        [
+          "10,000px〜12,500px",
+          "3〜4営業日",
+          "16,000円〜",
+          "軽度なJSやCSSアニメーション対応"
+        ],
+        [
+          "12,500px〜15,000px",
+          "4〜5営業日",
+          "18,000円〜",
+          "構造調整・簡易フォーム含む"
+        ],
+        [
+          "15,000px〜17,500px",
+          "5〜6営業日",
+          "20,000円〜",
+          "アニメーション数10箇所前後想定"
+        ],
+        [
+          "17,500px〜20,000px",
+          "6〜7営業日",
+          "22,000円〜",
+          "セクション多め長尺案件向け"
+        ],
+        [
+          "20,000px〜25,000px",
+          "7〜9営業日",
+          "24,000円〜",
+          "修正回数増・複合要素含む"
+        ],
+        [
+          "25,000px〜",
+          "要相談",
+          "別途お見積り",
+          "全体設計・複数デバイス最適化対応"
+        ]
+      ]
+    },
+    "price4": {
+      "title": "WordPress コーディング料金表",
+      "header": ["項目", "納期目安（営業日）", "料金（税込）", "備考"],
+      "rows": [
+        [
+          "トップページ",
+          "2〜4営業日",
+          "25,000円〜",
+          "静的HTMLをWPテーマ化。管理画面で編集可"
+        ],
+        [
+          "下層ページ（1ページあたり）",
+          "1〜2営業日",
+          "9,000円〜",
+          "固定ページテンプレート流用対応"
+        ],
+        [
+          "アニメーション処理（簡易）",
+          "+1営業日",
+          "4,000円〜",
+          "軽度のフェード・スライド演出"
+        ],
+        [
+          "アニメーション処理（高度）",
+          "+2営業日〜",
+          "8,000円〜",
+          "GSAP等の高度演出・複合動作"
+        ],
+        [
+          "カスタム投稿タイプ追加",
+          "+2営業日〜",
+          "12,000円〜",
+          "1投稿タイプ追加・一覧テンプレ込み"
+        ],
+        [
+          "お問い合わせフォーム実装",
+          "+1営業日",
+          "6,000円〜",
+          "Contact Form 7 / WPForms対応"
+        ],
+        ["レスポンシブ対応", "標準対応", "無料", "主要デバイス最適化込み"],
+        [
+          "カスタムフィールド設定",
+          "+1営業日〜",
+          "6,000円〜",
+          "ACFまたはCMB2による構築"
+        ],
+        [
+          "追加オプション・特殊カスタマイズ",
+          "要相談",
+          "別途お見積り",
+          "構築範囲・要件により調整"
+        ]
+      ]
+    }
+  },
+
+  "en": {
+    "price1": {
+      "title": "Corporate Website Coding Price List (Japan Standard Rates)",
+      "header": [
+        "Item",
+        "Estimated Delivery (Business Days)",
+        "Price (JPY, tax included)",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Top Page",
+          "2–3 business days",
+          "¥20,000〜",
+          "Static HTML build from design comp, including responsive design"
+        ],
+        [
+          "Subpage (per page)",
+          "1–2 business days",
+          "¥7,000〜",
+          "For same layout and simple text replacement"
+        ],
+        [
+          "Contact Form (Static)",
+          "+1 business day",
+          "¥3,000〜",
+          "HTML + CSS only, no sending function"
+        ],
+        [
+          "Contact Form (PHP + Send Function)",
+          "+1 business day",
+          "¥6,000〜",
+          "Includes auto-reply email and validation"
+        ],
+        [
+          "Simple Animation (up to 5 spots)",
+          "+1 business day",
+          "¥4,000〜",
+          "Basic effects such as fade-in or slide-in"
+        ],
+        [
+          "Advanced Animation",
+          "+2 business days〜",
+          "¥8,000〜",
+          "Uses GSAP or IntersectionObserver for advanced effects"
+        ],
+        [
+          "Responsive Design",
+          "Standard",
+          "Free",
+          "Optimization for smartphones and tablets included"
+        ],
+        [
+          "JavaScript Functions (Slider, Modal, etc.)",
+          "+1 business day〜",
+          "¥6,000〜",
+          "Implementation of Swiper, modal windows, etc."
+        ],
+        [
+          "Special Customization",
+          "Negotiable",
+          "Quote upon request",
+          "Depends on scope and complexity"
+        ]
+      ]
+    },
+    "price2": {
+      "title": "Image-based Landing Page Coding Price List",
+      "header": [
+        "Length",
+        "Estimated Delivery (Business Days)",
+        "Price (JPY, tax included)",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Up to 10,000px",
+          "2–3 business days",
+          "¥12,000〜",
+          "Includes responsive design and simple animation (up to 5 spots)"
+        ],
+        [
+          "10,000–12,500px",
+          "3–4 business days",
+          "¥14,000〜",
+          "Same layout, text replacement possible"
+        ],
+        [
+          "12,500–15,000px",
+          "4–5 business days",
+          "¥16,000〜",
+          "More animations, minor structural adjustments"
+        ],
+        [
+          "15,000–17,500px",
+          "5–6 business days",
+          "¥18,000〜",
+          "For long-form LPs with many sections"
+        ],
+        [
+          "17,500–20,000px",
+          "6–7 business days",
+          "¥20,000〜",
+          "Enhanced animations, multi-section layout"
+        ],
+        [
+          "20,000–25,000px",
+          "7–9 business days",
+          "¥22,000〜",
+          "Large LP with multiple revisions included"
+        ],
+        [
+          "Over 25,000px",
+          "Negotiable",
+          "Quote upon request",
+          "Flexible depending on structure and requirements"
+        ]
+      ]
+    },
+    "price3": {
+      "title": "HTML Coding Price List",
+      "header": [
+        "Length",
+        "Estimated Delivery (Business Days)",
+        "Price (JPY, tax included)",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Up to 10,000px",
+          "2–3 business days",
+          "¥14,000〜",
+          "Static HTML/CSS build with smartphone optimization"
+        ],
+        [
+          "10,000–12,500px",
+          "3–4 business days",
+          "¥16,000〜",
+          "Includes light JS or CSS animations"
+        ],
+        [
+          "12,500–15,000px",
+          "4–5 business days",
+          "¥18,000〜",
+          "Structure adjustments and simple forms"
+        ],
+        [
+          "15,000–17,500px",
+          "5–6 business days",
+          "¥20,000〜",
+          "Around 10 animation spots expected"
+        ],
+        [
+          "17,500–20,000px",
+          "6–7 business days",
+          "¥22,000〜",
+          "Suitable for long projects with many sections"
+        ],
+        [
+          "20,000–25,000px",
+          "7–9 business days",
+          "¥24,000〜",
+          "Includes more revisions and complex elements"
+        ],
+        [
+          "Over 25,000px",
+          "Negotiable",
+          "Quote upon request",
+          "Covers overall design and multi-device optimization"
+        ]
+      ]
+    },
+    "price4": {
+      "title": "WordPress Coding Price List",
+      "header": [
+        "Item",
+        "Estimated Delivery (Business Days)",
+        "Price (JPY, tax included)",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "Top Page",
+          "2–4 business days",
+          "¥25,000〜",
+          "Convert static HTML into a WordPress theme, editable via dashboard"
+        ],
+        [
+          "Subpage (per page)",
+          "1–2 business days",
+          "¥9,000〜",
+          "Uses fixed-page templates"
+        ],
+        [
+          "Animation (Simple)",
+          "+1 business day",
+          "¥4,000〜",
+          "Simple fade or slide effects"
+        ],
+        [
+          "Animation (Advanced)",
+          "+2 business days〜",
+          "¥8,000〜",
+          "Complex animations using GSAP, etc."
+        ],
+        [
+          "Add Custom Post Type",
+          "+2 business days〜",
+          "¥12,000〜",
+          "Includes archive template for one custom post type"
+        ],
+        [
+          "Contact Form Integration",
+          "+1 business day",
+          "¥6,000〜",
+          "Supports Contact Form 7 or WPForms"
+        ],
+        [
+          "Responsive Design",
+          "Standard",
+          "Free",
+          "Optimization for major devices included"
+        ],
+        [
+          "Custom Field Setup",
+          "+1 business day〜",
+          "¥6,000〜",
+          "Built using ACF or CMB2"
+        ],
+        [
+          "Additional Options / Special Customization",
+          "Negotiable",
+          "Quote upon request",
+          "Adjustable depending on scope and requirements"
+        ]
+      ]
+    }
+  }
+}

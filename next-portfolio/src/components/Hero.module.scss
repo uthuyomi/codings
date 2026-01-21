@@ -1,0 +1,19 @@
+.Hero {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* 背景の半透明オーバーレイ */
+/* 下向きの矢印（三角形） */
+&:after {
+   content: "";
+    position: absolute;
+    bottom: -80px;  // セクションの下に配置
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50vw solid transparent;   // 左側の透明な三角
+    border-right: 50vw solid transparent;  // 右側の透明な三角
+    border-top: 80px solid rgba(0, 0, 0, 0.5);          // 白い三角（背景色に合わせる）
+    z-index: 2;
+}
+}
+

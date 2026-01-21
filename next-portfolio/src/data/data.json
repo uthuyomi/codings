@@ -1,0 +1,210 @@
+{
+  "ja": {
+    "about": {
+      "title": "About",
+      "image": "/images/home/profile.png",
+      "name": "安崎 海星",
+      "description": [
+        "札幌を拠点にWeb制作・フロントエンド開発を行っています。",
+        "WordPressを中心に、React・Next.jsなどのモダン環境を用いたコーディング・設計に対応可能です。UI実装に必要なAPI連携や、Pythonを用いた簡易バックエンド実装にも対応しています。"
+      ],
+      "social": [
+        {
+          "label": "X",
+          "url": "https://x.com/uthuyomi",
+          "img": "/images/home/social/x.png"
+        },
+        {
+          "label": "git",
+          "url": "https://github.com/uthuyomi",
+          "img": "/images/home/social/github.svg"
+        }
+      ]
+    },
+    "skills": {
+      "title": "Skill",
+      "items": [
+        {
+          "icon": "/images/skill-icon/html.png",
+          "title": "HTML",
+          "description": "セマンティックなマークアップを意識し、正確でアクセシブルな構造を設計します。"
+        },
+        {
+          "icon": "/images/skill-icon/css.png",
+          "title": "CSS",
+          "description": "レスポンシブ対応・アニメーション・モダンなデザイン再現を意識した実装を行います。"
+        },
+        {
+          "icon": "/images/skill-icon/js.png",
+          "title": "JavaScript",
+          "description": "ユーザー操作に応じた動的UIやフォーム処理など、実務で必要なインタラクションを実装します。"
+        },
+        {
+          "icon": "/images/skill-icon/react.png",
+          "title": "React.js",
+          "description": "コンポーネント設計を意識し、状態管理を整理したUI実装を行います。"
+        },
+        {
+          "icon": "/images/skill-icon/next.png",
+          "title": "Next.js",
+          "description": "静的生成やSSRを活用し、パフォーマンスとSEOを考慮したサイトを構築します。"
+        },
+        {
+          "icon": "/images/skill-icon/typescript.png",
+          "title": "TypeScript",
+          "description": "型安全な実装を通じて、保守性の高いフロントエンドを構築します。"
+        },
+        {
+          "icon": "/images/skill-icon/php.png",
+          "title": "PHP",
+          "description": "WordPressテーマ制作やCMSまわりのロジック実装に対応します。"
+        },
+        {
+          "icon": "/images/skill-icon/wordpress.png",
+          "title": "WordPress",
+          "description": "企業サイト・メディアサイトなど、更新性と拡張性を意識した構成を制作します。"
+        },
+        {
+          "icon": "/images/skill-icon/python.png",
+          "title": "Python",
+          "description": "API開発やデータ処理、自動化スクリプトの実装に対応します。"
+        },
+        {
+          "icon": "/images/home/social/github.svg",
+          "title": "Git",
+          "description": "履歴を意識した運用や、ロールバックを前提とした開発を行います。"
+        }
+
+
+      ]
+    },
+    "service": {
+      "title": "Service",
+      "items": [
+        {
+          "title": "Web制作",
+          "image": "/images/home/card01.png",
+          "description": "デザインカンプをもとに、正確なコーディングとUI実装を行います。"
+        },
+        {
+          "title": "WordPress構築",
+          "image": "/images/home/card02.png",
+          "description": "オリジナルテーマ制作、Gutenberg対応、既存サイトの移行・保守。"
+        },
+        {
+          "title": "フロントエンド実装・API連携",
+          "image": "/images/home/card03.png",
+          "description": "UI実装に必要なAPI連携やデータ取得処理を含めたフロントエンド構築。"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "form": {
+        "name": "お名前",
+        "furigana": "フリガナ",
+        "email": "メールアドレス",
+        "message": "お問い合わせ内容",
+        "submit": "送信する"
+      }
+    }
+  },
+  "en": {
+    "about": {
+      "title": "About",
+      "image": "/images/home/profile.png",
+      "name": "Kaisei Yasuzaki",
+      "description": [
+        "I am a Sapporo-based front-end developer specializing in web development.",
+        "I work primarily with WordPress, React, and Next.js, and also handle API integration and lightweight backend implementation using Python to support UI functionality."
+      ],
+      "social": [
+        {
+          "label": "X",
+          "url": "https://x.com/uthuyomi",
+          "img": "/images/home/social/x.png"
+        },
+        {
+          "label": "git",
+          "url": "https://github.com/uthuyomi",
+          "img": "/images/home/social/github.svg"
+        }
+      ]
+    },
+    "skills": {
+      "title": "Skill",
+      "items": [
+        {
+          "icon": "/images/skill-icon/html.png",
+          "title": "HTML",
+          "description": "Designs semantic and accessible markup with clear structure."
+        },
+        {
+          "icon": "/images/skill-icon/css.png",
+          "title": "CSS",
+          "description": "Implements responsive layouts and modern UI styling."
+        },
+        {
+          "icon": "/images/skill-icon/js.png",
+          "title": "JavaScript",
+          "description": "Builds interactive UI behavior based on user actions."
+        },
+        {
+          "icon": "/images/skill-icon/react.png",
+          "title": "React.js",
+          "description": "Develops component-based UIs with clear state management."
+        },
+        {
+          "icon": "/images/skill-icon/next.png",
+          "title": "Next.js",
+          "description": "Uses static generation and SSR to improve performance and SEO."
+        },
+        {
+          "icon": "/images/skill-icon/typescript.png",
+          "title": "TypeScript",
+          "description": "Ensures maintainable and type-safe front-end implementations."
+        },
+        {
+          "icon": "/images/skill-icon/php.png",
+          "title": "PHP",
+          "description": "Handles CMS-related logic and WordPress theme development."
+        },
+        {
+          "icon": "/images/skill-icon/wordpress.png",
+          "title": "WordPress",
+          "description": "Builds flexible and maintainable CMS-based websites."
+        }
+      ]
+    },
+    "service": {
+      "title": "Service",
+      "items": [
+        {
+          "title": "Web Development",
+          "image": "/images/home/card01.png",
+          "description": "Accurate UI implementation based on provided designs."
+        },
+        {
+          "title": "WordPress Development",
+          "image": "/images/home/card02.png",
+          "description": "Custom theme development, Gutenberg support, and maintenance."
+        },
+        {
+          "title": "Frontend Implementation & API Integration",
+          "image": "/images/home/card03.png",
+          "description": "Front-end development with necessary API integration to support UI behavior."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "form": {
+        "name": "Name",
+        "furigana": "Name (Kana)",
+        "email": "Email Address",
+        "message": "Message",
+        "submit": "Send"
+      }
+    }
+  }
+}

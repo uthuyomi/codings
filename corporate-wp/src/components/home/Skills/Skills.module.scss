@@ -1,0 +1,91 @@
+.Skill {
+  max-width: 1200px;
+  padding: 0 30px;
+  margin: 150px auto 100px;
+
+  h2 {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .Slider_wrapper {
+    position: relative;
+    padding: 0 40px;
+    margin-bottom: 40px;
+    overflow: visible;
+    :global(.swiper-button-prev) {
+      left: 0; // ← 外側に出す
+      top: 50%;
+      color: #fff;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    :global(.swiper-button-next) {
+      right: 0;
+      top: 50%;
+      color: #fff;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    :global(.swiper-pagination) {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+    :global(.swiper-pagination-bullet) {
+      background: #fff !important; // ← ドットの色を白に
+      opacity: 0.5;
+    }
+
+    :global(.swiper-pagination-bullet-active) {
+      background: #fff !important; // ← アクティブなドットも白に
+      opacity: 1;
+    }
+
+    .SkillSlider {
+      position: relative;
+      gap: 30px;
+      * p,
+      h3 {
+        color: #000000;
+        word-break: break-word;
+        overflow-wrap: break-word;
+      }
+
+      .SkillSliderItem {
+        width: 100%;
+        background-color: #ffffff;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        .img {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 16/9;
+          img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .text {
+          padding: 30px;
+          p {
+          }
+          h3 {
+          }
+          div.Level_img {
+            img {
+            }
+            p {
+            }
+          }
+        }
+      }
+    }
+  }
+}

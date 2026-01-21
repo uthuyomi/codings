@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+## 🎨 React ポートフォリオサイト README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 📝 概要
 
-## Available Scripts
+このプロジェクトは、React.js と module.scss を使用して構築したポートフォリオサイトです。
+デザインデータをもとに、静的LPやWordPress連携サイトなど複数の制作実績を一元的に閲覧できる構成としています。
 
-In the project directory, you can run:
+### 🧩 使用技術
 
-### `npm start`
+* **React.js** — コンポーネント構成によるモジュール化と再利用性の確保。
+* **module.scss** — コンポーネント単位でのスコープ付きスタイル管理。
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 📂 ディレクトリ構成（主要部分）
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+src/
+├── index.css  
+├── index.js  
+├── Main.js  
+├── siteData.json  
+├── ThemeContext.js  
 
-### `npm test`
+├── assets/  
+│   ├── bottom-arrow.png  
+│   ├── pc-back.png  
+│   ├── sp-back.png  
+│   ├── top.jpg  
+│   ├── button/  
+│   │   ├── button-dark.png  
+│   │   └── button-light.png  
+│   └── gallery-img/  
+│       ├── inner-img00-pc.png ～ inner-img08-sp.png  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+├── Footer/  
+│   └── Footer.js  
 
-### `npm run build`
+├── Gallery/  
+│   ├── Gallery.js  
+│   ├── GalleryList.js  
+│   ├── GalleryListItem.js  
+│   ├── GalleryListItemImg.js  
+│   └── GalleryListText.js  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+├── Hero/  
+│   ├── Header.js  
+│   ├── Hero.js  
+│   ├── Nav.js  
+│   ├── Visual.js  
+│   └── Visual/  
+│       └── VisualHeading.js  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+├── hooks/  
+│   └── useScrollTrigger.js  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+└── scss/  
+    ├── Footer/Footer.module.scss  
+    ├── Gallery/Gallery.module.scss  
+    └── hero/Hero.module.scss  
+```
 
-### `npm run eject`
+### 💡 構成意図
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* **Gallery/** ：ポートフォリオ作品群の一覧表示とアニメーション制御を担当。
+* **Hero/** ：サイト上部のメインビジュアル・ナビゲーション領域。
+* **scss/** ：各セクションごとのモジュール化スタイル管理。
+* **assets/** ：LP画像、ボタン、背景素材を格納。
+* **hooks/** ：React のカスタムフックとしてスクロール連動アニメーションを制御。
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 🚀 実行方法
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm install
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+ブラウザで `http://localhost:3000` を開くとローカル環境で動作確認できます。
 
-## Learn More
+### 🌐 デプロイ
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Vercel や GitHub Pages など静的ホスティングに対応しています。
