@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=M+PLUS+1p:wght@300;400;500&display=swap");
-@import "tailwindcss";
+
+/* Tailwind v4 (Next.js 14 安定対応) */
+@tailwind utilities;
 
 /* =========================================================
   基本カラー設定（ライト・ダーク対応）
@@ -8,9 +10,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Outfit", "M PLUS 1p", sans-serif !important;
+
+  --font-sans: "Outfit", "M PLUS 1p", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,14 +27,19 @@
 /* =========================================================
   グローバルスタイル
 ========================================================= */
+
 html,
 body {
   background: var(--color-background);
   color: var(--color-foreground);
+
   font-family: var(--font-sans);
   font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 1.8;
+
+  margin: 0;
+  padding: 0;
 }
 
 h1,
