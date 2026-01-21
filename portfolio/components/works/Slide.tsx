@@ -9,8 +9,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-import pcOuter from "../../../public/images/works/pc-back.png";
-import spOuter from "../../../public/images/works/sp-back.png";
+import pcOuter from "@/public/images/works/pc-back.png";
+import spOuter from "@/public/images/works/sp-back.png";
 
 type SlideItem = {
   pcimg: string;
