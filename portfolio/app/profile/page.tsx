@@ -1,6 +1,5 @@
 "use client";
 import React, { useMemo, useState } from "react";
-import Particle from "@/components/common/Particles";
 import Header from "@/components/common/Header";
 import profileData from "@/data/profile.json";
 import Image from "next/image";
@@ -60,7 +59,6 @@ const Page = ({ lang = "ja" }: { lang?: Lang }) => {
   return (
     <>
       <Header onLangChange={setCurrentLang} />
-      <Particle />
 
       <main className="relative z-20 pt-32 px-6 text-gray-200">
         {/* ========== Hero ========== */}
