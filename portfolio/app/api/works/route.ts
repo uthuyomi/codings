@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
+/* =====================================================
+   GET /api/works
+   公開用一覧取得（lang対応）
+===================================================== */
 export async function GET(request: Request) {
   const supabase = await createServerSupabaseClient();
 
@@ -17,7 +21,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  // lang に応じて view 用に整形
+  // lang に応じて view 用に整形（DB構造そのまま）
   const works = data.map((work) => ({
     id: work.id,
     title: work.title?.[lang] ?? "",
@@ -33,17 +37,27 @@ export async function GET(request: Request) {
   return NextResponse.json(works);
 }
 
+/* =====================================================
+   POST /api/works
+   新規作成（DB構造準拠）
+===================================================== */
 export async function POST(request: Request) {
-  const supabase = await createServerSupabaseClient(); // ★ await
+  const supabase = await createServerSupabaseClient();
   const body = await request.json();
 
   const { error } = await supabase.from("works").insert({
-    title: { ja: body.title_ja, en: body.title_en },
-    description: { ja: body.description_ja, en: body.description_en },
+    title: {
+      ja: body.title?.ja ?? "",
+      en: body.title?.en ?? "",
+    },
+    description: {
+      ja: body.description?.ja ?? "",
+      en: body.description?.en ?? "",
+    },
     pcimg: body.pcimg,
     spimg: body.spimg,
     link: body.link,
-    github: body.github || null,
+    github: body.github ?? null,
     skill: body.skill,
     is_published: body.is_published,
   });

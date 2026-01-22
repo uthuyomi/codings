@@ -1,60 +1,70 @@
 import { NextResponse } from "next/server";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
-type Params = {
-  params: {
-    id: string;
-  };
-};
+/* =========================
+   Params (Next.js 15 対応)
+========================= */
+type Params = Promise<{
+  id: string;
+}>;
 
-/* =====================================================
+/* =========================
    GET /api/works/:id
-   編集画面用：単一データ取得
-===================================================== */
-export async function GET(_request: Request, { params }: Params) {
+========================= */
+export async function GET(_request: Request, { params }: { params: Params }) {
+  const { id } = await params; // ★ 必須
   const supabase = await createServerSupabaseClient();
 
   const { data, error } = await supabase
     .from("works")
-    .select("*")
-    .eq("id", params.id)
+    .select(
+      `
+      id,
+      title,
+      description,
+      pcimg,
+      spimg,
+      link,
+      github,
+      skill,
+      is_published
+    `,
+    )
+    .eq("id", id)
     .single();
 
   if (error || !data) {
-    return NextResponse.json({ error: "Work not found" }, { status: 404 });
+    return NextResponse.json(
+      { error: "Work not found", detail: error?.message },
+      { status: 404 },
+    );
   }
 
   return NextResponse.json(data);
 }
 
-/* =====================================================
+/* =========================
    PUT /api/works/:id
-   編集保存
-===================================================== */
-export async function PUT(request: Request, { params }: Params) {
+========================= */
+export async function PUT(request: Request, { params }: { params: Params }) {
+  const { id } = await params; // ★ 必須
   const supabase = await createServerSupabaseClient();
   const body = await request.json();
 
   const { error } = await supabase
     .from("works")
     .update({
-      title: {
-        ja: body.title_ja,
-        en: body.title_en,
-      },
-      description: {
-        ja: body.description_ja,
-        en: body.description_en,
-      },
+      title: body.title,
+      description: body.description,
       pcimg: body.pcimg,
       spimg: body.spimg,
       link: body.link,
-      github: body.github || null,
+      github: body.github ?? null,
       skill: body.skill,
       is_published: body.is_published,
       updated_at: new Date().toISOString(),
     })
-    .eq("id", params.id);
+    .eq("id", id);
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
@@ -63,14 +73,17 @@ export async function PUT(request: Request, { params }: Params) {
   return NextResponse.json({ success: true });
 }
 
-/* =====================================================
+/* =========================
    DELETE /api/works/:id
-   削除
-===================================================== */
-export async function DELETE(_request: Request, { params }: Params) {
+========================= */
+export async function DELETE(
+  _request: Request,
+  { params }: { params: Params },
+) {
+  const { id } = await params; // ★ 必須
   const supabase = await createServerSupabaseClient();
 
-  const { error } = await supabase.from("works").delete().eq("id", params.id);
+  const { error } = await supabase.from("works").delete().eq("id", id);
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });

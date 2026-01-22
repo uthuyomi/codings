@@ -8,26 +8,33 @@ import { useState } from "react";
 ========= */
 
 type LangBlock = {
-  title: string;
-  description: string;
+  ja: string;
+  en: string;
 };
 
 type WorkFormData = {
   id?: string;
-  slug: string;
-  is_published: boolean;
-  ja: LangBlock;
-  en: LangBlock;
+  title: LangBlock;
+  description: LangBlock;
   pcimg: string;
   spimg: string;
   link: string;
-  github: string; // ★ フォーム内部では string 固定
+  github: string; // フォーム内部では string 固定
   skill: string[];
+  is_published: boolean;
 };
 
 type Props = {
-  initialData?: Partial<Omit<WorkFormData, "github">> & {
-    github?: string | null; // ★ 受け取り側だけ null 許容
+  initialData?: {
+    id?: string;
+    title?: LangBlock;
+    description?: LangBlock;
+    pcimg?: string;
+    spimg?: string;
+    link?: string;
+    github?: string | null;
+    skill?: string[];
+    is_published?: boolean;
   };
 };
 
@@ -40,23 +47,20 @@ export default function WorkForm({ initialData }: Props) {
   const isEdit = Boolean(initialData?.id);
 
   const [form, setForm] = useState<WorkFormData>({
-    slug: initialData?.slug ?? "",
-    is_published: initialData?.is_published ?? false,
-
-    ja: {
-      title: initialData?.ja?.title ?? "",
-      description: initialData?.ja?.description ?? "",
+    title: {
+      ja: initialData?.title?.ja ?? "",
+      en: initialData?.title?.en ?? "",
     },
-    en: {
-      title: initialData?.en?.title ?? "",
-      description: initialData?.en?.description ?? "",
+    description: {
+      ja: initialData?.description?.ja ?? "",
+      en: initialData?.description?.en ?? "",
     },
-
     pcimg: initialData?.pcimg ?? "",
     spimg: initialData?.spimg ?? "",
     link: initialData?.link ?? "",
-    github: initialData?.github ?? "", // ★ null → ""
+    github: initialData?.github ?? "", // null → ""
     skill: initialData?.skill ?? [],
+    is_published: initialData?.is_published ?? false,
   });
 
   return (
@@ -70,7 +74,7 @@ export default function WorkForm({ initialData }: Props) {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             ...form,
-            github: form.github || null, // ★ 送信時だけ null に戻す
+            github: form.github || null, // 送信時のみ null 許容
           }),
         });
 
@@ -78,16 +82,9 @@ export default function WorkForm({ initialData }: Props) {
         router.refresh();
       }}
     >
-      {/* ========= 基本 ========= */}
+      {/* ========= 公開設定 ========= */}
       <section className="space-y-4">
-        <h2 className="text-lg font-semibold">基本設定</h2>
-
-        <input
-          className="w-full rounded bg-slate-800 border border-slate-700 px-4 py-2"
-          placeholder="スライドID（例: slide01）"
-          value={form.slug}
-          onChange={(e) => setForm({ ...form, slug: e.target.value })}
-        />
+        <h2 className="text-lg font-semibold">公開設定</h2>
 
         <label className="flex items-center gap-2 text-sm">
           <input
@@ -108,9 +105,12 @@ export default function WorkForm({ initialData }: Props) {
         <input
           className="w-full rounded bg-slate-800 border border-slate-700 px-4 py-2"
           placeholder="タイトル（JA）"
-          value={form.ja.title}
+          value={form.title.ja}
           onChange={(e) =>
-            setForm({ ...form, ja: { ...form.ja, title: e.target.value } })
+            setForm({
+              ...form,
+              title: { ...form.title, ja: e.target.value },
+            })
           }
         />
 
@@ -118,11 +118,11 @@ export default function WorkForm({ initialData }: Props) {
           rows={4}
           className="w-full rounded bg-slate-800 border border-slate-700 px-4 py-2"
           placeholder="説明（JA）"
-          value={form.ja.description}
+          value={form.description.ja}
           onChange={(e) =>
             setForm({
               ...form,
-              ja: { ...form.ja, description: e.target.value },
+              description: { ...form.description, ja: e.target.value },
             })
           }
         />
@@ -135,9 +135,12 @@ export default function WorkForm({ initialData }: Props) {
         <input
           className="w-full rounded bg-slate-800 border border-slate-700 px-4 py-2"
           placeholder="Title (EN)"
-          value={form.en.title}
+          value={form.title.en}
           onChange={(e) =>
-            setForm({ ...form, en: { ...form.en, title: e.target.value } })
+            setForm({
+              ...form,
+              title: { ...form.title, en: e.target.value },
+            })
           }
         />
 
@@ -145,11 +148,11 @@ export default function WorkForm({ initialData }: Props) {
           rows={4}
           className="w-full rounded bg-slate-800 border border-slate-700 px-4 py-2"
           placeholder="Description (EN)"
-          value={form.en.description}
+          value={form.description.en}
           onChange={(e) =>
             setForm({
               ...form,
-              en: { ...form.en, description: e.target.value },
+              description: { ...form.description, en: e.target.value },
             })
           }
         />
