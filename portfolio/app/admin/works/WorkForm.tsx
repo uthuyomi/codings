@@ -1,73 +1,239 @@
-// app/admin/works/page.tsx
-import Link from "next/link";
-import { WorkView } from "@/types/work";
-import DeleteButton from "./DeleteButton";
+"use client";
 
-async function getWorks(): Promise<WorkView[]> {
-  const res = await fetch("http://localhost:3000/api/works?lang=ja", {
-    cache: "no-store",
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+
+/* =========
+   Types
+========= */
+
+type LangBlock = {
+  title: string;
+  description: string;
+};
+
+type WorkFormData = {
+  id?: string;
+  slug: string;
+  is_published: boolean;
+  ja: LangBlock;
+  en: LangBlock;
+  pcimg: string;
+  spimg: string;
+  link: string;
+  github: string; // ★ フォーム内部では string 固定
+  skill: string[];
+};
+
+type Props = {
+  initialData?: Partial<Omit<WorkFormData, "github">> & {
+    github?: string | null; // ★ 受け取り側だけ null 許容
+  };
+};
+
+/* =========
+   Component
+========= */
+
+export default function WorkForm({ initialData }: Props) {
+  const router = useRouter();
+  const isEdit = Boolean(initialData?.id);
+
+  const [form, setForm] = useState<WorkFormData>({
+    slug: initialData?.slug ?? "",
+    is_published: initialData?.is_published ?? false,
+
+    ja: {
+      title: initialData?.ja?.title ?? "",
+      description: initialData?.ja?.description ?? "",
+    },
+    en: {
+      title: initialData?.en?.title ?? "",
+      description: initialData?.en?.description ?? "",
+    },
+
+    pcimg: initialData?.pcimg ?? "",
+    spimg: initialData?.spimg ?? "",
+    link: initialData?.link ?? "",
+    github: initialData?.github ?? "", // ★ null → ""
+    skill: initialData?.skill ?? [],
   });
-  return res.json();
-}
-
-export default async function AdminWorksPage() {
-  const works = await getWorks();
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-10">
-      {/* Header */}
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h1 className="text-2xl font-semibold text-slate-100">Works 管理</h1>
-          <p className="text-sm text-slate-400 mt-1">
-            登録済みの制作実績を管理します
-          </p>
-        </div>
+    <form
+      className="space-y-10 max-w-3xl"
+      onSubmit={async (e) => {
+        e.preventDefault();
 
-        <Link
-          href="/admin/works/new"
-          className="inline-flex items-center gap-2 rounded-lg bg-teal-500 px-5 py-2.5 text-sm font-medium text-slate-900 hover:bg-teal-400 transition"
-        >
-          ＋ 新規追加
-        </Link>
-      </div>
+        await fetch(isEdit ? `/api/works/${initialData!.id}` : "/api/works", {
+          method: isEdit ? "PUT" : "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ...form,
+            github: form.github || null, // ★ 送信時だけ null に戻す
+          }),
+        });
 
-      {/* List */}
-      <ul className="space-y-4">
-        {works.map((work: WorkView) => (
-          <li
-            key={work.id}
-            className="group rounded-xl border border-slate-700 bg-slate-900/60 p-5 flex items-center justify-between hover:border-teal-400/50 transition"
-          >
-            {/* Left */}
-            <div className="flex flex-col">
-              <span className="text-base font-medium text-slate-100">
-                {work.title}
-              </span>
-              <span className="text-xs text-slate-400 mt-1">ID: {work.id}</span>
-            </div>
+        router.push("/admin/works");
+        router.refresh();
+      }}
+    >
+      {/* ========= 基本 ========= */}
+      <section className="space-y-4">
+        <h2 className="text-lg font-semibold">基本設定</h2>
 
-            {/* Actions */}
-            <div className="flex items-center gap-4">
-              <Link
-                href={`/admin/works/${work.id}`}
-                className="text-sm text-teal-400 hover:text-teal-300 transition"
-              >
-                編集
-              </Link>
+        <input
+          className="w-full rounded bg-slate-800 border border-slate-700 px-4 py-2"
+          placeholder="スライドID（例: slide01）"
+          value={form.slug}
+          onChange={(e) => setForm({ ...form, slug: e.target.value })}
+        />
 
-              <DeleteButton workId={work.id} />
-            </div>
-          </li>
-        ))}
-      </ul>
+        <label className="flex items-center gap-2 text-sm">
+          <input
+            type="checkbox"
+            checked={form.is_published}
+            onChange={(e) =>
+              setForm({ ...form, is_published: e.target.checked })
+            }
+          />
+          公開する
+        </label>
+      </section>
 
-      {/* Empty */}
-      {works.length === 0 && (
-        <div className="mt-16 text-center text-slate-400">
-          登録されている Works はありません
-        </div>
-      )}
-    </div>
+      {/* ========= 日本語 ========= */}
+      <section className="space-y-4">
+        <h2 className="text-lg font-semibold">日本語</h2>
+
+        <input
+          className="w-full rounded bg-slate-800 border border-slate-700 px-4 py-2"
+          placeholder="タイトル（JA）"
+          value={form.ja.title}
+          onChange={(e) =>
+            setForm({ ...form, ja: { ...form.ja, title: e.target.value } })
+          }
+        />
+
+        <textarea
+          rows={4}
+          className="w-full rounded bg-slate-800 border border-slate-700 px-4 py-2"
+          placeholder="説明（JA）"
+          value={form.ja.description}
+          onChange={(e) =>
+            setForm({
+              ...form,
+              ja: { ...form.ja, description: e.target.value },
+            })
+          }
+        />
+      </section>
+
+      {/* ========= English ========= */}
+      <section className="space-y-4">
+        <h2 className="text-lg font-semibold">English</h2>
+
+        <input
+          className="w-full rounded bg-slate-800 border border-slate-700 px-4 py-2"
+          placeholder="Title (EN)"
+          value={form.en.title}
+          onChange={(e) =>
+            setForm({ ...form, en: { ...form.en, title: e.target.value } })
+          }
+        />
+
+        <textarea
+          rows={4}
+          className="w-full rounded bg-slate-800 border border-slate-700 px-4 py-2"
+          placeholder="Description (EN)"
+          value={form.en.description}
+          onChange={(e) =>
+            setForm({
+              ...form,
+              en: { ...form.en, description: e.target.value },
+            })
+          }
+        />
+      </section>
+
+      {/* ========= メディア ========= */}
+      <section className="space-y-4">
+        <h2 className="text-lg font-semibold">メディア</h2>
+
+        <input
+          className="w-full rounded bg-slate-800 border border-slate-700 px-4 py-2"
+          placeholder="PC画像パス"
+          value={form.pcimg}
+          onChange={(e) => setForm({ ...form, pcimg: e.target.value })}
+        />
+
+        <input
+          className="w-full rounded bg-slate-800 border border-slate-700 px-4 py-2"
+          placeholder="SP画像パス"
+          value={form.spimg}
+          onChange={(e) => setForm({ ...form, spimg: e.target.value })}
+        />
+      </section>
+
+      {/* ========= Links ========= */}
+      <section className="space-y-4">
+        <h2 className="text-lg font-semibold">リンク</h2>
+
+        <input
+          className="w-full rounded bg-slate-800 border border-slate-700 px-4 py-2"
+          placeholder="デモURL"
+          value={form.link}
+          onChange={(e) => setForm({ ...form, link: e.target.value })}
+        />
+
+        <input
+          className="w-full rounded bg-slate-800 border border-slate-700 px-4 py-2"
+          placeholder="GitHub URL"
+          value={form.github}
+          onChange={(e) => setForm({ ...form, github: e.target.value })}
+        />
+      </section>
+
+      {/* ========= Skills ========= */}
+      <section className="space-y-4">
+        <h2 className="text-lg font-semibold">Skills</h2>
+
+        <input
+          className="w-full rounded bg-slate-800 border border-slate-700 px-4 py-2"
+          placeholder="スキル（Enterで追加）"
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              const value = (e.target as HTMLInputElement).value.trim();
+              if (!value) return;
+
+              setForm({
+                ...form,
+                skill: [...form.skill, value],
+              });
+
+              (e.target as HTMLInputElement).value = "";
+            }
+          }}
+        />
+
+        <ul className="flex flex-wrap gap-2">
+          {form.skill.map((s, i) => (
+            <li
+              key={`${s}-${i}`}
+              className="px-3 py-1 text-sm rounded-full bg-slate-700"
+            >
+              {s}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <button
+        type="submit"
+        className="rounded bg-teal-500 px-6 py-3 font-medium text-slate-900 hover:bg-teal-400 transition"
+      >
+        {isEdit ? "更新する" : "登録する"}
+      </button>
+    </form>
   );
 }
