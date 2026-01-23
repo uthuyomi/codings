@@ -1,3 +1,4 @@
+//api/works/[id]/route.ts
 import { NextResponse } from "next/server";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
