@@ -2,6 +2,8 @@
 import WorkForm from "../WorkForm";
 import { WorkRecord } from "@/types/work";
 
+export const dynamic = "force-dynamic";
+
 /**
  * Works を1件取得
  * headers() は使わない
@@ -21,12 +23,12 @@ async function getWork(id: string): Promise<WorkRecord> {
   return res.json();
 }
 
-export default async function EditWorkPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const { id } = params;
+export default async function EditWorkPage(props: { params: { id?: string } }) {
+  const id = props.params?.id;
+
+  if (!id) {
+    throw new Error("Work ID is undefined");
+  }
 
   const work = await getWork(id);
 
