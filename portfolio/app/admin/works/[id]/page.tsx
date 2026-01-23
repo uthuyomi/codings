@@ -21,9 +21,15 @@ async function getWork(id: string): Promise<WorkRecord> {
 export default async function EditWorkPage({
   params,
 }: {
-  params: { id: string };
+  // 🔴 ここが重要：Promise
+  params: Promise<{ id: string }>;
 }) {
-  const { id } = params;
+  // 🔴 await が必須
+  const { id } = await params;
+
+  if (!id) {
+    throw new Error("Work ID is undefined");
+  }
 
   const work = await getWork(id);
 
