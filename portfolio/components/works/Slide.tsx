@@ -11,19 +11,10 @@ import React from "react";
 
 import pcOuter from "@/public/images/works/pc-back.png";
 import spOuter from "@/public/images/works/sp-back.png";
-
-type SlideItem = {
-  pcimg: string;
-  spimg: string;
-  link: string;
-  github?: string;
-  title: string;
-  description: string;
-  skill: string[];
-};
+import { WorkView } from "@/types/work"
 
 type SlideProps = {
-  data: SlideItem;
+  data: WorkView;
 };
 
 const Slide = ({ data }: SlideProps) => {
