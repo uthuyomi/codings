@@ -2,11 +2,27 @@
 import Link from "next/link";
 import { WorkView } from "@/types/work";
 import DeleteButton from "./DeleteButton";
+import { headers } from "next/headers";
 
 async function getWorks(): Promise<WorkView[]> {
-  const res = await fetch("/api/works?lang=ja", {
+  // ✅ headers() は await
+  const headersList = await headers();
+  const host = headersList.get("host");
+
+  if (!host) {
+    throw new Error("Host header is missing");
+  }
+
+  const protocol = process.env.NODE_ENV === "development" ? "http" : "https";
+
+  const res = await fetch(`${protocol}://${host}/api/works?lang=ja`, {
     cache: "no-store",
   });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch works");
+  }
+
   return res.json();
 }
 
