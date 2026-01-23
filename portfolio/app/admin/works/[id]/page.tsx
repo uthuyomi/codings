@@ -1,20 +1,16 @@
 // app/admin/works/[id]/page.tsx
 import WorkForm from "../WorkForm";
 import { WorkRecord } from "@/types/work";
-import { headers } from "next/headers";
 
+/**
+ * Works を1件取得
+ * headers() は使わない
+ * 環境変数ベースで API を叩く
+ */
 async function getWork(id: string): Promise<WorkRecord> {
-  // ✅ headers() は await
-  const headersList = await headers();
-  const host = headersList.get("host");
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
-  if (!host) {
-    throw new Error("Host header is missing");
-  }
-
-  const protocol = process.env.NODE_ENV === "development" ? "http" : "https";
-
-  const res = await fetch(`${protocol}://${host}/api/works/${id}`, {
+  const res = await fetch(`${baseUrl}/api/works/${id}`, {
     cache: "no-store",
   });
 
@@ -30,7 +26,6 @@ export default async function EditWorkPage({
 }: {
   params: { id: string };
 }) {
-  // ✅ params は Promise じゃない
   const { id } = params;
 
   const work = await getWork(id);
