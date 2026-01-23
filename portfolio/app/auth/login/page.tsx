@@ -6,13 +6,12 @@ import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const router = useRouter();
-  const supabase = createSupabaseBrowserClient(); // ★ ここ重要
+  const supabase = createSupabaseBrowserClient();
 
   useEffect(() => {
-    // すでにログイン済みなら admin へ
-    supabase.auth.getUser().then((res) => {
-      if (res.data.user) {
-        router.replace("/admin");
+    supabase.auth.getUser().then(({ data }) => {
+      if (data.user) {
+        router.replace("/admin/works");
       }
     });
   }, [router, supabase]);
@@ -21,7 +20,6 @@ export default function LoginPage() {
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        // 必ず callback に戻す
         redirectTo: `${location.origin}/auth/callback`,
       },
     });

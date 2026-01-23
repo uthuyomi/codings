@@ -25,7 +25,9 @@ export default function RootLayout({
 
   // /admin 配下では Particles を表示しない
   const showParticles =
-    !pathname.startsWith("/admin") && !pathname.startsWith("/auth");
+    !pathname.startsWith("/admin") &&
+    !pathname.startsWith("/auth") &&
+    !pathname.startsWith("/login");
   
   return (
     <html lang="en">
