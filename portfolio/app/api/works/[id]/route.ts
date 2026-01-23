@@ -1,15 +1,16 @@
 // app/api/works/[id]/route.ts
 import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 /* =========================
    GET /api/works/:id
 ========================= */
 export async function GET(
-  _request: Request,
-  { params }: { params: { id: string } },
+  _request: NextRequest,
+  context: { params: Promise<{ id: string }> },
 ) {
-  const { id } = params;
+  const { id } = await context.params;
 
   if (!id) {
     return NextResponse.json({ error: "Work ID is missing" }, { status: 400 });
@@ -49,10 +50,10 @@ export async function GET(
    PUT /api/works/:id
 ========================= */
 export async function PUT(
-  request: Request,
-  { params }: { params: { id: string } },
+  request: NextRequest,
+  context: { params: Promise<{ id: string }> },
 ) {
-  const { id } = params;
+  const { id } = await context.params;
   const body = await request.json();
   const supabase = await createServerSupabaseClient();
 
@@ -82,10 +83,10 @@ export async function PUT(
    DELETE /api/works/:id
 ========================= */
 export async function DELETE(
-  _request: Request,
-  { params }: { params: { id: string } },
+  _request: NextRequest,
+  context: { params: Promise<{ id: string }> },
 ) {
-  const { id } = params;
+  const { id } = await context.params;
   const supabase = await createServerSupabaseClient();
 
   const { error } = await supabase.from("works").delete().eq("id", id);
