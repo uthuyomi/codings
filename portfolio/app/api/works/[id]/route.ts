@@ -12,7 +12,7 @@ type Params = Promise<{
    GET /api/works/:id
 ========================= */
 export async function GET(_request: Request, { params }: { params: Params }) {
-  const { id } = await params; // ★ 必須
+  const { id } = await params;
   const supabase = await createServerSupabaseClient();
 
   const { data, error } = await supabase
@@ -47,7 +47,7 @@ export async function GET(_request: Request, { params }: { params: Params }) {
    PUT /api/works/:id
 ========================= */
 export async function PUT(request: Request, { params }: { params: Params }) {
-  const { id } = await params; // ★ 必須
+  const { id } = await params;
   const supabase = await createServerSupabaseClient();
   const body = await request.json();
 
@@ -80,7 +80,7 @@ export async function DELETE(
   _request: Request,
   { params }: { params: Params },
 ) {
-  const { id } = await params; // ★ 必須
+  const { id } = await params;
   const supabase = await createServerSupabaseClient();
 
   const { error } = await supabase.from("works").delete().eq("id", id);
