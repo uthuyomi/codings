@@ -4,19 +4,15 @@ import { WorkRecord } from "@/types/work";
 
 export const dynamic = "force-dynamic";
 
-/**
- * Works を1件取得
- * 環境変数ベースで API を叩く
- */
 async function getWork(id: string): Promise<WorkRecord> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
   const res = await fetch(`${baseUrl}/api/works/${id}`, {
     cache: "no-store",
   });
 
   if (!res.ok) {
-    throw new Error("Failed to fetch work");
+    throw new Error(`Failed to fetch work: ${id}`);
   }
 
   return res.json();
