@@ -2,7 +2,7 @@ import WorkForm from "../WorkForm";
 import { WorkRecord } from "@/types/work";
 
 async function getWork(id: string): Promise<WorkRecord> {
-  const res = await fetch(`http://localhost:3000/api/works/${id}`, {
+  const res = await fetch(`/api/works/${id}`, {
     cache: "no-store",
   });
 

@@ -4,7 +4,7 @@ import { WorkView } from "@/types/work";
 import DeleteButton from "./DeleteButton";
 
 async function getWorks(): Promise<WorkView[]> {
-  const res = await fetch("http://localhost:3000/api/works?lang=ja", {
+  const res = await fetch("/api/works?lang=ja", {
     cache: "no-store",
   });
   return res.json();
