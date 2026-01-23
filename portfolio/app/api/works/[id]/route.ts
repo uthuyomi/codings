@@ -1,19 +1,20 @@
-//api/works/[id]/route.ts
+// app/api/works/[id]/route.ts
 import { NextResponse } from "next/server";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 /* =========================
-   Params (Next.js 15 対応)
-========================= */
-type Params = Promise<{
-  id: string;
-}>;
-
-/* =========================
    GET /api/works/:id
 ========================= */
-export async function GET(_request: Request, { params }: { params: Params }) {
-  const { id } = await params;
+export async function GET(
+  _request: Request,
+  { params }: { params: { id: string } },
+) {
+  const { id } = params;
+
+  if (!id) {
+    return NextResponse.json({ error: "Work ID is missing" }, { status: 400 });
+  }
+
   const supabase = await createServerSupabaseClient();
 
   const { data, error } = await supabase
@@ -47,10 +48,13 @@ export async function GET(_request: Request, { params }: { params: Params }) {
 /* =========================
    PUT /api/works/:id
 ========================= */
-export async function PUT(request: Request, { params }: { params: Params }) {
-  const { id } = await params;
-  const supabase = await createServerSupabaseClient();
+export async function PUT(
+  request: Request,
+  { params }: { params: { id: string } },
+) {
+  const { id } = params;
   const body = await request.json();
+  const supabase = await createServerSupabaseClient();
 
   const { error } = await supabase
     .from("works")
@@ -79,9 +83,9 @@ export async function PUT(request: Request, { params }: { params: Params }) {
 ========================= */
 export async function DELETE(
   _request: Request,
-  { params }: { params: Params },
+  { params }: { params: { id: string } },
 ) {
-  const { id } = await params;
+  const { id } = params;
   const supabase = await createServerSupabaseClient();
 
   const { error } = await supabase.from("works").delete().eq("id", id);
