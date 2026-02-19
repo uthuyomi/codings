@@ -26,18 +26,12 @@ export async function GET(request: NextRequest) {
     supabaseAnonKey,
     {
       cookies: {
-        get(name) {
-          return request.cookies.get(name)?.value;
+        getAll() {
+          return request.cookies.getAll().map(({ name, value }) => ({ name, value }));
         },
-        set(name, value, options) {
-          response.cookies.set({ name, value, ...options });
-        },
-        remove(name, options) {
-          response.cookies.set({
-            name,
-            value: "",
-            ...options,
-            maxAge: 0,
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value, options }) => {
+            response.cookies.set({ name, value, ...options });
           });
         },
       },

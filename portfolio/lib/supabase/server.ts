@@ -18,13 +18,12 @@ export async function createServerSupabaseClient() {
     supabaseAnonKey,
     {
       cookies: {
-        get(name) {
-          return cookieStore.get(name)?.value;
+        getAll() {
+          return cookieStore.getAll().map(({ name, value }) => ({ name, value }));
         },
-        // No-op: this helper is used in Server Components and Route Handlers
-        // where we don't need token refresh to complete basic CRUD.
-        set() {},
-        remove() {},
+        // Server Components can't set response cookies.
+        // Auth flows that need setting cookies should do so in Route Handlers/Middleware.
+        setAll() {},
       },
     },
   );
