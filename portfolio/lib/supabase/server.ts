@@ -18,6 +18,7 @@ export async function createServerSupabaseClient() {
     supabaseAnonKey,
     {
       cookies: {
+        encode: "tokens-only",
         getAll() {
           return cookieStore.getAll().map(({ name, value }) => ({ name, value }));
         },

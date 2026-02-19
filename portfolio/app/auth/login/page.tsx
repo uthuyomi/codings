@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const router = useRouter();
-  const supabase = createSupabaseBrowserClient();
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -17,14 +16,14 @@ export default function LoginPage() {
       setError(null);
     }
 
+    const supabase = createSupabaseBrowserClient();
     supabase.auth.getUser().then(({ data }) => {
-      if (data.user) {
-        router.replace("/admin/works");
-      }
+      if (data.user) router.replace("/admin/works");
     });
-  }, [router, supabase]);
+  }, [router]);
 
   const loginWithGoogle = async () => {
+    const supabase = createSupabaseBrowserClient();
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {

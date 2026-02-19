@@ -20,13 +20,14 @@ export async function GET(request: NextRequest) {
   }
 
   // ✅ 最初から redirect response を作る
-  const response = NextResponse.redirect(`${origin}/admin/works`);
+  const response = NextResponse.redirect(`${origin}/admin/works`, 303);
 
   const supabase = createServerClient(
     supabaseUrl,
     supabaseAnonKey,
     {
       cookies: {
+        encode: "tokens-only",
         getAll() {
           return request.cookies.getAll().map(({ name, value }) => ({ name, value }));
         },
@@ -37,6 +38,10 @@ export async function GET(request: NextRequest) {
               name: c.name,
               valueLength: c.value.length,
               maxAge: c.options?.maxAge,
+              path: c.options?.path,
+              sameSite: c.options?.sameSite,
+              secure: (c.options as any)?.secure,
+              httpOnly: (c.options as any)?.httpOnly,
             })),
           });
           cookiesToSet.forEach(({ name, value, options }) => {

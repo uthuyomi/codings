@@ -13,6 +13,7 @@ export async function proxy(request: NextRequest) {
 
   const supabase = createServerClient(supabaseUrl, supabaseAnonKey, {
     cookies: {
+      encode: "tokens-only",
       getAll() {
         return request.cookies.getAll().map(({ name, value }) => ({ name, value }));
       },
@@ -24,6 +25,10 @@ export async function proxy(request: NextRequest) {
               name: c.name,
               valueLength: c.value.length,
               maxAge: c.options?.maxAge,
+              path: c.options?.path,
+              sameSite: c.options?.sameSite,
+              secure: (c.options as any)?.secure,
+              httpOnly: (c.options as any)?.httpOnly,
             })),
           });
         }
