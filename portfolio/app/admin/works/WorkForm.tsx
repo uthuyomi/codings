@@ -45,6 +45,7 @@ type Props = {
 export default function WorkForm({ initialData }: Props) {
   const router = useRouter();
   const isEdit = Boolean(initialData?.id);
+  const [submitting, setSubmitting] = useState(false);
 
   const [form, setForm] = useState<WorkFormData>({
     title: {
@@ -69,17 +70,30 @@ export default function WorkForm({ initialData }: Props) {
       onSubmit={async (e) => {
         e.preventDefault();
 
-        await fetch(isEdit ? `/api/works/${initialData!.id}` : "/api/works", {
-          method: isEdit ? "PUT" : "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            ...form,
-            github: form.github || null, // 送信時のみ null 許容
-          }),
-        });
+        if (submitting) return;
+        setSubmitting(true);
+        try {
+          const res = await fetch(isEdit ? `/api/works/${initialData!.id}` : "/api/works", {
+            method: isEdit ? "PUT" : "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              ...form,
+              github: form.github || null, // 送信時のみ null 許容
+            }),
+          });
 
-        router.push("/admin/works");
-        router.refresh();
+          if (!res.ok) {
+            const payload = await res.json().catch(() => null);
+            const msg = String(payload?.error ?? `Request failed (${res.status})`);
+            alert(msg);
+            return;
+          }
+
+          router.push("/admin/works");
+          router.refresh();
+        } finally {
+          setSubmitting(false);
+        }
       }}
     >
       {/* ========= 公開設定 ========= */}
@@ -233,9 +247,10 @@ export default function WorkForm({ initialData }: Props) {
 
       <button
         type="submit"
+        disabled={submitting}
         className="rounded bg-teal-500 px-6 py-3 font-medium text-slate-900 hover:bg-teal-400 transition"
       >
-        {isEdit ? "更新する" : "登録する"}
+        {submitting ? "送信中..." : isEdit ? "更新する" : "登録する"}
       </button>
     </form>
   );

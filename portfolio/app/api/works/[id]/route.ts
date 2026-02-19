@@ -57,6 +57,11 @@ export async function PUT(
   const body = await request.json();
   const supabase = await createServerSupabaseClient();
 
+  const { data: auth } = await supabase.auth.getUser();
+  if (!auth.user) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   const { error } = await supabase
     .from("works")
     .update({
@@ -88,6 +93,11 @@ export async function DELETE(
 ) {
   const { id } = await context.params;
   const supabase = await createServerSupabaseClient();
+
+  const { data: auth } = await supabase.auth.getUser();
+  if (!auth.user) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
 
   const { error } = await supabase.from("works").delete().eq("id", id);
 

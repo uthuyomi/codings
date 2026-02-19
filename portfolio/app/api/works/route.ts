@@ -10,12 +10,18 @@ export async function GET(request: Request) {
 
   const { searchParams } = new URL(request.url);
   const lang = searchParams.get("lang") ?? "ja";
+  const includeUnpublished = searchParams.get("includeUnpublished") === "1";
 
-  const { data, error } = await supabase
-    .from("works")
-    .select("*")
-    .eq("is_published", true)
-    .order("created_at", { ascending: false });
+  if (includeUnpublished) {
+    const { data: auth } = await supabase.auth.getUser();
+    if (!auth.user) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+  }
+
+  let query = supabase.from("works").select("*").order("created_at", { ascending: false });
+  if (!includeUnpublished) query = query.eq("is_published", true);
+  const { data, error } = await query;
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
@@ -44,6 +50,11 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   const supabase = await createServerSupabaseClient();
   const body = await request.json();
+
+  const { data: auth } = await supabase.auth.getUser();
+  if (!auth.user) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
 
   const { error } = await supabase.from("works").insert({
     title: {

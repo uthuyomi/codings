@@ -15,7 +15,7 @@ async function getWorks(): Promise<WorkView[]> {
 
   const protocol = process.env.NODE_ENV === "development" ? "http" : "https";
 
-  const res = await fetch(`${protocol}://${host}/api/works?lang=ja`, {
+  const res = await fetch(`${protocol}://${host}/api/works?lang=ja&includeUnpublished=1`, {
     cache: "no-store",
   });
 
