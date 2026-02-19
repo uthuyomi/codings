@@ -17,6 +17,16 @@ export async function proxy(request: NextRequest) {
         return request.cookies.getAll().map(({ name, value }) => ({ name, value }));
       },
       setAll(cookiesToSet) {
+        if (cookiesToSet.length > 0) {
+          console.log("[proxy] setAll", {
+            count: cookiesToSet.length,
+            cookies: cookiesToSet.map((c) => ({
+              name: c.name,
+              valueLength: c.value.length,
+              maxAge: c.options?.maxAge,
+            })),
+          });
+        }
         cookiesToSet.forEach(({ name, value, options }) => {
           response.cookies.set({ name, value, ...options });
         });
@@ -32,4 +42,3 @@ export async function proxy(request: NextRequest) {
 export const config = {
   matcher: ["/admin/:path*"],
 };
-

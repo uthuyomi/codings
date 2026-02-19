@@ -31,6 +31,14 @@ export async function GET(request: NextRequest) {
           return request.cookies.getAll().map(({ name, value }) => ({ name, value }));
         },
         setAll(cookiesToSet) {
+          console.log("[auth/callback] setAll", {
+            count: cookiesToSet.length,
+            cookies: cookiesToSet.map((c) => ({
+              name: c.name,
+              valueLength: c.value.length,
+              maxAge: c.options?.maxAge,
+            })),
+          });
           cookiesToSet.forEach(({ name, value, options }) => {
             response.cookies.set({ name, value, ...options });
           });
@@ -51,5 +59,6 @@ export async function GET(request: NextRequest) {
     return NextResponse.redirect(`${origin}/auth/login?error=exchange_failed`);
   }
 
+  console.log("[auth/callback] exchangeCodeForSession ok");
   return response;
 }
