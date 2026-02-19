@@ -7,7 +7,8 @@ export async function GET(request: NextRequest) {
   const code = searchParams.get("code");
 
   if (!code) {
-    return NextResponse.redirect(`${origin}/auth/login`);
+    console.error("[auth/callback] Missing code param", { url: request.url });
+    return NextResponse.redirect(`${origin}/auth/login?error=missing_code`);
   }
 
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -41,7 +42,13 @@ export async function GET(request: NextRequest) {
   const { error } = await supabase.auth.exchangeCodeForSession(code);
 
   if (error) {
-    return NextResponse.redirect(`${origin}/auth/login`);
+    console.error("[auth/callback] exchangeCodeForSession failed", {
+      message: error.message,
+      name: error.name,
+      status: (error as any).status,
+      code: (error as any).code,
+    });
+    return NextResponse.redirect(`${origin}/auth/login?error=exchange_failed`);
   }
 
   return response;
