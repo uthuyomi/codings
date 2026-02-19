@@ -2,28 +2,39 @@
 import Link from "next/link";
 import { WorkView } from "@/types/work";
 import DeleteButton from "./DeleteButton";
-import { headers } from "next/headers";
+import { redirect } from "next/navigation";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
+
+export const dynamic = "force-dynamic";
 
 async function getWorks(): Promise<WorkView[]> {
-  // ✅ headers() は await
-  const headersList = await headers();
-  const host = headersList.get("host");
+  const supabase = await createServerSupabaseClient();
 
-  if (!host) {
-    throw new Error("Host header is missing");
+  const { data: auth } = await supabase.auth.getUser();
+  if (!auth.user) {
+    redirect("/auth/login");
   }
 
-  const protocol = process.env.NODE_ENV === "development" ? "http" : "https";
+  const { data, error } = await supabase
+    .from("works")
+    .select("id,title,description,pcimg,spimg,link,github,skill")
+    .order("created_at", { ascending: false });
 
-  const res = await fetch(`${protocol}://${host}/api/works?lang=ja&includeUnpublished=1`, {
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch works");
+  if (error) {
+    throw new Error(`Failed to fetch works: ${error.message}`);
   }
 
-  return res.json();
+  const lang: "ja" = "ja";
+  return (data ?? []).map((work) => ({
+    id: work.id,
+    title: work.title?.[lang] ?? "",
+    description: work.description?.[lang] ?? "",
+    pcimg: work.pcimg,
+    spimg: work.spimg,
+    link: work.link,
+    github: work.github,
+    skill: work.skill ?? [],
+  }));
 }
 
 export default async function AdminWorksPage() {

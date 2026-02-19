@@ -1,22 +1,9 @@
 // app/admin/works/[id]/page.tsx
 import WorkForm from "../WorkForm";
-import { WorkRecord } from "@/types/work";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { notFound, redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
-
-async function getWork(id: string): Promise<WorkRecord> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-
-  const res = await fetch(`${baseUrl}/api/works/${id}`, {
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error(`Failed to fetch work: ${id}`);
-  }
-
-  return res.json();
-}
 
 export default async function EditWorkPage({
   params,
@@ -28,15 +15,30 @@ export default async function EditWorkPage({
   const { id } = await params;
 
   if (!id) {
-    throw new Error("Work ID is undefined");
+    notFound();
   }
 
-  const work = await getWork(id);
+  const supabase = await createServerSupabaseClient();
+
+  const { data: auth } = await supabase.auth.getUser();
+  if (!auth.user) {
+    redirect("/auth/login");
+  }
+
+  const { data, error } = await supabase
+    .from("works")
+    .select("id,title,description,pcimg,spimg,link,github,skill,is_published")
+    .eq("id", id)
+    .single();
+
+  if (error || !data) {
+    notFound();
+  }
 
   return (
     <div className="p-8 max-w-6xl mx-auto">
       <h1 className="text-2xl font-bold mb-8">Works 編集</h1>
-      <WorkForm initialData={work} />
+      <WorkForm initialData={data} />
     </div>
   );
 }
