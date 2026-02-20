@@ -1,50 +1,36 @@
-"use client";
+import { unstable_noStore as noStore } from "next/cache";
+import type { WorkView } from "@/types/work";
+import WorksClient from "./WorksClient";
+import { createPublicSupabaseClient } from "@/lib/supabase/service";
 
-import React, { useEffect, useState } from "react";
-import Header from "@/components/common/Header";
-import Slide from "@/components/works/Slide";
-import { WorkView } from "@/types/work";
+export const dynamic = "force-dynamic";
 
-export default function WorksPage() {
-  // 言語切り替えボタンだけ残す
-  const [currentLang, setCurrentLang] = useState<"ja" | "en">("ja");
-  const [slides, setSlides] = useState<WorkView[]>([]);
-  const [loading, setLoading] = useState(true);
+async function getWorks(lang: "ja" | "en"): Promise<WorkView[]> {
+  noStore();
 
-  useEffect(() => {
-    const fetchWorks = async () => {
-      setLoading(true);
+  const supabase = createPublicSupabaseClient();
+  const { data, error } = await supabase
+    .from("works")
+    .select("*")
+    .eq("is_published", true)
+    .order("created_at", { ascending: false });
 
-      const res = await fetch(`/api/works?lang=${currentLang}`, {
-        cache: "no-store",
-      });
+  if (error) throw new Error(error.message);
 
-      if (!res.ok) {
-        console.error("Failed to fetch works");
-        setSlides([]);
-        setLoading(false);
-        return;
-      }
+  return (data ?? []).map((work) => ({
+    id: work.id,
+    title: work.title?.[lang] ?? "",
+    description: work.description?.[lang] ?? "",
+    pcimg: work.pcimg,
+    spimg: work.spimg,
+    link: work.link,
+    github: work.github,
+    skill: work.skill ?? [],
+  }));
+}
 
-      const data: WorkView[] = await res.json();
-      setSlides(data);
-      setLoading(false);
-    };
-
-    fetchWorks();
-  }, [currentLang]);
-
-  return (
-    <>
-      <Header onLangChange={setCurrentLang} />
-      <main className="relative z-20 pt-30 pl-5 pr-5">
-        <div className="py-12 flex flex-col items-center -mt-20">
-          {loading && <p className="text-gray-400 text-sm">Loading works...</p>}
-
-          {!loading &&
-            slides.map((item) => <Slide key={item.id} data={item} />)}
-        </div>
-      </main>
-    </>
-  );
+export default async function WorksPage() {
+  const initialLang: "ja" = "ja";
+  const initialWorks = await getWorks(initialLang);
+  return <WorksClient initialLang={initialLang} initialWorks={initialWorks} />;
 }

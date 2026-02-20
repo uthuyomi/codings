@@ -2,6 +2,8 @@ import { NextResponse, type NextRequest } from "next/server";
 import { getAdminSessionFromRequest } from "@/lib/admin/session";
 import { createPublicSupabaseClient, createServiceSupabaseClient } from "@/lib/supabase/service";
 
+export const dynamic = "force-dynamic";
+
 /* =====================================================
    GET /api/works
    公開用一覧取得（lang対応）
@@ -41,7 +43,11 @@ export async function GET(request: NextRequest) {
     is_published: work.is_published,
   }));
 
-  return NextResponse.json(works);
+  return NextResponse.json(works, {
+    headers: {
+      "Cache-Control": "no-store",
+    },
+  });
 }
 
 /* =====================================================
@@ -78,5 +84,5 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  return NextResponse.json({ success: true });
+  return NextResponse.json({ success: true }, { headers: { "Cache-Control": "no-store" } });
 }

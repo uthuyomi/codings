@@ -4,6 +4,8 @@ import type { NextRequest } from "next/server";
 import { getAdminSessionFromRequest } from "@/lib/admin/session";
 import { createPublicSupabaseClient, createServiceSupabaseClient } from "@/lib/supabase/service";
 
+export const dynamic = "force-dynamic";
+
 /* =========================
    GET /api/works/:id
 ========================= */
@@ -46,7 +48,7 @@ export async function GET(
     );
   }
 
-  return NextResponse.json(data);
+  return NextResponse.json(data, { headers: { "Cache-Control": "no-store" } });
 }
 
 /* =========================
@@ -84,7 +86,7 @@ export async function PUT(
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  return NextResponse.json({ success: true });
+  return NextResponse.json({ success: true }, { headers: { "Cache-Control": "no-store" } });
 }
 
 /* =========================
@@ -108,5 +110,5 @@ export async function DELETE(
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  return NextResponse.json({ success: true });
+  return NextResponse.json({ success: true }, { headers: { "Cache-Control": "no-store" } });
 }
