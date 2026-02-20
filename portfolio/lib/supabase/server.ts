@@ -17,6 +17,9 @@ export async function createServerSupabaseClient() {
     supabaseUrl,
     supabaseAnonKey,
     {
+      cookieOptions: {
+        secure: process.env.NODE_ENV === "production",
+      },
       cookies: {
         encode: "tokens-only",
         getAll() {

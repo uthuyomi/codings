@@ -21,6 +21,9 @@ export async function proxy(request: NextRequest) {
   });
 
   const supabase = createServerClient(supabaseUrl, supabaseAnonKey, {
+    cookieOptions: {
+      secure: process.env.NODE_ENV === "production",
+    },
     cookies: {
       encode: "tokens-only",
       getAll() {

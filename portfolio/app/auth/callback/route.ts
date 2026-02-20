@@ -26,6 +26,9 @@ export async function GET(request: NextRequest) {
     supabaseUrl,
     supabaseAnonKey,
     {
+      cookieOptions: {
+        secure: process.env.NODE_ENV === "production",
+      },
       cookies: {
         encode: "tokens-only",
         getAll() {

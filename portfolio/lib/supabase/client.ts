@@ -6,6 +6,12 @@ export function createSupabaseBrowserClient() {
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
+      cookieOptions: {
+        secure:
+          typeof window !== "undefined" &&
+          window.location &&
+          window.location.protocol === "https:",
+      },
       cookies: {
         encode: "tokens-only",
         getAll() {
