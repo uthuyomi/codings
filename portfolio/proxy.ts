@@ -11,6 +11,15 @@ export async function proxy(request: NextRequest) {
 
   const response = NextResponse.next();
 
+  const incomingAuthCookieNames = request.cookies
+    .getAll()
+    .map((c) => c.name)
+    .filter((name) => name.startsWith("sb-"));
+  console.log("[proxy] incoming cookies", {
+    total: request.cookies.getAll().length,
+    sb: incomingAuthCookieNames,
+  });
+
   const supabase = createServerClient(supabaseUrl, supabaseAnonKey, {
     cookies: {
       encode: "tokens-only",

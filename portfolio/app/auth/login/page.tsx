@@ -24,10 +24,11 @@ export default function LoginPage() {
 
   const loginWithGoogle = async () => {
     const supabase = createSupabaseBrowserClient();
+    const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? location.origin).replace(/\/$/, "");
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${location.origin}/auth/callback`,
+        redirectTo: `${siteUrl}/auth/callback`,
       },
     });
   };
