@@ -3,6 +3,7 @@
 
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { usePathname } from "next/navigation";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Particles from "@/components/common/Particles";
 
@@ -39,6 +40,7 @@ export default function RootLayout({
         )}
 
         {children}
+        <Analytics />
       </body>
     </html>
   );
