@@ -1,20 +1,21 @@
-import { NextResponse } from "next/server";
-import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { NextResponse, type NextRequest } from "next/server";
+import { getAdminSessionFromRequest } from "@/lib/admin/auth";
+import { createPublicSupabaseClient, createServiceSupabaseClient } from "@/lib/supabase/service";
 
 /* =====================================================
    GET /api/works
    公開用一覧取得（lang対応）
 ===================================================== */
-export async function GET(request: Request) {
-  const supabase = await createServerSupabaseClient();
-
+export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const lang = searchParams.get("lang") ?? "ja";
   const includeUnpublished = searchParams.get("includeUnpublished") === "1";
 
+  const supabase = includeUnpublished ? createServiceSupabaseClient() : createPublicSupabaseClient();
+
   if (includeUnpublished) {
-    const { data: auth } = await supabase.auth.getUser();
-    if (!auth.user) {
+    const session = getAdminSessionFromRequest(request);
+    if (!session) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
   }
@@ -47,12 +48,12 @@ export async function GET(request: Request) {
    POST /api/works
    新規作成（DB構造準拠）
 ===================================================== */
-export async function POST(request: Request) {
-  const supabase = await createServerSupabaseClient();
+export async function POST(request: NextRequest) {
+  const supabase = createServiceSupabaseClient();
   const body = await request.json();
 
-  const { data: auth } = await supabase.auth.getUser();
-  if (!auth.user) {
+  const session = getAdminSessionFromRequest(request);
+  if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

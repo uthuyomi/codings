@@ -1,13 +1,14 @@
 // app/api/works/[id]/route.ts
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { getAdminSessionFromRequest } from "@/lib/admin/auth";
+import { createPublicSupabaseClient, createServiceSupabaseClient } from "@/lib/supabase/service";
 
 /* =========================
    GET /api/works/:id
 ========================= */
 export async function GET(
-  _request: NextRequest,
+  request: NextRequest,
   context: { params: Promise<{ id: string }> },
 ) {
   const { id } = await context.params;
@@ -16,9 +17,10 @@ export async function GET(
     return NextResponse.json({ error: "Work ID is missing" }, { status: 400 });
   }
 
-  const supabase = await createServerSupabaseClient();
+  const isAdmin = Boolean(getAdminSessionFromRequest(request));
+  const supabase = isAdmin ? createServiceSupabaseClient() : createPublicSupabaseClient();
 
-  const { data, error } = await supabase
+  let query = supabase
     .from("works")
     .select(
       `
@@ -33,8 +35,9 @@ export async function GET(
       is_published
     `,
     )
-    .eq("id", id)
-    .single();
+    .eq("id", id);
+  if (!isAdmin) query = query.eq("is_published", true);
+  const { data, error } = await query.single();
 
   if (error || !data) {
     return NextResponse.json(
@@ -55,10 +58,10 @@ export async function PUT(
 ) {
   const { id } = await context.params;
   const body = await request.json();
-  const supabase = await createServerSupabaseClient();
+  const supabase = createServiceSupabaseClient();
 
-  const { data: auth } = await supabase.auth.getUser();
-  if (!auth.user) {
+  const session = getAdminSessionFromRequest(request);
+  if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -88,14 +91,14 @@ export async function PUT(
    DELETE /api/works/:id
 ========================= */
 export async function DELETE(
-  _request: NextRequest,
+  request: NextRequest,
   context: { params: Promise<{ id: string }> },
 ) {
   const { id } = await context.params;
-  const supabase = await createServerSupabaseClient();
+  const supabase = createServiceSupabaseClient();
 
-  const { data: auth } = await supabase.auth.getUser();
-  if (!auth.user) {
+  const session = getAdminSessionFromRequest(request);
+  if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

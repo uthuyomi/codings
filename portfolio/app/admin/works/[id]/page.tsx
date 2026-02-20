@@ -1,6 +1,6 @@
 // app/admin/works/[id]/page.tsx
 import WorkForm from "../WorkForm";
-import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { createServiceSupabaseClient } from "@/lib/supabase/service";
 import { notFound } from "next/navigation";
 
 export const dynamic = "force-dynamic";
@@ -18,7 +18,7 @@ export default async function EditWorkPage({
     notFound();
   }
 
-  const supabase = await createServerSupabaseClient();
+  const supabase = createServiceSupabaseClient();
 
   const { data, error } = await supabase
     .from("works")

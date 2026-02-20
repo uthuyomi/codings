@@ -2,12 +2,12 @@
 import Link from "next/link";
 import { WorkView } from "@/types/work";
 import DeleteButton from "./DeleteButton";
-import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { createServiceSupabaseClient } from "@/lib/supabase/service";
 
 export const dynamic = "force-dynamic";
 
 async function getWorks(): Promise<WorkView[]> {
-  const supabase = await createServerSupabaseClient();
+  const supabase = createServiceSupabaseClient();
 
   const { data, error } = await supabase
     .from("works")
