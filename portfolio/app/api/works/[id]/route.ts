@@ -1,7 +1,7 @@
 // app/api/works/[id]/route.ts
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { getAdminSessionFromRequest } from "@/lib/admin/auth";
+import { getAdminSessionFromRequest } from "@/lib/admin/session";
 import { createPublicSupabaseClient, createServiceSupabaseClient } from "@/lib/supabase/service";
 
 /* =========================
@@ -17,7 +17,7 @@ export async function GET(
     return NextResponse.json({ error: "Work ID is missing" }, { status: 400 });
   }
 
-  const isAdmin = Boolean(getAdminSessionFromRequest(request));
+  const isAdmin = Boolean(await getAdminSessionFromRequest(request));
   const supabase = isAdmin ? createServiceSupabaseClient() : createPublicSupabaseClient();
 
   let query = supabase
@@ -60,7 +60,7 @@ export async function PUT(
   const body = await request.json();
   const supabase = createServiceSupabaseClient();
 
-  const session = getAdminSessionFromRequest(request);
+  const session = await getAdminSessionFromRequest(request);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -97,7 +97,7 @@ export async function DELETE(
   const { id } = await context.params;
   const supabase = createServiceSupabaseClient();
 
-  const session = getAdminSessionFromRequest(request);
+  const session = await getAdminSessionFromRequest(request);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

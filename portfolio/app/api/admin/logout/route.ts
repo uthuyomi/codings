@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { getAdminCookieName, getSessionCookieOptions } from "@/lib/admin/auth";
+import { getAdminCookieName, getSessionCookieOptions } from "@/lib/admin/session";
 
 export async function POST(request: NextRequest) {
   const response = NextResponse.json({ success: true });
@@ -11,4 +11,3 @@ export async function POST(request: NextRequest) {
   });
   return response;
 }
-

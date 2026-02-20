@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { getAdminSessionFromRequest } from "@/lib/admin/auth";
+import { getAdminSessionFromRequest } from "@/lib/admin/session";
 import { createPublicSupabaseClient, createServiceSupabaseClient } from "@/lib/supabase/service";
 
 /* =====================================================
@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
   const supabase = includeUnpublished ? createServiceSupabaseClient() : createPublicSupabaseClient();
 
   if (includeUnpublished) {
-    const session = getAdminSessionFromRequest(request);
+    const session = await getAdminSessionFromRequest(request);
     if (!session) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
   const supabase = createServiceSupabaseClient();
   const body = await request.json();
 
-  const session = getAdminSessionFromRequest(request);
+  const session = await getAdminSessionFromRequest(request);
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }

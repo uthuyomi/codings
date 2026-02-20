@@ -14,7 +14,7 @@ function getAnonKey() {
 
 function getServiceRoleKey() {
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  if (!key) throw new Error("Missing env var: SUPABASE_SERVICE_ROLE_KEY");
+  if (!key) throw new Error("Missing env var: SUPABASE_SERVICE_ROLE_KEY (required for admin CRUD)");
   return key;
 }
 

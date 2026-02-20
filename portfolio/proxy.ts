@@ -1,8 +1,8 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { getAdminSessionFromRequest } from "@/lib/admin/auth";
+import { getAdminSessionFromRequest } from "@/lib/admin/session";
 
 export async function proxy(request: NextRequest) {
-  const session = getAdminSessionFromRequest(request);
+  const session = await getAdminSessionFromRequest(request);
   if (session) return NextResponse.next();
 
   const next = request.nextUrl.pathname + request.nextUrl.search;
@@ -15,4 +15,3 @@ export async function proxy(request: NextRequest) {
 export const config = {
   matcher: ["/admin/:path*"],
 };
-
