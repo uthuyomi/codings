@@ -9,10 +9,8 @@ export type SessionPayload = {
   exp: number;
 };
 
-function getAuthSecret() {
-  const secret = process.env.AUTH_SECRET;
-  if (!secret) throw new Error("Missing env var: AUTH_SECRET");
-  return secret;
+function getAuthSecretOrNull() {
+  return process.env.AUTH_SECRET ?? null;
 }
 
 function textToBytes(input: string) {
@@ -82,6 +80,9 @@ export function getSessionCookieOptions(request: NextRequest) {
 }
 
 export async function createSessionToken(email: string) {
+  const secret = getAuthSecretOrNull();
+  if (!secret) throw new Error("Missing env var: AUTH_SECRET");
+
   const now = Math.floor(Date.now() / 1000);
   const payload: SessionPayload = {
     email,
@@ -90,17 +91,20 @@ export async function createSessionToken(email: string) {
   };
 
   const body = base64UrlEncodeBytes(textToBytes(JSON.stringify(payload)));
-  const key = await importHmacKey(getAuthSecret());
+  const key = await importHmacKey(secret);
   const signature = new Uint8Array(await crypto.subtle.sign("HMAC", key, textToBytes(body)));
   const sig = base64UrlEncodeBytes(signature);
   return `${body}.${sig}`;
 }
 
 export async function verifySessionToken(token: string): Promise<SessionPayload | null> {
+  const secret = getAuthSecretOrNull();
+  if (!secret) return null;
+
   const [body, sig] = token.split(".");
   if (!body || !sig) return null;
 
-  const key = await importHmacKey(getAuthSecret());
+  const key = await importHmacKey(secret);
   const ok = await crypto.subtle.verify(
     "HMAC",
     key,
@@ -127,4 +131,3 @@ export async function getAdminSessionFromRequest(request: NextRequest) {
   if (!token) return null;
   return verifySessionToken(token);
 }
-
