@@ -41,10 +41,10 @@
           "linkUrl": "https://docreview-ui.vercel.app/"
         },
         {
-          "name": "Touhou Talk",
-          "description": "キャラクター切替と会話履歴を扱うチャットUI。レスポンシブ対応とUI状態の整理を重視し、フロントエンド実装を中心に設計。",
+          "name": "Touhou Chat",
+          "description": "キャラクター切替と会話履歴を扱うチャットUI。レスポンシブ対応とUI状態管理を重視し、Next.jsによるフロントエンド実装を中心に設計。併せてPythonを用いたAI処理・API検証を行い、フロントと連携させた構成で開発。",
           "linkText": "View Project →",
-          "linkUrl": "https://touhou-talk.vercel.app/"
+          "linkUrl": "https://touhou-chat.vercel.app/"
         }
       ]
     },
