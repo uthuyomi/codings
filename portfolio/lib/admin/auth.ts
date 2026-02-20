@@ -141,8 +141,15 @@ function constantTimeEqual(a: Buffer, b: Buffer) {
 }
 
 export function verifyAdminPassword(password: string) {
+  const plain = process.env.ADMIN_PASSWORD;
+  if (plain) {
+    const a = crypto.createHash("sha256").update(password, "utf8").digest();
+    const b = crypto.createHash("sha256").update(plain, "utf8").digest();
+    return crypto.timingSafeEqual(a, b);
+  }
+
   const stored = process.env.ADMIN_PASSWORD_HASH;
-  if (!stored) throw new Error("Missing env var: ADMIN_PASSWORD_HASH");
+  if (!stored) throw new Error("Missing env var: ADMIN_PASSWORD (or ADMIN_PASSWORD_HASH)");
 
   const parsed = parsePasswordHash(stored);
   if (!parsed) throw new Error("Invalid ADMIN_PASSWORD_HASH format");
@@ -163,4 +170,3 @@ export function isValidAdminEmail(email: string) {
   if (!expected) throw new Error("Missing env var: ADMIN_EMAIL");
   return expected.trim().toLowerCase() === email.trim().toLowerCase();
 }
-
