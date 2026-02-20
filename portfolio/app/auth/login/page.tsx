@@ -3,32 +3,38 @@
 import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { getSiteUrl } from "@/lib/supabase/config";
 
 export default function LoginPage() {
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
+  const [nextPath, setNextPath] = useState<string>("/admin/works");
 
   useEffect(() => {
     try {
       const params = new URLSearchParams(window.location.search);
       setError(params.get("error"));
+      const next = params.get("next");
+      if (next && next.startsWith("/") && !next.startsWith("//")) {
+        setNextPath(next);
+      }
     } catch {
       setError(null);
     }
 
     const supabase = createSupabaseBrowserClient();
     supabase.auth.getUser().then(({ data }) => {
-      if (data.user) router.replace("/admin/works");
+      if (data.user) router.replace(nextPath);
     });
-  }, [router]);
+  }, [router, nextPath]);
 
   const loginWithGoogle = async () => {
     const supabase = createSupabaseBrowserClient();
-    const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? location.origin).replace(/\/$/, "");
+    const siteUrl = getSiteUrl() ?? location.origin.replace(/\/$/, "");
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${siteUrl}/auth/callback`,
+        redirectTo: `${siteUrl}/auth/callback?next=${encodeURIComponent(nextPath)}`,
       },
     });
   };

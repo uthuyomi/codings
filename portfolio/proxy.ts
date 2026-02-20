@@ -1,9 +1,15 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createServerClient } from "@supabase/ssr";
+import {
+  getSupabaseAnonKey,
+  getSupabaseUrl,
+  isHttpsRequest,
+  SUPABASE_COOKIE_NAME,
+} from "@/lib/supabase/config";
 
 export async function proxy(request: NextRequest) {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const supabaseUrl = getSupabaseUrl();
+  const supabaseAnonKey = getSupabaseAnonKey();
 
   if (!supabaseUrl || !supabaseAnonKey) {
     return NextResponse.next();
@@ -11,18 +17,23 @@ export async function proxy(request: NextRequest) {
 
   const response = NextResponse.next();
 
-  const incomingAuthCookieNames = request.cookies
-    .getAll()
-    .map((c) => c.name)
-    .filter((name) => name.startsWith("sb-"));
-  console.log("[proxy] incoming cookies", {
-    total: request.cookies.getAll().length,
-    sb: incomingAuthCookieNames,
-  });
+  if (process.env.AUTH_DEBUG === "1") {
+    const incomingAuthCookieNames = request.cookies
+      .getAll()
+      .map((c) => c.name)
+      .filter((name) => name.startsWith("sb-"));
+    console.log("[proxy] incoming cookies", {
+      total: request.cookies.getAll().length,
+      sb: incomingAuthCookieNames,
+    });
+  }
 
   const supabase = createServerClient(supabaseUrl, supabaseAnonKey, {
     cookieOptions: {
-      secure: process.env.NODE_ENV === "production",
+      name: SUPABASE_COOKIE_NAME,
+      path: "/",
+      sameSite: "lax",
+      secure: isHttpsRequest(request),
     },
     cookies: {
       encode: "tokens-only",
@@ -30,7 +41,7 @@ export async function proxy(request: NextRequest) {
         return request.cookies.getAll().map(({ name, value }) => ({ name, value }));
       },
       setAll(cookiesToSet) {
-        if (cookiesToSet.length > 0) {
+        if (process.env.AUTH_DEBUG === "1" && cookiesToSet.length > 0) {
           console.log("[proxy] setAll", {
             count: cookiesToSet.length,
             cookies: cookiesToSet.map((c) => ({
@@ -51,7 +62,14 @@ export async function proxy(request: NextRequest) {
     },
   });
 
-  await supabase.auth.getUser();
+  const { data } = await supabase.auth.getUser();
+  if (!data.user) {
+    const next = request.nextUrl.pathname + request.nextUrl.search;
+    const redirectUrl = request.nextUrl.clone();
+    redirectUrl.pathname = "/auth/login";
+    redirectUrl.searchParams.set("next", next);
+    return NextResponse.redirect(redirectUrl);
+  }
 
   return response;
 }

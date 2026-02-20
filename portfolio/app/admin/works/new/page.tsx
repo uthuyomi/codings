@@ -1,15 +1,10 @@
 import WorkForm from "../WorkForm";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-import { redirect } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
 export default async function NewWorkPage() {
-  const supabase = await createServerSupabaseClient();
-  const { data: auth } = await supabase.auth.getUser();
-  if (!auth.user) {
-    redirect("/auth/login");
-  }
+  await createServerSupabaseClient();
 
   return (
     <div className="p-8 max-w-6xl mx-auto">

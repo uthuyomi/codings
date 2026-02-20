@@ -1,12 +1,26 @@
 import { createBrowserClient } from "@supabase/ssr";
 import { parse, serialize } from "cookie";
+import {
+  getSupabaseAnonKey,
+  getSupabaseUrl,
+  SUPABASE_COOKIE_NAME,
+} from "@/lib/supabase/config";
 
 export function createSupabaseBrowserClient() {
+  const supabaseUrl = getSupabaseUrl();
+  const supabaseAnonKey = getSupabaseAnonKey();
+  if (!supabaseUrl || !supabaseAnonKey) {
+    throw new Error("Missing Supabase env vars for browser client.");
+  }
+
   return createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    supabaseUrl,
+    supabaseAnonKey,
     {
       cookieOptions: {
+        name: SUPABASE_COOKIE_NAME,
+        path: "/",
+        sameSite: "lax",
         secure:
           typeof window !== "undefined" &&
           window.location &&

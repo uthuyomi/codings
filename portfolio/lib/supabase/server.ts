@@ -1,11 +1,16 @@
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
+import {
+  getSupabaseAnonKey,
+  getSupabaseUrl,
+  SUPABASE_COOKIE_NAME,
+} from "@/lib/supabase/config";
 
 export async function createServerSupabaseClient() {
   const cookieStore = await cookies();
 
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const supabaseUrl = getSupabaseUrl();
+  const supabaseAnonKey = getSupabaseAnonKey();
 
   if (!supabaseUrl || !supabaseAnonKey) {
     throw new Error(
@@ -18,7 +23,10 @@ export async function createServerSupabaseClient() {
     supabaseAnonKey,
     {
       cookieOptions: {
-        secure: process.env.NODE_ENV === "production",
+        name: SUPABASE_COOKIE_NAME,
+        path: "/",
+        sameSite: "lax",
+        secure: true,
       },
       cookies: {
         encode: "tokens-only",

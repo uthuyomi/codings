@@ -1,33 +1,46 @@
 import { NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import type { NextRequest } from "next/server";
+import {
+  getSupabaseAnonKey,
+  getSupabaseUrl,
+  isHttpsRequest,
+  isSafeRelativePath,
+  SUPABASE_COOKIE_NAME,
+} from "@/lib/supabase/config";
 
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url);
   const code = searchParams.get("code");
+  const next = searchParams.get("next");
 
   if (!code) {
     console.error("[auth/callback] Missing code param", { url: request.url });
     return NextResponse.redirect(`${origin}/auth/login?error=missing_code`);
   }
 
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const supabaseUrl = getSupabaseUrl();
+  const supabaseAnonKey = getSupabaseAnonKey();
   if (!supabaseUrl || !supabaseAnonKey) {
     throw new Error(
       "Missing Supabase env vars: NEXT_PUBLIC_SUPABASE_URL / NEXT_PUBLIC_SUPABASE_ANON_KEY (set them in Vercel Project Settings).",
     );
   }
 
+  const redirectPath = isSafeRelativePath(next) ? next : "/admin/works";
+
   // ✅ 最初から redirect response を作る
-  const response = NextResponse.redirect(`${origin}/admin/works`, 303);
+  const response = NextResponse.redirect(`${origin}${redirectPath}`, 303);
 
   const supabase = createServerClient(
     supabaseUrl,
     supabaseAnonKey,
     {
       cookieOptions: {
-        secure: process.env.NODE_ENV === "production",
+        name: SUPABASE_COOKIE_NAME,
+        path: "/",
+        sameSite: "lax",
+        secure: isHttpsRequest(request),
       },
       cookies: {
         encode: "tokens-only",
@@ -35,18 +48,20 @@ export async function GET(request: NextRequest) {
           return request.cookies.getAll().map(({ name, value }) => ({ name, value }));
         },
         setAll(cookiesToSet) {
-          console.log("[auth/callback] setAll", {
-            count: cookiesToSet.length,
-            cookies: cookiesToSet.map((c) => ({
-              name: c.name,
-              valueLength: c.value.length,
-              maxAge: c.options?.maxAge,
-              path: c.options?.path,
-              sameSite: c.options?.sameSite,
-              secure: (c.options as any)?.secure,
-              httpOnly: (c.options as any)?.httpOnly,
-            })),
-          });
+          if (process.env.AUTH_DEBUG === "1") {
+            console.log("[auth/callback] setAll", {
+              count: cookiesToSet.length,
+              cookies: cookiesToSet.map((c) => ({
+                name: c.name,
+                valueLength: c.value.length,
+                maxAge: c.options?.maxAge,
+                path: c.options?.path,
+                sameSite: c.options?.sameSite,
+                secure: (c.options as any)?.secure,
+                httpOnly: (c.options as any)?.httpOnly,
+              })),
+            });
+          }
           cookiesToSet.forEach(({ name, value, options }) => {
             response.cookies.set({ name, value, ...options });
           });
@@ -67,6 +82,8 @@ export async function GET(request: NextRequest) {
     return NextResponse.redirect(`${origin}/auth/login?error=exchange_failed`);
   }
 
-  console.log("[auth/callback] exchangeCodeForSession ok");
+  if (process.env.AUTH_DEBUG === "1") {
+    console.log("[auth/callback] exchangeCodeForSession ok");
+  }
   return response;
 }

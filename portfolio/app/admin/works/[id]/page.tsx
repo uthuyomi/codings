@@ -1,7 +1,7 @@
 // app/admin/works/[id]/page.tsx
 import WorkForm from "../WorkForm";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
@@ -19,11 +19,6 @@ export default async function EditWorkPage({
   }
 
   const supabase = await createServerSupabaseClient();
-
-  const { data: auth } = await supabase.auth.getUser();
-  if (!auth.user) {
-    redirect("/auth/login");
-  }
 
   const { data, error } = await supabase
     .from("works")

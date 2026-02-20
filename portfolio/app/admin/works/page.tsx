@@ -2,18 +2,12 @@
 import Link from "next/link";
 import { WorkView } from "@/types/work";
 import DeleteButton from "./DeleteButton";
-import { redirect } from "next/navigation";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 export const dynamic = "force-dynamic";
 
 async function getWorks(): Promise<WorkView[]> {
   const supabase = await createServerSupabaseClient();
-
-  const { data: auth } = await supabase.auth.getUser();
-  if (!auth.user) {
-    redirect("/auth/login");
-  }
 
   const { data, error } = await supabase
     .from("works")
