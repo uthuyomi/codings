@@ -33,14 +33,14 @@ export async function GET(request: NextRequest) {
   // lang に応じて view 用に整形（DB構造そのまま）
   const works = data.map((work) => ({
     id: work.id,
+    kind: work.kind ?? "web",
     title: work.title?.[lang] ?? "",
     description: work.description?.[lang] ?? "",
     pcimg: work.pcimg,
-    spimg: work.spimg,
+    spimg: work.spimg ?? null,
     link: work.link,
     github: work.github,
     skill: work.skill,
-    is_published: work.is_published,
   }));
 
   return NextResponse.json(works, {
@@ -63,7 +63,22 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
+  const kind = (body.kind ?? "web") as string;
+  if (!body?.pcimg) {
+    return NextResponse.json({ error: "pcimg is required" }, { status: 400 });
+  }
+  if (kind === "web" && !body?.spimg) {
+    return NextResponse.json(
+      { error: "spimg is required for kind=web" },
+      { status: 400 },
+    );
+  }
+  if (!body?.link) {
+    return NextResponse.json({ error: "link is required" }, { status: 400 });
+  }
+
   const { error } = await supabase.from("works").insert({
+    kind,
     title: {
       ja: body.title?.ja ?? "",
       en: body.title?.en ?? "",
@@ -73,7 +88,7 @@ export async function POST(request: NextRequest) {
       en: body.description?.en ?? "",
     },
     pcimg: body.pcimg,
-    spimg: body.spimg,
+    spimg: body.spimg ?? null,
     link: body.link,
     github: body.github ?? null,
     skill: body.skill,

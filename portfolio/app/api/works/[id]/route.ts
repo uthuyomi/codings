@@ -27,6 +27,7 @@ export async function GET(
     .select(
       `
       id,
+      kind,
       title,
       description,
       pcimg,
@@ -67,13 +68,28 @@ export async function PUT(
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
+  const kind = (body.kind ?? "web") as string;
+  if (!body?.pcimg) {
+    return NextResponse.json({ error: "pcimg is required" }, { status: 400 });
+  }
+  if (kind === "web" && !body?.spimg) {
+    return NextResponse.json(
+      { error: "spimg is required for kind=web" },
+      { status: 400 },
+    );
+  }
+  if (!body?.link) {
+    return NextResponse.json({ error: "link is required" }, { status: 400 });
+  }
+
   const { error } = await supabase
     .from("works")
     .update({
+      kind,
       title: body.title,
       description: body.description,
       pcimg: body.pcimg,
-      spimg: body.spimg,
+      spimg: body.spimg ?? null,
       link: body.link,
       github: body.github ?? null,
       skill: body.skill,

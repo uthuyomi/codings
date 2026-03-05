@@ -18,6 +18,32 @@ type SlideProps = {
 };
 
 const Slide = ({ data }: SlideProps) => {
+  const previewSlides: Array<
+    | { key: "pc"; outer: typeof pcOuter; src: string; alt: string; className: string }
+    | { key: "sp"; outer: typeof spOuter; src: string; alt: string; className: string }
+  > = [
+    {
+      key: "pc",
+      outer: pcOuter,
+      src: data.pcimg,
+      alt: "preview",
+      className: style["slide-pc"],
+    },
+  ];
+
+  if (data.spimg) {
+    previewSlides.push({
+      key: "sp",
+      outer: spOuter,
+      src: data.spimg,
+      alt: "preview",
+      className: style["slide-sp"],
+    });
+  }
+
+  const primaryLinkLabel =
+    data.kind === "vscode" ? "Marketplace" : data.kind === "web" ? "Demo" : "Link";
+
   return (
     <div className="mt-20">
       <div className="mx-auto max-w-5xl rounded-2xl border border-gray-700 bg-gray-900/70 shadow-lg shadow-teal-500/10 overflow-hidden">
@@ -32,35 +58,21 @@ const Slide = ({ data }: SlideProps) => {
                 pagination={{ clickable: true }}
                 className="absolute inset-0 !w-full !h-full"
               >
-                {/* ===== PC ===== */}
-                <SwiperSlide className={style["slide-pc"]}>
-                  <Image className={style.slideOuter} src={pcOuter} alt="" />
-                  <div className={style.slideInner}>
-                    <Image
-                      src={data.pcimg}
-                      alt="pc preview"
-                      width={1920}
-                      height={1280}
-                      unoptimized
-                      className="rounded-lg border border-gray-600 shadow-md shadow-teal-400/10"
-                    />
-                  </div>
-                </SwiperSlide>
-
-                {/* ===== SP ===== */}
-                <SwiperSlide className={style["slide-sp"]}>
-                  <Image className={style.slideOuter} src={spOuter} alt="" />
-                  <div className={style.slideInner}>
-                    <Image
-                      src={data.spimg}
-                      alt="sp preview"
-                      width={1920}
-                      height={1280}
-                      unoptimized
-                      className="rounded-lg border border-gray-600 shadow-md shadow-teal-400/10"
-                    />
-                  </div>
-                </SwiperSlide>
+                {previewSlides.map((s) => (
+                  <SwiperSlide key={s.key} className={s.className}>
+                    <Image className={style.slideOuter} src={s.outer} alt="" />
+                    <div className={style.slideInner}>
+                      <Image
+                        src={s.src}
+                        alt={s.alt}
+                        width={1920}
+                        height={1280}
+                        unoptimized
+                        className="rounded-lg border border-gray-600 shadow-md shadow-teal-400/10"
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
               </Swiper>
             </div>
           </div>
@@ -70,6 +82,13 @@ const Slide = ({ data }: SlideProps) => {
             <h3 className="text-lg font-semibold text-teal-300">
               {data.title}
             </h3>
+            <p className="mt-1 text-xs text-gray-500">
+              {data.kind === "vscode"
+                ? "VSCode Extension"
+                : data.kind === "web"
+                  ? "Web"
+                  : data.kind.toUpperCase()}
+            </p>
 
             <p className="mt-2 text-sm text-gray-400 leading-relaxed">
               {data.description}
@@ -96,7 +115,7 @@ const Slide = ({ data }: SlideProps) => {
                 href={data.link}
                 className="inline-flex items-center justify-center rounded-lg bg-teal-500/90 text-slate-900 text-sm font-medium px-5 py-2 hover:bg-teal-400 transition"
               >
-                Demo
+                {primaryLinkLabel}
               </Link>
 
               {data.github && (

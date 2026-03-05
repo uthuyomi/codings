@@ -22,7 +22,7 @@ export default async function EditWorkPage({
 
   const { data, error } = await supabase
     .from("works")
-    .select("id,title,description,pcimg,spimg,link,github,skill,is_published")
+    .select("id,kind,title,description,pcimg,spimg,link,github,skill,is_published")
     .eq("id", id)
     .single();
 

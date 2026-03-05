@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import type { WorkKind } from "@/types/work";
 
 /* =========
    Types
@@ -14,6 +15,7 @@ type LangBlock = {
 
 type WorkFormData = {
   id?: string;
+  kind: WorkKind;
   title: LangBlock;
   description: LangBlock;
   pcimg: string;
@@ -27,10 +29,11 @@ type WorkFormData = {
 type Props = {
   initialData?: {
     id?: string;
+    kind?: WorkKind;
     title?: LangBlock;
     description?: LangBlock;
     pcimg?: string;
-    spimg?: string;
+    spimg?: string | null;
     link?: string;
     github?: string | null;
     skill?: string[];
@@ -48,6 +51,7 @@ export default function WorkForm({ initialData }: Props) {
   const [submitting, setSubmitting] = useState(false);
 
   const [form, setForm] = useState<WorkFormData>({
+    kind: initialData?.kind ?? "web",
     title: {
       ja: initialData?.title?.ja ?? "",
       en: initialData?.title?.en ?? "",
@@ -78,6 +82,7 @@ export default function WorkForm({ initialData }: Props) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               ...form,
+              spimg: form.kind === "web" ? form.spimg : form.spimg || null,
               github: form.github || null, // 送信時のみ null 許容
             }),
           });
@@ -110,6 +115,23 @@ export default function WorkForm({ initialData }: Props) {
           />
           公開する
         </label>
+      </section>
+
+      {/* ========= 種別 ========= */}
+      <section className="space-y-4">
+        <h2 className="text-lg font-semibold">種別</h2>
+
+        <select
+          className="w-full rounded bg-slate-800 border border-slate-700 px-4 py-2"
+          value={form.kind}
+          onChange={(e) => setForm({ ...form, kind: e.target.value as WorkKind })}
+        >
+          <option value="web">Webアプリ / Web制作</option>
+          <option value="vscode">VSCode拡張</option>
+          <option value="cli">CLI</option>
+          <option value="library">ライブラリ</option>
+          <option value="other">その他</option>
+        </select>
       </section>
 
       {/* ========= 日本語 ========= */}
@@ -189,6 +211,11 @@ export default function WorkForm({ initialData }: Props) {
           value={form.spimg}
           onChange={(e) => setForm({ ...form, spimg: e.target.value })}
         />
+        {form.kind !== "web" && (
+          <p className="text-xs text-slate-400">
+            VSCode拡張/CLI などは SP 画像なしでもOK（空でも保存できます）
+          </p>
+        )}
       </section>
 
       {/* ========= Links ========= */}
@@ -197,7 +224,7 @@ export default function WorkForm({ initialData }: Props) {
 
         <input
           className="w-full rounded bg-slate-800 border border-slate-700 px-4 py-2"
-          placeholder="デモURL"
+          placeholder={form.kind === "vscode" ? "Marketplace URL" : "デモURL"}
           value={form.link}
           onChange={(e) => setForm({ ...form, link: e.target.value })}
         />

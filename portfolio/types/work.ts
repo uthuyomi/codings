@@ -4,8 +4,11 @@
  * DB（Supabase）に保存されているそのままの形
  * title / description は jsonb
  */
+export type WorkKind = "web" | "vscode" | "cli" | "library" | "other";
+
 export type WorkRecord = {
   id: string;
+  kind: WorkKind;
 
   title: {
     ja: string;
@@ -18,7 +21,7 @@ export type WorkRecord = {
   };
 
   pcimg: string;
-  spimg: string;
+  spimg: string | null;
 
   link: string;
   github: string | null;
@@ -36,12 +39,13 @@ export type WorkRecord = {
  */
 export type WorkView = {
   id: string;
+  kind: WorkKind;
 
   title: string;
   description: string;
 
   pcimg: string;
-  spimg: string;
+  spimg: string | null;
 
   link: string;
   github: string | null;

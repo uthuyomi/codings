@@ -11,7 +11,7 @@ async function getWorks(): Promise<WorkView[]> {
 
   const { data, error } = await supabase
     .from("works")
-    .select("id,title,description,pcimg,spimg,link,github,skill")
+    .select("id,kind,title,description,pcimg,spimg,link,github,skill")
     .order("created_at", { ascending: false });
 
   if (error) {
@@ -21,10 +21,11 @@ async function getWorks(): Promise<WorkView[]> {
   const lang: "ja" = "ja";
   return (data ?? []).map((work) => ({
     id: work.id,
+    kind: work.kind ?? "web",
     title: work.title?.[lang] ?? "",
     description: work.description?.[lang] ?? "",
     pcimg: work.pcimg,
-    spimg: work.spimg,
+    spimg: work.spimg ?? null,
     link: work.link,
     github: work.github,
     skill: work.skill ?? [],
