@@ -22,7 +22,7 @@ export async function GET(request: NextRequest) {
     }
   }
 
-  let query = supabase.from("works").select("*").order("created_at", { ascending: false });
+  let query = supabase.from("works").select("*").order("sort_order", { ascending: true });
   if (!includeUnpublished) query = query.eq("is_published", true);
   const { data, error } = await query;
 

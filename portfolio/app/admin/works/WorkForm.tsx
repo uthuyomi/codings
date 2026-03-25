@@ -65,7 +65,7 @@ export default function WorkForm({ initialData }: Props) {
     link: initialData?.link ?? "",
     github: initialData?.github ?? "", // null → ""
     skill: initialData?.skill ?? [],
-    is_published: initialData?.is_published ?? false,
+    is_published: initialData?.is_published ?? true,
   });
 
   return (

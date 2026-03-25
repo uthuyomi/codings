@@ -13,7 +13,7 @@ async function getWorks(lang: "ja" | "en"): Promise<WorkView[]> {
     .from("works")
     .select("*")
     .eq("is_published", true)
-    .order("created_at", { ascending: false });
+    .order("sort_order", { ascending: true });
 
   if (error) throw new Error(error.message);
 
